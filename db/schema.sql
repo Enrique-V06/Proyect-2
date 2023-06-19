@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS RoomieFinder_db;
+
+-- CREATE DATABASE
+CREATE DATABASE RoomieFinder_db;
+use RoomieFinder_db;
