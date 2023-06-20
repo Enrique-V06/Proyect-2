@@ -1,0 +1,20 @@
+[
+    {
+        "location": "Gustavo A. Madero",
+        "typeOfHome": "house",
+        "pet": true,
+        "user_id": 1
+    },
+    {
+        "location": "Coyoacán",
+        "typeOfHome": "apartment",
+        "pet": true,
+        "user_id": 2
+    },
+    {
+        "location": "Cuahutemoc",
+        "typeOfHome": "house",
+        "pet": false,
+        "user_id": 3
+    }
+]
