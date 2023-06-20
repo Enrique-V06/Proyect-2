@@ -50,7 +50,7 @@ Not Applicable
  * 
 To see more of our work, see the following Github profiles: 
 * [Ximena Fernández del Castillo: @ Ximenacu](https://github.com/Ximenacu);
-* [María Fernanda Marroquín @ ]();
+* [María Fernanda Marroquín @ ](https://github.com/MariaFernandaMarroquin);
 * [David Mondragón @ mondragonSaiz](https://github.com/mondragonSaiz);
-* [Eduardo Pineda Huerta @ ](https://github.com/Ximenacu);
-* [Eduardo Pineda Huerta @ ](https://github.com/Ximenacu);
+* [Eduardo Pineda Huerta @ ](https://github.com/EduardoPinedaH);
+* [Héctor Enrique Vázquez Martínez @ ](https://github.com/Enrique-V06);
