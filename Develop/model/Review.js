@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Offer extends Model { }
+class Review extends Model { }
 
-Offer.init(
+Review.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,37 +11,34 @@ Offer.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        location: {
-            type: DataTypes.STRING, 
-            allowNull: false,
-        },
-        typeOfHome: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        pet: {
-            type: DataTypes.BOOLEAN,
+        description: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        imageUrl: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+          },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
               model: 'users',
               key: 'id',
             },
-          },
+        },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'offer',
+        modelName: 'review',
       },
 );
 
-module.exports = Offer;
+module.exports = Review;

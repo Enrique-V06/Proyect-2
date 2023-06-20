@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
+
 // model import:
 const Users = require('./model');
 
@@ -13,6 +14,7 @@ app.set('view engine', 'handlebars');
 //Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(routes);
 
 app.use(routes);
 // sync sequelize models to the database, then turn on the server
