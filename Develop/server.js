@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3001;
 //Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public',express.static(__dirname + "/public"));
+app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
 sequelize.sync().then(() => {
