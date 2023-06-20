@@ -20,12 +20,12 @@ Offer.init(
             allowNull: false,
         },
         pet: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
         imageUrl: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
