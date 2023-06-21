@@ -46,8 +46,9 @@ router.post('/signup', async (req, res) => {
 // You are SIGNED IN
 // http://localhost:3001/api/users/in
 router.get('/in', async (req, res) => {
-  // res.render('users');
-  res.send("You are in!")
+  console.log("GET request")
+  res.render('profile');  // PLACEHOLDER HANDLEBAR.!!!
+  // res.send("You are in!")
 });
 
 

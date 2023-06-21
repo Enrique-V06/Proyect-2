@@ -29,10 +29,15 @@ signUpSubmit.addEventListener("click", async (event) => {
         console.log("back")
         if (response.ok) {
             console.log("in if auth")
-            // const lemein = await fetch('/api/users/in', {
-            //     method: 'GET',
+            document.location.replace('/api/users/in');
+            // const lemein = await fetch('/api/users/in')
+            // .then(response => response.text())
+            // .then(data => {
+            //     console.log(data); // You can handle the response data here
             // })
-            // console.log("response ok")
+            // .catch(error => {
+            //     console.error('Error:', error);
+            // });
         } else {
             alert('There was a problem with your sign up, Please Try Again');
         }
