@@ -16,13 +16,14 @@ signUpSubmit.addEventListener("click", async (event) => {
             headers: { 'Content-Type': 'application/json' },
         })
 
-        // if (response.ok) {
-        //     const lemein = await fetch('/someroot', {
-        //         method: 'GET',
-        //     })
-        // } else {
-        //     alert('Failed to sign up.');
-        // }
+        if (response.ok) {
+            // const lemein = await fetch('/someroot', {
+            //     method: 'GET',
+            // })
+            console.log("response ok")
+        } else {
+            alert('Failed to sign up.');
+        }
     }
   }
 );

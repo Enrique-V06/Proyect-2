@@ -26,6 +26,7 @@ router.post('/signup', async (req, res) => {
         password: req.body.password,
       });
       res.status(200).json(dbUserData);
+      console.log("sucess: ", res.status);
 
       // Set up sessions with a 'loggedIn' variable set to `true`
     //   req.session.save(() => {
@@ -37,6 +38,7 @@ router.post('/signup', async (req, res) => {
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
+      console.log("failure: ", res.status);
     }
 });
 
