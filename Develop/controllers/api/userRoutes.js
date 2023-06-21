@@ -14,6 +14,30 @@ router.get('/', async (req, res) => {
     }
 });
 
+// SIGNUP 
+// http://localhost:3001/api/users/signup
+router.post('/signup', async (req, res) => {
+    console.log("req: ",  req.body)
+    try {
+      const dbUserData = await Users.create({
+        userName: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+      });
+      res.status(200).json(dbUserData);
+
+      // Set up sessions with a 'loggedIn' variable set to `true`
+    //   req.session.save(() => {
+    //     req.session.loggedIn = true;
+  
+  
+    //     res.status(200).json(dbUserData);
+    //   });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
 
 
 module.exports = router;

@@ -31,24 +31,24 @@ Users.init (
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {len: [6,8]},
+            validate: {len: [6,20]},
         },
-        userType: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        location: {
-            type: DataTypes.STRING, 
-            allowNull: false,
-        },
-        typeOfHome: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        pet: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },  
+        // userType: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+        // location: {
+        //     type: DataTypes.STRING, 
+        //     allowNull: false,
+        // },
+        // typeOfHome: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+        // pet: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false,
+        // },  
     },
     {
         hooks: {
