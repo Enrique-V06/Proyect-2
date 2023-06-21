@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 // http://localhost:3001/api/users/signup
 router.post('/signup', async (req, res) => {
     console.log("req: ",  req.body)
+    console.log("req username: ",  req.body.username)
     try {
       const dbUserData = await Users.create({
         userName: req.body.username,
