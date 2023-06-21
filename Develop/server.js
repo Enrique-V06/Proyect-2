@@ -2,6 +2,7 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
+const path = require('path');
 // model import:
 const Users = require('./model');
 const hbs = exphbs.create({});
@@ -15,8 +16,8 @@ app.set('view engine', 'handlebars');
 //Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use('/public',express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(routes);
 
