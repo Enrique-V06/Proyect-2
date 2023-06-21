@@ -18,17 +18,94 @@
       <div class='container text-center'>
         <div class='row align-items-start'>
           <div class='col-5' style="padding-top:5%;">
+
             <div class="bg-home-container"></div>
-            <p class="lead">We offer you a wide range of roomies and fine locations</p>
+            <p class="lead">We offer a wide range of roomies and fine locations</p>
+
             <h1 class="display-1">Find the best...</h1>
             <div class="container">
-              <button type="button" class="btn btn-dark" style="border-radius: 0; margin-right:5px;">Sign up</button>
-              <button type="button" class="btn btn-light" style="border-radius: 0;">Login -></button>
+              <button type="button" class='btn btn-outline-white btn-dark' data-bs-toggle="modal" data-bs-target="#loginModal" style="border-radius: 0; margin-right:5px;">Login</button>
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signupModal" style="border-radius: 0;">Signup</button>
               </div>
           </div>
           <div class='col-6' style="padding-top:5%;">
             <img src="/Develop/public/images/homepage-image.png" class="img-fluid" alt="homepage image">
           </div>
+
+          <!-- Modal LOGIN -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style="text-align: left; margin-bottom: 2%;">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
+                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="text-align: left; margin-bottom: 2%;">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="text-align: left; margin-bottom: 2%;">
+                        </div>
+                        {{!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div> --}}
+                        <button type="submit" class="btn btn-primary" style="margin: 3%;">Submit</button>
+                    </form>
+                </div>
+                {{!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal SIGNUP-->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Signup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style="text-align: left; margin-bottom: 2%;">Username</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Username" style="margin-bottom: 2%;">
+                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style="text-align: left; margin-bottom: 2%;">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
+                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="text-align: left; margin-bottom: 2%;">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="text-align: left; margin-bottom: 2%;">
+                        </div>
+                        {{!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div> --}}
+                        <button type="submit" class="btn btn-primary" style="margin: 3%;">Submit</button>
+                    </form>
+                </div>
+                {{!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+
           <div class="col-12" style="padding-top: 5%;">
             <h3 class="display-3">About us</h2>
             <p class="lead">The site for those looking for the best place to live</p>
