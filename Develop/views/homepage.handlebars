@@ -1,20 +1,20 @@
 
   <body>
     <main>
+      <div class="bg-home-container"></div>
       <div class='container text-center'>
         <div class='row align-items-start'>
-          <div class='col-5' style="padding-top:5%;">
+          <div class='col-5' style="padding-top:15%; transform:translateY(-10vh)">
+            <div class="bg-header"></div>
+            <p class="lead" style='top:25vh; text-align:left; max-width:501px; font-size:18px; color:var(var(--grey-color)); font-family: Poppins'>We offer a wide range of roomies and fine locations</p>
 
-            <div class="bg-home-container"></div>
-            <p class="lead">We offer a wide range of roomies and fine locations</p>
-
-            <h1 class="display-1">Find the best...</h1>
-            <div class="container">
-              <button type="button" class='btn btn-outline-white btn-dark' data-bs-toggle="modal" data-bs-target="#loginModal" style="border-radius: 0; margin-right:5px;">Login</button>
-              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signupModal" style="border-radius: 0;">Signup</button>
+            <h1 class="display-1" style='text-align: left; font-family: Lora'>Find the best...</h1>
+            <div class="container" style="padding-top: 5%; display: flex; justify-content: left;">
+              <button type="button" class='btn btn-outline-white btn-dark btn-signup' data-bs-toggle="modal" data-bs-target="#signupModal" style="font-family: Poppins; border-radius: 0; margin-right: 20%">Signup</button>
+              <button type="button" class="btn btn-light btn-login" data-bs-toggle="modal" data-bs-target="#loginModal" style="font-family: Poppins; border-radius: 0;" >Login →</button>
               </div>
           </div>
-          <div class='col-6' style="padding-top:5%;">
+          <div class='col-6' style="transform:translate(6vw,12vh); width:750px; height:auto">
             <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
           </div>
 
@@ -92,21 +92,19 @@
     </div>
 
 
-          <div class="col-12" style="padding-top: 5%;">
-            <h3 class="display-3">About us</h2>
-            <p class="lead">The site for those looking for the best place to live</p>
-            <div class="container text-center">
+          <div class="col-12" style="padding-top: 20%;">
+            <h3 class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>About us</h2>
+            <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
+            <div class="container text-center" style='padding-top: 5%; padding-left: 5%'>
               <div class="row align-items-center">
                 <div class="col">
-                  <div class="card" style="width: 18rem;">
-                      <img src="../images/house.png" class="card-img-top" alt="...">
-                      <div class="card-body">
+                  <div class="card" style="width: 24rem; border-color: #FFFF;" style='display:flex; justify-content: center;'>
+                      <img src="../images/house.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+                      <div class="card-body" id="card-about-us">
                       
-                        <p class="card-text">Find what best suits you.</p>
-                        <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                          Dolore et obcaecati blanditiis ut quo tempora earum praesentium 
-                          recusandae corrupti provident ex, voluptatem in nesciunt at voluptatibus
-                          aliquam numquam laboriosam ratione.
+                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>Find what best suits you.</p>
+                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
                         </small>
                       
                       </div>
@@ -114,29 +112,25 @@
                   </div>
 
                 <div class="col">
-                  <div class="card" style="width: 18rem;">
+                  <div class="card" style="width: 24rem; border-color: #FFFF;">
                   
-                      <img src="../images/amigos.png" class="card-img-top" alt="...">
+                      <img src="../images/roomies.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
 
-                      <div class="card-body">
-                        <p class="card-text">With the best people</p>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                          Suscipit, aspernatur sed labore ipsum voluptatum ipsa consequuntur 
-                          aperiam maiores, magni amet quisquam culpa veritatis earum eum architecto qui,
-                          ex quibusdam adipisci.
+                      <div class="card-body" id="card-about-us">
+                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>With the best people</p>
+                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
                         </small>
                       </div>
                     </div>
                 </div>
                 <div class="col">
-                  <div class="card" style="width: 18rem;">
-                      <img src="../images/apoyo.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text">24/7 Support</p>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                          Suscipit, aspernatur sed labore ipsum voluptatum ipsa consequuntur 
-                          aperiam maiores, magni amet quisquam culpa veritatis earum eum architecto qui,
-                          ex quibusdam adipisci.
+                  <div class="card" style="width: 24rem; border-color: #FFFF;" >
+                      <img src="../images/apoyo.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+                      <div class="card-body" id="card-about-us">
+                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>24/7 Support</p>
+                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
                         </small>
                       </div>
                     </div>
@@ -144,52 +138,73 @@
                 </div>
             </div>
           </div>
-          <div class="col-12" style="padding-top: 4%;">
-            <h3 class="display-3">Our Services</h2>
-            <div class="container text-center">
+
+          <div class="bg-our-services"></div>
+          <div class="col-12" style="padding-top:15%;">
+            <h3 class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
+            <div class="container text-center" style="display:flex; justify-content:center;">
               <div class="row align-items-start">
                 <div class="col">
                   <div class="card" style="width: 18rem;">
-                      <img src="../images/Girls.png" class="card-img-top" alt="...">
+                      <img src="../images/find-a-roomie.png" class="card-img-top" alt="...">
                       <div class="card-body">
                         
-                        <p class="card-text">Find a Roomate</p>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                          Quisquam sunt ex distinctio nobis!
-                        </small>
+                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find a Roommate</p>
                       </div>
                     </div>
                   </div>
 
                 <div class="col">
-                    <div class="card align-self-end" style="width: 18rem;">
-                      <img src="../images/3d-rendering-wood-beautiful-loft-minimal-bedroom-2021-08-28-10-14-45-utc.jpg" class="card-img-top" alt="...">
+                    <div class="card align-self-end" style="margin-top:15%; width: 18rem;">
+                      <img src="../images/find-a-place.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <p class="card-text">Find a Place</p>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                          Quisquam sunt ex distinctio nobis!
-                        </small>
+                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find a Place</p>
                       </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                      <img src="../images/luxury-house-2022-03-04-02-21-22-utc.jpg" class="card-img-top" alt="...">
+                      <img src="../images/share-a-place.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <p class="card-text">Share a Place</p>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                          Quisquam sunt ex distinctio nobis!
-                        </small>
+                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Share a Place</p>
                       </div>
                     </div>
                 </div>
                 </div>
             </div>
           </div>
-
-          <div class="col-12">
-            <h3>***Reviews***</h3>
+        
+          <div class="bg-reviews"></div>
+          <div class='row align-items-start' style="padding-top:25%">
+            <div class='col-5' style="width:553px; height:768px;">
+              <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
+            </div>
+            <div class='col-6' style="transform:translateY(-10vh)">
+              <h1 class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
+              <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna.”</p>
+              <div class="container" style="display: flex; justify-content: left;">
+                <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>Roomiehunt User</p>
+            </div>
           </div>
+
+          <div class="container" style="padding-top: 20%; margin-bottom: 20%">
+            <div class="row" style="max-width: 750px; margin:auto">
+              <div class="col-sm-12">
+                <div class="content">
+                  <h1 style="font-family:Lora; color:var(--dark-green-color); font-size:56px">Join Our Newsletter</h1>
+                  <h2 style="padding-top:5%; font-family:Poppins; color:var(--grey-color); font-size:16px">Sign up for our email newsletter to get our latest news</h2>
+                  <div class="input-group" style="padding-top:5%;">
+                    <input type="email" class="form-control" name="" placeholder="Enter email">
+                    <span class="input-group-btn">
+                      <button class="btn" type="submit" style="padding: 24px 71px; border-radius:0%; background-color:var(--dark-green-color); color:var(--light-color)">Subscribe</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </main>

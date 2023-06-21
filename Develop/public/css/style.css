@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --light-green-color: #E4EEE6;
+    --dark-green-color: #082E21;
+    --red-color: #E01E5A;
+    --green-color: #2EB67D;
+    --light-color: #EFF4F0;
+    --dark-color: #202020;
+    --grey-color: #778082;
+    --transition: all 300ms ease-in-out;
+}
+
+body {
+    background-color: #ffff;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bg-home-container {
+    position: absolute;
+    width: 70vw;
+    height: 90vh;
+    left: 0vw;
+    top: 0vh;
+    background: var(--light-green-color);
+    z-index: -10;
+}
+
+.bg-reviews {
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+    left: 35vw;
+    top: 350vh;
+    background: var(--light-green-color);
+    z-index: -10;
+}
+
+.bg-our-services {
+    position: absolute;
+    width: 100vw;
+    height: 70vh;
+    left: 0vw;
+    top: 240vh;
+    background: var(--light-green-color);
+    z-index: -10;
+}
+
+.btn-signup {
+    background-color: var(--dark-green-color) !important;
+    width: 236px;
+    height: 76px;
+}
+
+.btn-signup:hover {
+    opacity: 70% !important;
+}
+
+.btn-login {
+    background-color: var(--light-green-color) !important;
+    border-color: var(--light-green-color) !important;
+}
+
+.card {
+    border-color: var(--light-green-color);
+}
+
+.card-body {
+    background-color: var(--light-green-color);
+}
+
+#card-about-us {
+    background-color: #ffff;
+}
