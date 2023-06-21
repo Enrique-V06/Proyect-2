@@ -24,6 +24,7 @@ router.post('/signup', async (req, res) => {
         userName: req.body.username,
         email: req.body.email,
         password: req.body.password,
+        userType: req.body.userType
       });
       res.status(200).json(dbUserData);
       console.log("sucess: ", res.status);
@@ -40,6 +41,13 @@ router.post('/signup', async (req, res) => {
       res.status(500).json(err);
       console.log("failure: ", res.status);
     }
+});
+
+// You are SIGNED IN
+// http://localhost:3001/api/users/in
+router.get('/in', async (req, res) => {
+  // res.render('users');
+  res.send("You are in!")
 });
 
 

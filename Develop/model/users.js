@@ -33,10 +33,10 @@ Users.init (
             allowNull: false,
             validate: {len: [2,20]},
         },
-        // userType: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
+        userType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         // location: {
         //     type: DataTypes.STRING, 
         //     allowNull: false,
