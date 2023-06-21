@@ -2,12 +2,12 @@
 console.log("Auth.js file")
 var signUpSubmit = document.querySelector("#signUpSubmit");
 var type; 
-//  Parameter Options COLOR 
+// ----------- Type of user JQuery  
 (function (){
     var Options = $('.dropdown-item');  
     Options.on('click', function () { 
     type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
-      document.getElementById("dropdownMenuButton").textContent=this.innerHTML;
+    document.getElementById("dropdownMenuButton").textContent=this.innerHTML;
       return type;
     });
     return type;
@@ -41,7 +41,31 @@ signUpSubmit.addEventListener("click", async (event) => {
         } else {
             alert('There was a problem with your sign up, Please Try Again');
         }
+    }else{
+        alert('Please provide a Username, Email Adress, Password and what you will be looking for in our website.');
     }
   }
 );
 
+var loginSubmit = document.querySelector("#loginSubmit");
+loginSubmit.addEventListener("click", async (event) => {
+    event.preventDefault();
+    const email = document.querySelector('#loginInputEmail').value.trim();
+    const password = document.querySelector('#loginInputPassword').value.trim();
+
+    if (email && password) {
+        const response = await fetch('/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+    
+        if (response.ok) {
+          document.location.replace('/api/users/in');
+        } else {
+          alert('Failed to log in.');
+        }
+    } else {
+        alert('Please provide an Email Adress and Password so we can log you in.');
+    }
+})

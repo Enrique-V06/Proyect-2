@@ -3,7 +3,11 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 // New Sequelize model for Users
-class Users extends Model {}
+class Users extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      }
+}
 
 Users.init (
     {
