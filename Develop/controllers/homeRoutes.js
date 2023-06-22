@@ -27,6 +27,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+//CONTACT
+// http://localhost:3001/contact
+router.get('/contact', async (req, res) => {
+  try {
+    res.render('contact');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // SIGNUP
 // http://localhost:3001/signup
 router.post('/signup', async (req, res) => {
@@ -100,7 +110,26 @@ router.post('/login', async (req, res) => {
 // http://localhost:3001/user
 // -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
 router.get('/user', async (req, res) => {
-  res.render('userhomepage'); 
+  console.log('---------------LOGED?: ',req.session.loggedIn);
+  if (!req.session.loggedIn) {
+    console.log("NOT loged!")
+    res.redirect('/');
+  } else {
+    console.log("loged!")
+    res.render('userhomepage'); 
+  }
 });
+
+
+// Logout
+// router.post('/logout', (req, res) => {
+//   if (req.session.loggedIn) {
+//     req.session.destroy(() => {
+//       res.status(204).end();
+//     });
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
 module.exports = router;

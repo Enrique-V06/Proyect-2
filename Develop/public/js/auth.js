@@ -13,6 +13,7 @@ var type;
     return type;
 })();
 
+//SIGNUP
 signUpSubmit.addEventListener("click", async (event) => {
     event.preventDefault();
     const username = document.querySelector('#signupInputUserName').value.trim();
@@ -48,6 +49,7 @@ signUpSubmit.addEventListener("click", async (event) => {
   }
 );
 
+//LOGIN
 var loginSubmit = document.querySelector("#loginSubmit");
 loginSubmit.addEventListener("click", async (event) => {
     event.preventDefault();
@@ -70,3 +72,18 @@ loginSubmit.addEventListener("click", async (event) => {
         alert('Please provide an Email Adress and Password so we can log you in.');
     }
 })
+
+//LOGOUT 
+// var logOutBtn = document.querySelector("#logOutBtn");
+// logOutBtn.addEventListener("click", async () => {
+//   const response = await fetch('/logout', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//   });
+
+//   if (response.ok) {
+//     document.location.replace('/');
+//   } else {
+//     alert('Failed to log out.');
+//   }
+// })
