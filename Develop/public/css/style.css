@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     position: fixed;
     z-index: 50;
-    transition: opacity 1s, visibility 1;
+    transition: opacity 0.75s, visibility 0.75;
 }
 
 #preloader {
@@ -42,12 +42,12 @@ body::-webkit-scrollbar {
 
 #preloader-bg--hidden {
     opacity: 0;
-    display: none;
+    visibility: hidden;
 }
 
 #preloader--hidden {
     opacity: 0;
-    display: none;
+    visibility: hidden;
 }
 
 /* Background rectangles CSS*/
@@ -120,6 +120,7 @@ body::-webkit-scrollbar {
 .btn-contact-us:hover {
     opacity: 70% !important;
 }
+
 /* Card CSS */
 
 .card {
