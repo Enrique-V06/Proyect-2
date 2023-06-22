@@ -74,16 +74,20 @@ loginSubmit.addEventListener("click", async (event) => {
 })
 
 //LOGOUT 
-// var logOutBtn = document.querySelector("#logOutBtn");
-// logOutBtn.addEventListener("click", async () => {
-//   const response = await fetch('/logout', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//   });
+var logOutBtn = document.querySelector("#logOutBtn");
+logOutBtn.addEventListener("click", 
+async () => {
+  console.log("click logout")
+  // const response = await fetch('/logout', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  // });
 
-//   if (response.ok) {
-//     document.location.replace('/');
-//   } else {
-//     alert('Failed to log out.');
-//   }
-// })
+  // if (response.ok) {
+  //   document.location.replace('/');
+  //   console.log("response ok")
+  // } else {
+  //   alert('Failed to log out.');
+  // }
+}
+)
