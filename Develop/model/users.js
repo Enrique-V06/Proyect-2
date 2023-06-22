@@ -39,15 +39,15 @@ Users.init (
         },
         location: {
             type: DataTypes.STRING, 
-            allowNull: false,
+            allowNull: true,
         },
         typeOfHome: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         pet: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         },  
     },
     {

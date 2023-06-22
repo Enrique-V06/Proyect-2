@@ -3,27 +3,18 @@
     "userName": "Sal",
     "email": "sal@hotmail.com",
     "password": "password2",
-    "userType": "search",
-    "location": "Cuahutemoc",
-    "typeOfHome": "apartment",
-    "pet": true
+    "userType": "search"
   },
   {
     "userName": "Lernantino",
     "email": "lernantino@gmail.com",
     "password": "password1",
-    "userType": "search",
-    "location": "Coyoacán",
-    "typeOfHome": "apartment",
-    "pet": false
+    "userType": "search"
   },
   {
     "userName": "Amiko",
     "email": "amiko2k20@aol.com",
     "password": "password3",
-    "userType": "offer",
-    "location": "Cuahutemoc",
-    "typeOfHome": "house",
-    "pet": true
+    "userType": "offer"
   }
 ]
