@@ -4,7 +4,7 @@ var signUpSubmit = document.querySelector("#signUpSubmit");
 var type; 
 // ----------- Type of user JQuery  
 (function (){
-    var Options = $('.dropdown-item');  
+    var Options = $('.dropdown-item');  //document.querySelectorAll
     Options.on('click', function () { 
     type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
     document.getElementById("dropdownMenuButton").textContent=this.innerHTML;

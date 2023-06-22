@@ -82,6 +82,7 @@ router.post('/login', async (req, res) => {
 
 // You are SIGNED IN
 // http://localhost:3001/api/users/in
+// -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
 router.get('/in', async (req, res) => {
   console.log("GET request")
   res.render('profile');  // PLACEHOLDER HANDLEBAR.!!!
