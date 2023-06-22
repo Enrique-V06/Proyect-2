@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     // const reviews = projectData.map((review) => review.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('contact');
+    res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
