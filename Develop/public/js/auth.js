@@ -30,7 +30,7 @@ signUpSubmit.addEventListener("click", async (event) => {
         console.log(response.ok);
         if (response.ok) {
             console.log("in if auth")
-            document.location.replace('/api/users/in');
+            document.location.replace('/user');
             // const lemein = await fetch('/api/users/in')
             // .then(response => response.text())
             // .then(data => {
@@ -55,14 +55,14 @@ loginSubmit.addEventListener("click", async (event) => {
     const password = document.querySelector('#loginInputPassword').value.trim();
 
     if (email && password) {
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/login', {
           method: 'POST',
           body: JSON.stringify({ email, password }),
           headers: { 'Content-Type': 'application/json' },
         });
     
         if (response.ok) {
-          document.location.replace('/api/users/in');
+          document.location.replace('/user');
         } else {
           alert('Failed to log in.');
         }
