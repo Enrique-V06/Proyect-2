@@ -33,7 +33,7 @@ router.put('/quiz/:id', async (req, res) => {
     });
 })
 
-router.post('/offer', withAuth, async (req, res) => {
+router.post('/offer', async (req, res) => {
     try {
         const newOffer = await Offer.create({
             ...req.body,
