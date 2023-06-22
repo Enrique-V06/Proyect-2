@@ -116,7 +116,46 @@ router.get('/user', async (req, res) => {
     res.redirect('/');
   } else {
     console.log("loged!")
-    res.render('userhomepage'); 
+    //---------------------------
+    try {
+      const dbHomeData = await Offer.findAll(
+      //   {
+      //   include: [
+      //     {
+      //       model: Painting,
+      //       attributes: ['filename', 'description'],
+      //     },
+      //   ],
+      // }
+      );
+      // console.log("-------------dbHomeData: ", dbHomeData);
+      
+      const homes = dbHomeData.map((home) =>
+        home.get({ plain: true })
+      );
+      
+      console.log("-------------homes b4: ", homes);
+
+      homes.forEach(element => {
+        if (!element.pet){
+          element.pet = `class="fa-solid fa-shield-xmark"`
+        } else {
+          element.pet = `class="fa-solid fa-shield-dog"`
+        }
+      });
+        
+      console.log("-------------homes aft: ", homes);
+
+      res.render('userhomepage', {homes}); 
+      // res.render('homepage', {
+      //   galleries,
+      // });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+    //---------------------------
+    // res.render('userhomepage'); 
   }
 });
 
