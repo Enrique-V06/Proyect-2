@@ -1,13 +1,64 @@
-<div class='container-fluid'>
-  <div class='container text-center'>
-    <div class='row align-items-start'>
-      <div class='col-4'>
-        One of three columns
-      </div>
-      <div class='col-8'>
-        One of three columns
-      </div>
+<body>
+  <main>
+    <div class='container-fluid' style='margin-bottom: 5%; margin-top:5%'>
+      <div class='container text-center'>
+        <div class='row align-items-start'>
+          <div
+            class='col-4'
+            style='margin-left: 10%;  background-color:rgba(228, 230, 221, 0.561); padding:2%;'
+          >
+            <img
+              src='../images/profile-picture.jpeg'
+              class='img-fluid circle-image'
+              alt='homepage image'
+            />
+          </div>
+          <div class='col-6' style='margin-top:10%'>
+            <form style='padding-left:20%'>
+              <div class='mb-3'>
+                <label
+                  for='exampleInputEmail1'
+                  class='form-label'
+                  style='margin-right:80%; font-weight:500;'
+                >User Name</label>
+                <input
+                  type='email'
+                  class='form-control'
+                  id='exampleInputEmail1'
+                  placeholder='your display name'
+                />
+              </div>
+              <div class='mb-3'>
+                <label
+                  for='exampleInputPassword1'
+                  class='form-label'
+                  style='margin-right:80%; font-weight:500;'
+                >User Email</label>
+                <input
+                  type='password'
+                  class='form-control'
+                  id='exampleInputPassword1'
+                  placeholder='your email address'
+                />
+              </div>
 
+              <div class='d-grid gap-2 d-md-block button-group'>
+                <button
+                  class='btn btn-dark'
+                  type='button'
+                  style='padding-left:1.5rem; padding-right:1.5rem;'
+                >Change Password</button>
+                <button
+                  class='btn btn-secondary'
+                  type='button'
+                  style='padding-left:1.5rem; padding-right:1.5rem;'
+                >Delete Account</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </main>
+</body>
