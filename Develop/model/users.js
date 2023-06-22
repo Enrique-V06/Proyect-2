@@ -22,7 +22,7 @@ Users.init (
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {len: [2,10]}
+            validate: {len: [2,20]}
         },
 
         email: {

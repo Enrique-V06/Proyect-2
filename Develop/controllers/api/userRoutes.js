@@ -90,30 +90,31 @@ router.get('/search', async (req, res) => {
   }
 });
 
-// SIGNUP
-// http://localhost:3001/api/users/signup
-router.post('/signup', async (req, res) => {
-  console.log('req: ', req.body);
-  console.log('req username: ', req.body.username);
-  try {
-    const dbUserData = await Users.create({
-      userName: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      userType: req.body.userType,
-    });
+// // SIGNUP
+// // http://localhost:3001/api/users/signup
+// router.post('/signup', async (req, res) => {
+//   console.log('req: ', req.body);
+//   console.log('req username: ', req.body.username);
+//   try {
+//     const dbUserData = await Users.create({
+//       userName: req.body.username,
+//       email: req.body.email,
+//       password: req.body.password,
+//       userType: req.body.userType,
+//     });
 
-    // Set up sessions with a 'loggedIn' variable set to `true`
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      res.status(200).json(dbUserData);
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-    console.log('failure: ', res.status);
-  }
-});
+//     // Set up sessions with a 'loggedIn' variable set to `true`
+//     req.session.save(() => {
+//       req.session.loggedIn = true;
+//       res.status(200).json(dbUserData);
+//       console.log("response sent")
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//     console.log('failure: ', res.status);
+//   }
+// });
 
 //LOGIN
 router.post('/login', async (req, res) => {

@@ -21,12 +21,13 @@ signUpSubmit.addEventListener("click", async (event) => {
     const userType = type;
 
     if (username && email && password){
-        const response = await fetch('/api/users/signup', {
+        const response = await fetch('/signup', {
             method: 'POST',
             body: JSON.stringify({username, email, password, userType}),
             headers: { 'Content-Type': 'application/json' },
         })
         console.log("back")
+        console.log(response.ok);
         if (response.ok) {
             console.log("in if auth")
             document.location.replace('/api/users/in');
