@@ -40,19 +40,7 @@ Users.init (
         userType: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        // location: {
-        //     type: DataTypes.STRING, 
-        //     allowNull: false,
-        // },
-        // typeOfHome: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
-        // pet: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: false,
-        // },  
+        },  
     },
     {
         hooks: {
