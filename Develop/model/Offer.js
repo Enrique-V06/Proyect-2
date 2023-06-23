@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+/*const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Offer extends Model { }
@@ -44,4 +44,4 @@ Offer.init(
       },
 );
 
-module.exports = Offer;
+module.exports = Offer;*/
