@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Cuahutemoc house",
+        "description": "The house at Cuahutemoc, has an amazing location, with big rooms and clean accomodations!",
+        "date_created": "2023-06-21",
+        "user_id": 3
+    },
+    {
+        "title": "Apartment review",
+        "description": "The location is the best! You can walk to get to Coyoacan's market, Coyoacan's town center, with amazing places to eat! ",
+        "date_created": "2023-06-21",
+        "user_id": 2
+    },
+    {
+        "title": "Sal's house",
+        "description": "Sal was an awesome host, he showed me around town and ",
+        "date_created": "2023-06-21",
+        "user_id": 1
+    }
+
+]
