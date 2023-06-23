@@ -118,38 +118,28 @@ router.get('/user', async (req, res) => {
     console.log("loged!")
     //---------------------------
     try {
-      const dbHomeData = await Offer.findAll(
-      //   {
-      //   include: [
-      //     {
-      //       model: Painting,
-      //       attributes: ['filename', 'description'],
-      //     },
-      //   ],
-      // }
-      );
+      // const dbHomeData = await Offer.findAll(
+      // );
       // console.log("-------------dbHomeData: ", dbHomeData);
       
-      const homes = dbHomeData.map((home) =>
-        home.get({ plain: true })
-      );
+      // const homes = dbHomeData.map((home) =>
+      //   home.get({ plain: true })
+      // );
       
-      console.log("-------------homes b4: ", homes);
+      // console.log("-------------homes b4: ", homes);
 
-      homes.forEach(element => {
-        if (!element.pet){
-          element.pet = 'No Pets Allowed'
-        } else {
-          element.pet = 'This home is Pet Friendly'
-        }
-      });
-        
-      console.log("-------------homes aft: ", homes);
-
-      res.render('userhomepage', {homes}); 
-      // res.render('homepage', {
-      //   galleries,
+      // homes.forEach(element => {
+      //   if (!element.pet){
+      //     element.pet = 'No Pets Allowed'
+      //   } else {
+      //     element.pet = 'This home is Pet Friendly'
+      //   }
       // });
+        
+      // console.log("-------------homes aft: ", homes);
+
+      // res.render('userhomepage', {homes}); 
+      res.render('userhomepage');
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

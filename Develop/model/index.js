@@ -1,7 +1,7 @@
 // Import models
 const Users = require('./users');
 const Search = require('./Search');
-//const Offer = require('./Offer');
+const Offer = require('./Offer');
 const Review = require('./Review');
 
 //Users.hasMany(Offer, {
