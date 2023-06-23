@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { Users, Search, Offer } = require('../model');
+const { Users, Search, Offer, Review } = require('../model');
 
 const userData = require('./userData.json');
 const offerData = require('./offerData.json');
 const searchData = require('./searchData.json');
+const reviewData = require('./reviews.json');
 
 //Function to seed db
 const seedDatabase = async () => {
@@ -20,6 +21,11 @@ const seedDatabase = async () => {
     });
 
     const search = await Search.bulkCreate(searchData, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    const reviews = await Review.bulkCreate(reviewData, {
         individualHooks: true,
         returning: true,
     });

@@ -5,23 +5,19 @@ const router = require('express').Router();
 
 //const withAuth = require('../utils/auth');
 
+//GET REVIEWS
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    // const reviewsData = await Review.findAll({
-    //   include: [
-    //     {
-    //       model: Users,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
+    const reviewsData = await Review.findAll({
+     
+    });
 
-    // // Serialize data so the template can read it
-    // const reviews = projectData.map((review) => review.get({ plain: true }));
+    // Serialize data so the template can read it
+    const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage');
+    res.render('homepage', {reviews});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -106,72 +102,18 @@ router.post('/login', async (req, res) => {
 });
 
 
-// You are SIGNED IN
-// http://localhost:3001/user
-// -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
-router.get('/user', async (req, res) => {
-  console.log('---------------LOGED?: ',req.session.loggedIn);
-  if (!req.session.loggedIn) {
-    console.log("NOT loged!")
-    res.redirect('/');
-  } else {
-    console.log("loged!")
-    //---------------------------
-    try {
-      const dbHomeData = await Offer.findAll(
-      //   {
-      //   include: [
-      //     {
-      //       model: Painting,
-      //       attributes: ['filename', 'description'],
-      //     },
-      //   ],
-      // }
-      );
-      // console.log("-------------dbHomeData: ", dbHomeData);
-      
-      const homes = dbHomeData.map((home) =>
-        home.get({ plain: true })
-      );
-      
-      console.log("-------------homes b4: ", homes);
-
-      homes.forEach(element => {
-        if (!element.pet){
-          element.pet = 'No Pets Allowed'
-        } else {
-          element.pet = 'This home is Pet Friendly'
-        }
-      });
-        
-      console.log("-------------homes aft: ", homes);
-
-      res.render('userhomepage', {homes}); 
-      // res.render('homepage', {
-      //   galleries,
-      // });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-    //---------------------------
-    // res.render('userhomepage'); 
-  }
-});
-
-
 // Logout
 router.post('/logout', (req, res) => {
   console.log("---------- LOGOUT POST REQ RECEIVED");
-  // if (req.session.loggedIn) {
-    req.session.loggedIn = false;
-    res.status(204).end();
-    // req.session.destroy(() => {
-    //   res.status(204).end();
-    // });
-  // } else {
-  //   res.status(404).end();
-  // }
+  if (req.session.loggedIn) {
+    // req.session.loggedIn = false;
+    // res.status(204).end();
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

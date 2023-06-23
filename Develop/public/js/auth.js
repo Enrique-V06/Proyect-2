@@ -1,7 +1,7 @@
 // 
 console.log("Auth.js file")
 var signUpSubmit = document.querySelector("#signUpSubmit");
-var type; 
+let type; 
 // ----------- Type of user JQuery  
 (function (){
     var Options = $('.item-type');  //document.querySelectorAll
@@ -10,7 +10,7 @@ var type;
     document.getElementById("typeDropDown").textContent=this.innerHTML;
       return type;
     });
-    return type;
+    // return type;
 })();
 
 (function (){
@@ -51,7 +51,7 @@ signUpSubmit.addEventListener("click", async (event) => {
         console.log(response.ok);
         if (response.ok) {
             console.log("in if auth")
-            document.location.replace('/user');
+            document.location.replace('/api/user');
             // const lemein = await fetch('/api/users/in')
             // .then(response => response.text())
             // .then(data => {
@@ -84,7 +84,7 @@ loginSubmit.addEventListener("click", async (event) => {
         });
     
         if (response.ok) {
-          document.location.replace('/user');
+          document.location.replace('/api/user');
         } else {
           alert('Failed to log in.');
         }
