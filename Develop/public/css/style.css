@@ -94,6 +94,17 @@ body::-webkit-scrollbar {
     opacity: 70% !important;
 }
 
+.btn-more-info {
+    background-color: var(--dark-green-color) !important;
+    border-color: var(--dark-green-color) !important;
+    width: 100px;
+    height: 35px;
+}
+
+.btn-more-info:hover {
+    opacity: 70% !important;
+}
+
 .btn-login {
     background-color: var(--light-green-color) !important;
     border-color: var(--light-green-color) !important;
@@ -121,6 +132,15 @@ body::-webkit-scrollbar {
     opacity: 70% !important;
 }
 
+.btn-dropdown {
+    background-color: var(--dark-green-color) !important;
+    color: var(--light-color);
+}
+
+.btn-dropdown:hover, .btn-dropdown:active {
+    opacity: 70% !important;
+}
+
 /* Card CSS */
 
 .card {
@@ -138,3 +158,8 @@ body::-webkit-scrollbar {
 .circle-image {
     border-radius: 80%;
 }
+
+.modal {
+    --bs-modal-header-border-color: transparent;
+}
+
