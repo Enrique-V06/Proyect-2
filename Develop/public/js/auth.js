@@ -1,16 +1,17 @@
 // 
 console.log("Auth.js file")
 var signUpSubmit = document.querySelector("#signUpSubmit");
-var type; 
+let type; 
 // ----------- Type of user JQuery  
 (function (){
     var Options = $('.dropdown-item');  //document.querySelectorAll
     Options.on('click', function () { 
     type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
+    console.log("Type: ", type);
     document.getElementById("dropdownMenuButton").textContent=this.innerHTML;
-      return type;
+      // return type;
     });
-    return type;
+    // return type;
 })();
 
 //SIGNUP

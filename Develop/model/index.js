@@ -4,10 +4,10 @@ const Search = require('./Search');
 const Offer = require('./Offer');
 const Review = require('./Review');
 
-//Users.hasMany(Offer, {
-//    foreignKey: 'user_id',
-//    onDelete: 'CASCADE'
-//});
+Users.hasMany(Offer, {
+   foreignKey: 'user_id',
+   onDelete: 'CASCADE'
+});
 
 //User can make different searches everytime he enters in userhomepage
 Users.hasMany(Search, {
@@ -28,8 +28,8 @@ Review.belongsTo(Users, {
     foreignKey: 'user_id'
 });
 
-//Offer.belongsTo(Users, {
-//    foreignKey: 'user_id'
-//});
+Offer.belongsTo(Users, {
+   foreignKey: 'user_id'
+});
 
 module.exports = { Users, Search, Offer, Review };
