@@ -4,6 +4,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'
+    />
+    <link
       href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'
       rel='stylesheet'
       integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM'
@@ -13,15 +17,21 @@
 
     <title>roomiehunt</title>
     <script>
-      window.addEventListener("load", () => {
-        document.querySelector(".preloader").classList.add("preloader--hidden");
+    window.addEventListener("load", () => {
+      setInterval(loaderTimer, 2800);
+      function loaderTimer() {
+        document.querySelector(".preloader").classList.add("preloader--hidden");  
+      }   
+      setInterval(bgloaderTimer, 3000);
+      function bgloaderTimer() {
         document.querySelector(".preloader-bg").classList.add("preloader-bg--hidden");
-      });
+      }    
+    })
     </script>
   </head>
   <body>
-    {{!-- <div id="preloader-bg"></div>
-    <div id="preloader"></div> --}}
+    <div class="preloader-bg"></div>
+    <div class="preloader"></div>
     <header>
       <nav class='navbar navbar-expand-lg' style='margin-left:5%'>
         <div class='container-fluid'>
@@ -44,14 +54,14 @@
           <div
             class='collapse navbar-collapse'
             id='navbarSupportedContent'
-            style='padding-left:22%'
+            style='padding-left:25%'
           >
             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
               <li class='nav-item'>
                 <a
                   class='nav-link active'
                   aria-current='page'
-                  href='/'
+                  href='#'
                   style='font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;'
                 >Home</a>
               </li>
@@ -62,18 +72,7 @@
                   style='padding-left:50%; font-size:20px; color:var(--grey-color); font-family: Poppins;'
                 >Contact</a>
               </li>
-              <li class="nav-item">
-                <img 
-                  class="nav-link btn-user" 
-                  href="#" 
-                  style="margin-left:110%; width:55px; height:50px; opacity:60%" src="../images/user.png">
-              </li>
             </ul>
-            {{!-- <button
-              class='btn btn-outline-white btn-dark btn-logout'
-              type='submit' id="logOutBtn"
-            >Log Out
-            </button> --}}
           </div>
         </div>
       </nav>

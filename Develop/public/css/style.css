@@ -21,33 +21,33 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-#preloader-bg {
+.preloader-bg {
     background: #ffff;
     width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: 50;
-    transition: opacity 1s, visibility 1;
+    transition: opacity 0.75s, visibility 0.75s;
 }
 
-#preloader {
+.preloader {
     background: url(../images/Loading_Screen.gif) no-repeat center center;
     background-size: 50%;
     width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: 100;
-    transition: opacity 0.75s, visibility 0.75s; /*no se por que no jala*/
+    transition: opacity 1s, visibility 1s; /*no se por que no jala*/
 }
 
-#preloader-bg--hidden {
+.preloader-bg--hidden {
     opacity: 0;
-    display: none;
+    visibility: hidden;
 }
 
-#preloader--hidden {
+.preloader--hidden {
     opacity: 0;
-    display: none;
+    visibility: hidden;
 }
 
 /* Background rectangles CSS*/
@@ -120,6 +120,7 @@ body::-webkit-scrollbar {
 .btn-contact-us:hover {
     opacity: 70% !important;
 }
+
 /* Card CSS */
 
 .card {
