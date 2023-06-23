@@ -1,14 +1,9 @@
 const router = require('express').Router();
 const { Users, Search, Offer } = require('../../model');
 
-router.get('/', async (req, res) => {
-  try {
-    res.render('profile');
-  } catch (err) {
-    res.json(err);
-  }
-});
 
+
+/*
 //Require withAuth
 
 //Update user with preferences information based on its id
@@ -89,5 +84,6 @@ router.get('/search', async (req, res) => {
     res.json(err);
   }
 });
+*/
 
 module.exports = router;

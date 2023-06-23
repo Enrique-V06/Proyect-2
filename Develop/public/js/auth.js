@@ -31,7 +31,7 @@ signUpSubmit.addEventListener("click", async (event) => {
         console.log(response.ok);
         if (response.ok) {
             console.log("in if auth")
-            document.location.replace('/user');
+            document.location.replace('/api/user');
             // const lemein = await fetch('/api/users/in')
             // .then(response => response.text())
             // .then(data => {
@@ -64,7 +64,7 @@ loginSubmit.addEventListener("click", async (event) => {
         });
     
         if (response.ok) {
-          document.location.replace('/user');
+          document.location.replace('/api/user');
         } else {
           alert('Failed to log in.');
         }
