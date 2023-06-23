@@ -138,9 +138,9 @@ router.get('/user', async (req, res) => {
 
       homes.forEach(element => {
         if (!element.pet){
-          element.pet = `class="fa-solid fa-shield-xmark"`
+          element.pet = 'No Pets Allowed'
         } else {
-          element.pet = `class="fa-solid fa-shield-dog"`
+          element.pet = 'This home is Pet Friendly'
         }
       });
         
