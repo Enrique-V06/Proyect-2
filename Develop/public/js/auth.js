@@ -4,13 +4,33 @@ var signUpSubmit = document.querySelector("#signUpSubmit");
 var type; 
 // ----------- Type of user JQuery  
 (function (){
-    var Options = $('.dropdown-item');  //document.querySelectorAll
+    var Options = $('.item-type');  //document.querySelectorAll
     Options.on('click', function () { 
     type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
-    document.getElementById("dropdownMenuButton").textContent=this.innerHTML;
+    document.getElementById("typeDropDown").textContent=this.innerHTML;
       return type;
     });
     return type;
+})();
+
+(function (){
+  var Options = $('.item-location');  //document.querySelectorAll
+  Options.on('click', function () { 
+  type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
+  document.getElementById("locationDropDown").textContent=this.innerHTML;
+    return type;
+  });
+  return type;
+})();
+
+(function (){
+  var Options = $('.item-pet');  //document.querySelectorAll
+  Options.on('click', function () { 
+  type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
+  document.getElementById("petDropDown").textContent=this.innerHTML;
+    return type;
+  });
+  return type;
 })();
 
 //SIGNUP
