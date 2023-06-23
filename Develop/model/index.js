@@ -10,7 +10,8 @@ Users.hasMany(Offer, {
 });
 
 Offer.hasOne(Users, {
-    foreignKey: 'user_id'
+   foreignKey: 'user_id',
+   onDelete: 'CASCADE'
 });
 
 //User can make different searches everytime he enters in userhomepage
@@ -32,5 +33,8 @@ Review.belongsTo(Users, {
     foreignKey: 'user_id'
 });
 
+Offer.belongsTo(Users, {
+   foreignKey: 'user_id'
+});
 
 module.exports = { Users, Search, Offer, Review };
