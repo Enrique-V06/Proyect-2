@@ -1,98 +1,23 @@
 
   <body>
+                <button
+              class='btn btn-outline-white btn-dark btn-logout'
+              type='submit' id="logOutBtn"
+            >Log Out
+            </button>
     <main>
       <div class="bg-home-container"></div>
       <div class='container text-center'>
         <div class='row align-items-start'>
-          <div class='col-5' style="padding-top:15%; transform:translateY(-10vh)">
+          <div class='col-5' style="padding-top:20%; transform:translateY(-10vh)">
             <div class="bg-header"></div>
             <p class="lead" style='top:25vh; text-align:left; max-width:501px; font-size:18px; color:var(var(--grey-color)); font-family: Poppins'>We offer a wide range of roomies and fine locations</p>
 
             <h1 class="display-1" style='text-align: left; font-family: Lora'>Find the best...</h1>
-            <div class="container" style="padding-top: 5%; display: flex; justify-content: left;">
-              <button type="button" class='btn btn-outline-white btn-dark btn-signup' data-bs-toggle="modal" data-bs-target="#signupModal" style="font-family: Poppins; border-radius: 0; margin-right: 20%">Signup</button>
-              <button type="button" class="btn btn-light btn-login" data-bs-toggle="modal" data-bs-target="#loginModal" style="font-family: Poppins; border-radius: 0;" >Login → </button>
-              </div>
           </div>
-          <div class='col-6' style="transform:translate(6vw,12vh);  height:auto">
+          <div class='col-6' style="transform:translate(6vw,12vh); width:750px; height:auto">
             <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
           </div>
-
-          <!-- Modal LOGIN -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form> 
-                        <div class="form-group">
-                            <label for="loginInputEmail" style="margin-right:75%; margin-bottom: 2%;">Email address</label>
-                            <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginInputPassword" style="margin-right:80%; margin-bottom: 2%;">Password</label>
-                            <input type="password" class="form-control" id="loginInputPassword" placeholder="Password" style="text-align: left; margin-bottom: 2%;">
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="loginSubmit">Submit</button>
-                    </form>
-                </div>
-                {{!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal SIGNUP-->
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Signup</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form> 
-                        <div class="form-group">
-                            <label for="signupInputUserName" style="text-align: left; margin-right:80%; margin-bottom: 2%;">Username</label>
-                            <input type="email" class="form-control" id="signupInputUserName" aria-describedby="emailHelp" placeholder="Your Username" style="margin-bottom: 2%;">
-                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                        </div>
-                        <div class="form-group">
-                            <label for="signupInputEmail" style="text-align: left; margin-right:75%; margin-bottom: 2%;">Email address</label>
-                            <input type="email" class="form-control" id="signupInputEmail" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
-                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                        </div>
-                        <div class="form-group">
-                            <label for="signupInputPassword" style="text-align: left; margin-right:80%; margin-bottom: 2%;">Password</label>
-                            <input type="password" class="form-control" id="signupInputPassword" placeholder="Password" style="text-align: left; margin-bottom: 2%;">
-                        </div>
-
-                        <div class="dropdown">
-                          <button class="btn btn-secondary btn-outline-white btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style=" margin: 2% 0%;">
-                            What are you looking for?
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#" id="A">A Home</a></li>
-                            <li><a class="dropdown-item" href="#" id="B">A Roomie</a></li>
-                          </ul>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="signUpSubmit">Submit</button>
-                    </form>
-                </div>
-                {{!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> --}}
-            </div>
-        </div>
-    </div>
-
 
           <div class="col-12" style="padding-top: 20%;">
             <h3 class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>About us</h2>
@@ -183,10 +108,11 @@
             </div>
             <div class='col-6' style="transform:translateY(-10vh)">
               <h1 class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
-              <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>{{reviews.[0].description}}</p>
-    <div class="container" style="display: flex; justify-content: left;">
-    <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>{{reviews.[0].title}}</p>
-    </div>
+              <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna.”</p>
+              <div class="container" style="display: flex; justify-content: left;">
+                <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>Roomiehunt User</p>
+            </div>
           </div>
 
           <div class="container" style="padding-top: 20%; margin-bottom: 20%">
@@ -212,6 +138,7 @@
     <div class="container-fluid" style="background-color: #E4EEE6;">
       ...
     </div>
+    <script src='../../js/logout.js'></script>
   </body>
 
 
