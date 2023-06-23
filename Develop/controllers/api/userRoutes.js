@@ -4,7 +4,7 @@ const { Users, Search, Offer } = require('../../model');
 // You are SIGNED IN
 // http://localhost:3001/api/user/all
 // -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
-router.get('/all', async (req, res) => {
+router.get('/', async (req, res) => {
   console.log('---------------LOGED?: ',req.session.loggedIn);
   if (!req.session.loggedIn) {
     console.log("NOT loged!")
