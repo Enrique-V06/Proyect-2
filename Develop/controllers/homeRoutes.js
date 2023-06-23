@@ -101,62 +101,62 @@ router.post('/login', async (req, res) => {
 });
 
 
-// You are SIGNED IN
-// http://localhost:3001/user
-// -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
-router.get('/user', async (req, res) => {
-  console.log('---------------LOGED?: ',req.session.loggedIn);
-  if (!req.session.loggedIn) {
-    console.log("NOT loged!")
-    res.redirect('/');
-  } else {
-    console.log("loged!")
-    //---------------------------
-    try {
-      // const dbHomeData = await Offer.findAll(
-      // );
-      // console.log("-------------dbHomeData: ", dbHomeData);
+// // You are SIGNED IN
+// // http://localhost:3001/user
+// // -----EVITAR RENDER SI NO ESTAS SIGNED IN !!!
+// router.get('/user', async (req, res) => {
+//   console.log('---------------LOGED?: ',req.session.loggedIn);
+//   if (!req.session.loggedIn) {
+//     console.log("NOT loged!")
+//     res.redirect('/');
+//   } else {
+//     console.log("loged!")
+//     //---------------------------
+//     try {
+//       const dbHomeData = await Offer.findAll(
+//       );
+//       console.log("-------------dbHomeData: ", dbHomeData);
       
-      // const homes = dbHomeData.map((home) =>
-      //   home.get({ plain: true })
-      // );
+//       const homes = dbHomeData.map((home) =>
+//         home.get({ plain: true })
+//       );
       
-      // console.log("-------------homes b4: ", homes);
+//       // console.log("-------------homes b4: ", homes);
 
-      // homes.forEach(element => {
-      //   if (!element.pet){
-      //     element.pet = 'No Pets Allowed'
-      //   } else {
-      //     element.pet = 'This home is Pet Friendly'
-      //   }
-      // });
+//       homes.forEach(element => {
+//         if (!element.pet){
+//           element.pet = 'No Pets Allowed'
+//         } else {
+//           element.pet = 'This home is Pet Friendly'
+//         }
+//       });
         
-      // console.log("-------------homes aft: ", homes);
+//       console.log("-------------homes aft: ", homes);
 
-      // res.render('userhomepage', {homes}); 
-      res.render('userhomepage');
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-    //---------------------------
-    // res.render('userhomepage'); 
-  }
-});
+//       res.render('userhomepage', {homes}); 
+//       // res.render('userhomepage');
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//     //---------------------------
+//     // res.render('userhomepage'); 
+//   }
+// });
 
 
 // Logout
 router.post('/logout', (req, res) => {
   console.log("---------- LOGOUT POST REQ RECEIVED");
-  // if (req.session.loggedIn) {
-    req.session.loggedIn = false;
-    res.status(204).end();
-    // req.session.destroy(() => {
-    //   res.status(204).end();
-    // });
-  // } else {
-  //   res.status(404).end();
-  // }
+  if (req.session.loggedIn) {
+    // req.session.loggedIn = false;
+    // res.status(204).end();
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;
