@@ -5,6 +5,11 @@ const Offer = require('./Offer');
 const Review = require('./Review');
 
 Users.hasMany(Offer, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Offer.hasOne(Users, {
    foreignKey: 'user_id',
    onDelete: 'CASCADE'
 });
