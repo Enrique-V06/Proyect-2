@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Users, Search, Offer } = require('../../model');
+const { Sequelize } = require('sequelize');
+const { Users, Search, Offer, Review } = require('../../model');
 
 // You are SIGNED IN
 // http://localhost:3001/api/user/all
@@ -11,7 +12,7 @@ router.get('/', async (req, res) => {
     res.redirect('/');
   } else {
     console.log("loged!")
-    //---------------------------
+    //------------------------------------------------------------------------------------------------------------------------
     try {
       const dbHomeData = await Offer.findAll(
       );
@@ -31,9 +32,11 @@ router.get('/', async (req, res) => {
         }
       });
 
-      console.log("-------------homes aft: ", homes);
-
-      res.render('userhomepage', { homes });
+      // console.log("-------------homes aft: ", homes);
+      const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
+      const reviews = reviewsData.map((review) => review.get({plain:true}));
+      // console.log('-------------------------test', reviews);
+      res.render('userhomepage', { homes, reviews });
       // res.render('userhomepage');
     } catch (err) {
       console.log(err);
@@ -58,10 +61,9 @@ router.get('/', async (req, res) => {
           pet: req.body.pet,
         }
       });
-      const searchResults = newSearch.map((search) =>
-        search.get({ plain: true })
-      );
-      res.render('userhomepage', { searchResults });
+      const searchResults = newSearch.map((search) => search.get({ plain: true }));
+      
+      res.render('userhomepage', {searchResults});
     } catch (err) {
       res.status(500).json(err);
     }
