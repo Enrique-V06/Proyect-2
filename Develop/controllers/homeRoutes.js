@@ -42,7 +42,6 @@ router.post('/signup', async (req, res) => {
       userName: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      userType: req.body.userType,
     });
 
     // Set up sessions with a 'loggedIn' variable set to `true`

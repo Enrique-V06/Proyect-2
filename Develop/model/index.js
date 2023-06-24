@@ -5,13 +5,13 @@ const Offer = require('./Offer');
 const Review = require('./Review');
 
 Users.hasMany(Offer, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Offer.hasOne(Users, {
-   foreignKey: 'user_id',
-   onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 //User can make different searches everytime he enters in userhomepage
@@ -34,7 +34,7 @@ Review.belongsTo(Users, {
 });
 
 Offer.belongsTo(Users, {
-   foreignKey: 'user_id'
+  foreignKey: 'user_id',
 });
 
-module.exports = { Users, Search, Review };
+module.exports = { Users, Search, Offer, Review };
