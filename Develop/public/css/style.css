@@ -19,6 +19,9 @@ body {
 
 body::-webkit-scrollbar {
     display: none;
+    /* display: flex;
+    justify-content:end;
+    align-items: end; */
 }
 
 .preloader-bg {
