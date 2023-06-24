@@ -34,9 +34,6 @@ router.get('/contact', async (req, res) => {
 // SIGNUP
 // http://localhost:3001/signup
 router.post('/signup', async (req, res) => {
-  console.log('req: ', req.body);
-  console.log('req username: ', req.body.username);
-  // res.status(200).json(req.body);
   try {
     const dbUserData = await Users.create({
       userName: req.body.username,
@@ -47,6 +44,7 @@ router.post('/signup', async (req, res) => {
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = req.body.username;
       res.status(200).json(dbUserData);
       console.log('response sent');
     });
@@ -73,7 +71,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Cannot Find your account in our system.' });
       return;
     }
-
+    
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -86,6 +84,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = dbUserData.userName;
 
       res
         .status(200)
