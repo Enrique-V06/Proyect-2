@@ -9,15 +9,13 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const reviewsData = await Review.findAll({
-     
-    });
+    const reviewsData = await Review.findAll({});
 
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', {reviews});
+    res.render('homepage', { reviews });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -44,14 +42,13 @@ router.post('/signup', async (req, res) => {
       userName: req.body.username,
       email: req.body.email,
       password: req.body.password,
-      userType: req.body.userType,
     });
 
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
       res.status(200).json(dbUserData);
-      console.log("response sent")
+      console.log('response sent');
     });
   } catch (err) {
     console.log(err);
@@ -70,7 +67,7 @@ router.post('/login', async (req, res) => {
       },
     });
     if (!dbUserData) {
-      console.log("cant find user")
+      console.log('cant find user');
       res
         .status(400)
         .json({ message: 'Cannot Find your account in our system.' });
@@ -80,7 +77,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      console.log("invalid password")
+      console.log('invalid password');
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
@@ -95,16 +92,15 @@ router.post('/login', async (req, res) => {
         .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    console.log("Catched!")
+    console.log('Catched!');
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-
 // Logout
 router.post('/logout', (req, res) => {
-  console.log("---------- LOGOUT POST REQ RECEIVED");
+  console.log('---------- LOGOUT POST REQ RECEIVED');
   if (req.session.loggedIn) {
     // req.session.loggedIn = false;
     // res.status(204).end();
