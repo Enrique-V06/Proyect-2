@@ -14,7 +14,11 @@
         <div class='modal-content'>
 
           <div class='modal-header'>
-            <h5 class='modal-title' id='exampleModalLabel'>Offer a Home</h5>
+            <h5
+              class='modal-title'
+              id='exampleModalLabel'
+              style='justify-content:center;  margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
+            >Offer a Home</h5>
             <button
               type='button'
               class='btn-close'
@@ -38,13 +42,13 @@
                   id='signupInputUserName'
                   aria-describedby='emailHelp'
                   placeholder='Enter the location of your home'
-                  style='margin-bottom: 2%;'
+                  style='margin-bottom: 4%;'
                 />
                 {{! <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> }}
               </div>
 
               <!--Type OF Home Input-->
-              <div class='form-group' style='margin-bottom: 2%;'>
+              <div class='form-group' style='margin-bottom: 4%;'>
                 <label
                   for='signupInputUserName'
                   style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
@@ -98,13 +102,38 @@
                 </label>
               </div>
 
+              <div class='mb-3' style='margin-top: 0.4rem;'>
+                <label
+                  for='formFile'
+                  class='form-label'
+                  style='font-weight:500;'
+                >Home Image</label>
+                <input class='form-control' type='file' id='formFile' />
+              </div>
+
               <button
                 type='submit'
                 id='offerSubmit'
                 class='btn btn-primary'
-                style='margin: 3%;'
+                style='margin-left: 40%; margin-top:3%;'
               >Submit</button>
+
             </form>
+
+            <!--multer Test from -->
+            {{! <form
+              action='/api/offer/uploadFile'
+              enctype='multipart/form-data'
+              method='POST'
+            >
+              <input
+                type='file'
+                class='admin__input'
+                id='myFile'
+                name='myFile'
+              />
+              <input class='admin__submit' type='submit' />
+            </form> }}
           </div>
         </div>
       </div>
@@ -126,10 +155,10 @@
 
             <button
               type='button'
-              class='btn btn-outline-white btn-dark btn-signup'
+              class='btn btn-outline-white btn-dark btn-signup btn-sm'
               data-bs-toggle='modal'
               data-bs-target='#offerHomeModal'
-              style='font-family: Poppins; border-radius: 0; margin-right: 20%'
+              style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
             >Offer a Home</button>
           </div>
           <div class='col-6' style='margin-top:10%'>

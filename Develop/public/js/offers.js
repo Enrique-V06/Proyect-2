@@ -6,7 +6,9 @@ OfferForm.addEventListener('submit', async (e) => {
   let radioOptions = document.getElementsByName('typeOfHomeRadio');
   let typeOfHome;
   let offerPetFriendly = document.querySelector('#checkPetFriendly');
+  let fileData = document.getElementById('formFile').value;
 
+  //console.log('FILE DATA :', fileData);
   let pet = offerPetFriendly.checked;
   for (let i = 0; i < radioOptions.length; i++) {
     if (radioOptions[i].checked) {
@@ -19,7 +21,7 @@ OfferForm.addEventListener('submit', async (e) => {
   console.log('Location :', location);
   console.log('Pet Friendly :', pet);
 
-  if (location && typeOfHome && pet) {
+  if ((location && typeOfHome && pet) || (location && typeOfHome && !pet)) {
     const response = await fetch('/api/offer', {
       method: 'POST',
       body: JSON.stringify({
@@ -31,9 +33,14 @@ OfferForm.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      document.location.replace('/api/profile');
+      alert('RESPONSE WAS GOOD');
+      //document.location.replace('/api/profile');
     } else {
       alert('Failed to create Offer (offers.js)');
     }
   }
 });
+
+let multerBTN = document.querySelector('.multerBTN');
+
+multerBTN.addEventListener('click', () => {});
