@@ -2,164 +2,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --light-green-color: #e4eee6;
-    --dark-green-color: #082e21;
-    --red-color: #e01e5a;
-    --green-color: #2eb67d;
-    --light-color: #eff4f0;
-    --dark-color: #202020;
-    --grey-color: #778082;
-    --transition: all 300ms ease-in-out;
+  --light-green-color: #e4eee6;
+  --dark-green-color: #082e21;
+  --red-color: #e01e5a;
+  --green-color: #2eb67d;
+  --light-color: #eff4f0;
+  --dark-color: #202020;
+  --grey-color: #778082;
+  --transition: all 300ms ease-in-out;
 }
 
 body {
-    background-color: #ffff;
-    overflow-x: hidden;
+  background-color: #ffff;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .preloader-bg {
-    background: #ffff;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 50;
-    transition: opacity 0.75s, visibility 0.75s;
+  background: #ffff;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  transition: opacity 0.75s, visibility 0.75s;
 }
 
 .preloader {
-    background: url(../images/Loading_Screen.gif) no-repeat center center;
-    background-size: 50%;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    z-index: 100;
-    transition: opacity 1s, visibility 1s; /*no se por que no jala*/
+  background: url(../images/Loading_Screen.gif) no-repeat center center;
+  background-size: 50%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  transition: opacity 1s, visibility 1s; /*no se por que no jala*/
 }
 
 .preloader-bg--hidden {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .preloader--hidden {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Background rectangles CSS*/
 
 .bg-home-container {
-    position: absolute;
-    width: 70vw;
-    height: 90vh;
-    left: 0vw;
-    top: 0vh;
-    background: var(--light-green-color);
-    z-index: -10;
+  position: absolute;
+  width: 70vw;
+  height: 90vh;
+  left: 0vw;
+  top: 0vh;
+  background: var(--light-green-color);
+  z-index: -10;
 }
 
 .bg-reviews {
-    position: absolute;
-    width: 70vw;
-    height: 80vh;
-    left: 35vw;
-    top: 350vh;
-    background: var(--light-green-color);
-    z-index: -10;
+  position: absolute;
+  width: 70vw;
+  height: 80vh;
+  left: 35vw;
+  top: 350vh;
+  background: var(--light-green-color);
+  z-index: -10;
 }
 
 .bg-our-services {
-    position: absolute;
-    width: 100vw;
-    height: 70vh;
-    left: 0vw;
-    top: 240vh;
-    background: var(--light-green-color);
-    z-index: -10;
+  position: absolute;
+  width: 100vw;
+  height: 70vh;
+  left: 0vw;
+  top: 240vh;
+  background: var(--light-green-color);
+  z-index: -10;
 }
 
 /* Buttons CSS*/
 
 .btn-signup {
-    background-color: var(--dark-green-color) !important;
-    width: 236px;
-    height: 76px;
+  background-color: var(--dark-green-color) !important;
+  width: 236px;
+  height: 76px;
 }
 
 .btn-signup:hover {
-    opacity: 70% !important;
+  opacity: 70% !important;
 }
 
 .btn-more-info {
-    background-color: var(--dark-green-color) !important;
-    border-color: var(--dark-green-color) !important;
-    width: 100px;
-    height: 35px;
+  background-color: var(--dark-green-color) !important;
+  border-color: var(--dark-green-color) !important;
+  width: 100px;
+  height: 35px;
 }
 
 .btn-more-info:hover {
-    opacity: 70% !important;
+  opacity: 70% !important;
 }
 
 .btn-login {
-    background-color: var(--light-green-color) !important;
-    border-color: var(--light-green-color) !important;
+  background-color: var(--light-green-color) !important;
+  border-color: var(--light-green-color) !important;
 }
 
 .btn-logout {
-    background-color: var(--dark-green-color) !important;
+  background-color: var(--dark-green-color) !important;
 }
 
 .btn-logout:hover {
-    opacity: 70% !important;
+  opacity: 70% !important;
 }
 
 .btn-user:hover {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .btn-contact-us {
-    background-color: var(--dark-green-color) !important;
-    width: 100px;
-    height: 35px;
+  background-color: var(--dark-green-color) !important;
+  width: 100px;
+  height: 35px;
 }
 
 .btn-contact-us:hover {
-    opacity: 70% !important;
+  opacity: 70% !important;
 }
 
 .btn-dropdown {
-    background-color: var(--dark-green-color) !important;
-    color: var(--light-color);
+  background-color: var(--dark-green-color) !important;
+  color: var(--light-color);
 }
 
-.btn-dropdown:hover, .btn-dropdown:active {
-    opacity: 70% !important;
+.btn-dropdown:hover,
+.btn-dropdown:active {
+  opacity: 70% !important;
 }
 
 /* Card CSS */
 
 .card {
-    border-color: var(--light-green-color);
+  border-color: var(--light-green-color);
 }
 
 .card-body {
-    background-color: var(--light-green-color);
+  background-color: var(--light-green-color);
 }
 
 #card-about-us {
-    background-color: #ffff;
+  background-color: #ffff;
 }
 
 .circle-image {
-    border-radius: 80%;
+  border-radius: 80%;
 }
 
 .modal {
-    --bs-modal-header-border-color: transparent;
+  --bs-modal-header-border-color: transparent;
 }
-
