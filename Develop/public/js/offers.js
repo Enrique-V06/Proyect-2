@@ -1,4 +1,6 @@
 const OfferForm = document.querySelector('.offer-form');
+const fs = require('fs');
+const path = require('path');
 
 OfferForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -6,7 +8,9 @@ OfferForm.addEventListener('submit', async (e) => {
   let radioOptions = document.getElementsByName('typeOfHomeRadio');
   let typeOfHome;
   let offerPetFriendly = document.querySelector('#checkPetFriendly');
-  let fileData = document.getElementById('formFile').value;
+  //let fileData = document.getElementById('formFile').value;
+  const fileInput = document.querySelector('input[type="file"]');
+  const file = fileInput.files[0];
 
   //console.log('FILE DATA :', fileData);
   let pet = offerPetFriendly.checked;
@@ -20,13 +24,17 @@ OfferForm.addEventListener('submit', async (e) => {
   console.log('Type of Home  :', typeOfHome);
   console.log('Location :', location);
   console.log('Pet Friendly :', pet);
+  console.log('File data :', file);
+  console.log('File name :', file.name);
+  console.log('File path :', file.filepath);
 
   if ((location && typeOfHome && pet) || (location && typeOfHome && !pet)) {
-    const response = await fetch('/api/offer', {
+    const response = await fetch('/api/offer/upload', {
       method: 'POST',
       body: JSON.stringify({
         location,
         typeOfHome,
+        image: file,
         pet,
       }),
       headers: { 'Content-Type': 'application/json' },
@@ -41,6 +49,6 @@ OfferForm.addEventListener('submit', async (e) => {
   }
 });
 
-let multerBTN = document.querySelector('.multerBTN');
+// let multerBTN = document.querySelector('.multerBTN');
 
-multerBTN.addEventListener('click', () => {});
+// multerBTN.addEventListener('click', () => {});
