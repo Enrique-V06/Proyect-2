@@ -33,7 +33,7 @@ router.get('/contact', async (req, res) => {
 });
 
 //REVIEWS
-// http://localhost:3001/contact
+// http://localhost:3001/reviews
 router.get('/reviews', async (req, res) => {
   try {
     const reviewsData = await Review.findAll();
@@ -41,7 +41,7 @@ router.get('/reviews', async (req, res) => {
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
 
-    res.render('reviews');
+    res.render('reviews', {reviews});
   } catch (err) {
     res.status(500).json(err);
   }
