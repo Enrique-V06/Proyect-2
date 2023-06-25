@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     position: fixed;
     z-index: 100;
-    transition: opacity 1s, visibility 1s; /*no se por que no jala*/
+    transition: opacity 1s, visibility 1s;
 }
 
 .preloader-bg--hidden {
@@ -137,7 +137,8 @@ body::-webkit-scrollbar {
     color: var(--light-color);
 }
 
-.btn-dropdown:hover, .btn-dropdown:active {
+.btn-dropdown:hover,
+.btn-dropdown:active {
     opacity: 70% !important;
 }
 

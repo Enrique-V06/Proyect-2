@@ -32,7 +32,147 @@
 
 <body>
   <main>
-    <div class='container-fluid' style='margin-bottom: 5%; margin-top:5%'>
+
+    <!-- ***Add a Home modal*** (toggle)-->
+    <div
+      class='modal fade'
+      id='offerHomeModal'
+      tabindex='-1'
+      role='dialog'
+      aria-labelledby='exampleModalLabel'
+      aria-hidden='true'
+    >
+      <div class='modal-dialog' role='document'>
+        <div class='modal-content'>
+
+          <div class='modal-header'>
+            <h5
+              class='modal-title'
+              id='exampleModalLabel'
+              style='justify-content:center;  margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
+            >Offer a Home</h5>
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='modal'
+              aria-label='Close'
+            ></button>
+          </div>
+
+          <div class='modal-body'>
+            <form class='offer-form'>
+              <!-- Location Input -->
+              <div class='form-group'>
+                <label
+                  for='signupInputUserName'
+                  style='text-align: left; margin-right:80%; margin-bottom: 2%;font-weight:500;'
+                >Location
+                </label>
+                <input
+                  type='text'
+                  class='form-control locationInput'
+                  id='signupInputUserName'
+                  aria-describedby='emailHelp'
+                  placeholder='Enter the location of your home'
+                  style='margin-bottom: 4%;'
+                />
+                {{! <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> }}
+              </div>
+
+              <!--Type OF Home Input-->
+              <div class='form-group' style='margin-bottom: 4%;'>
+                <label
+                  for='signupInputUserName'
+                  style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
+                >Home Type
+                </label>
+
+                <div class='form-check'>
+                  <input
+                    class='form-check-input typeOfHome_A'
+                    type='radio'
+                    name='typeOfHomeRadio'
+                    id='typeOgHomeA'
+                    value='Department'
+                  />
+                  <label class='form-check-label' for='typeOfHomeA'>
+                    Department
+                  </label>
+                </div>
+
+                <div class='form-check'>
+                  <input
+                    class='form-check-input typeOfHome_B'
+                    type='radio'
+                    name='typeOfHomeRadio'
+                    id='typeOfHomeB'
+                    value='House'
+                  />
+                  <label class='form-check-label' for='typeOfHomeB'>
+                    House
+                  </label>
+                </div>
+              </div>
+
+              <!--Pet Friendly Input-->
+
+              <label
+                for='signupInputUserName'
+                style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
+              >Pet Friendly
+              </label>
+
+              <div class='form-check form-switch'>
+                <input
+                  class='form-check-input'
+                  type='checkbox'
+                  value=''
+                  id='checkPetFriendly'
+                />
+                <label class='form-check-label' for='checkPetFriendly'>
+                  Pet Friendly
+                </label>
+              </div>
+
+              <div class='mb-3' style='margin-top: 0.4rem;'>
+                <label
+                  for='formFile'
+                  class='form-label'
+                  style='font-weight:500;'
+                >Home Image</label>
+                <input class='form-control' type='file' id='formFile' />
+              </div>
+
+              <button
+                type='submit'
+                id='offerSubmit'
+                class='btn btn-primary'
+                style='margin-left: 40%; margin-top:3%;'
+              >Submit</button>
+
+            </form>
+
+            <!--multer Test from -->
+            {{! <form
+              action='/api/offer/uploadFile'
+              enctype='multipart/form-data'
+              method='POST'
+            >
+              <input
+                type='file'
+                class='admin__input'
+                id='myFile'
+                name='myFile'
+              />
+              <input class='admin__submit' type='submit' />
+            </form> }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ***"profile homepage"*** -->
+    <div class='container-fluid' style='margin-bottom: 5%; margin-top:5%;'>
       <div class='container text-center'>
         <div class='row align-items-start'>
           <div
@@ -44,6 +184,14 @@
               class='img-fluid circle-image'
               alt='homepage image'
             />
+
+            <button
+              type='button'
+              class='btn btn-outline-white btn-dark btn-signup btn-sm'
+              data-bs-toggle='modal'
+              data-bs-target='#offerHomeModal'
+              style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
+            >Offer a Home</button>
           </div>
           <div class='col-6' style='margin-top:10%'>
             <form style='padding-left:20%'>
@@ -86,11 +234,11 @@
                   style='padding-left:1.5rem; padding-right:1.5rem;'
                 >Delete Account</button>
               </div>
-
             </form>
           </div>
         </div>
       </div>
     </div>
   </main>
+
 </body>
