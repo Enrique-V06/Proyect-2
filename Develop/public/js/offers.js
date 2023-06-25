@@ -1,10 +1,14 @@
-const OfferForm = document.querySelector('.offer-form');
+
+
 const fs = require('fs');
 const path = require('path');
+const OfferForm = document.getElementById('offerSubmit')
 
-OfferForm.addEventListener('submit', async (e) => {
+
+function sub(location){
+  OfferForm.addEventListener('click', async (e) => {
   e.preventDefault();
-  let location = document.querySelector('.locationInput').value.trim();
+  // let location = document.querySelector('.locationInput').value.trim();
   let radioOptions = document.getElementsByName('typeOfHomeRadio');
   let typeOfHome;
   let offerPetFriendly = document.querySelector('#checkPetFriendly');
@@ -48,7 +52,13 @@ OfferForm.addEventListener('submit', async (e) => {
     }
   }
 });
+}
+
 
 // let multerBTN = document.querySelector('.multerBTN');
 
-// multerBTN.addEventListener('click', () => {});
+
+
+multerBTN.addEventListener('click', () => {});
+
+

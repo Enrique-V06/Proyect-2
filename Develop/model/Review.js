@@ -11,7 +11,7 @@ Review.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -23,12 +23,12 @@ Review.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-          },
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'users',
-              key: 'id',
+            model: 'users',
+            key: 'id',
             },
         },
     },
@@ -38,7 +38,7 @@ Review.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'review',
-      },
+    },
 );
 
 module.exports = Review;

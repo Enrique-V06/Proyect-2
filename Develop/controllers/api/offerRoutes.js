@@ -62,6 +62,9 @@ const upload = multer({ dest: 'public/images' });
 //   }
 // });
 
+//const upload = multer({ dest: 'public/images' });
+
+
 // router.post('/multerTest', upload.single('myFile'), (req, res) => {
 //   console.log('IMAGE STRING', req.file);
 // });

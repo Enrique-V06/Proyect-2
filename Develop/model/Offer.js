@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Offer extends Model {}
+class Offer extends Model { }
 
 Offer.init(
   {
@@ -23,6 +23,7 @@ Offer.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+
     image: {
       type: DataTypes.STRING,
       allowNull: true,
