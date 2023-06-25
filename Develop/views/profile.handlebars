@@ -1,3 +1,35 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4" href="/" style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="color: var(--dark-color);">
+        <span class="navbar-toggler-icon" style="color: var(--dark-color);"></span>
+      </button>
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header border-bottom" style="color: var(--light-color);">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family: Lora; margin-left: 2%">roomiehunt</h5>
+            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link btn-contact" href="/contact" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
+            </li>
+          </ul>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+          <a href="/api/profile"><img 
+          class="nav-link btn-user" 
+          style="width:55px; height:50px; opacity:60%" src="../images/user.png"></a>
+          <a><button class='btn btn-outline-white btn-dark btn-logout' type='submit' id="logOutBtn" style="font-family:Poppins">Log Out</button></a>
+        </div>
+      </div>
+    </div>
+  </nav> 
+</header>
+
 <body>
   <main>
 
@@ -14,7 +46,11 @@
         <div class='modal-content'>
 
           <div class='modal-header'>
-            <h5 class='modal-title' id='exampleModalLabel'>Offer a Home</h5>
+            <h5
+              class='modal-title'
+              id='exampleModalLabel'
+              style='justify-content:center;  margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
+            >Offer a Home</h5>
             <button
               type='button'
               class='btn-close'
@@ -38,13 +74,13 @@
                   id='signupInputUserName'
                   aria-describedby='emailHelp'
                   placeholder='Enter the location of your home'
-                  style='margin-bottom: 2%;'
+                  style='margin-bottom: 4%;'
                 />
                 {{! <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> }}
               </div> --}}
 
               <!--Type OF Home Input-->
-              <div class='form-group' style='margin-bottom: 2%;'>
+              <div class='form-group' style='margin-bottom: 4%;'>
                 <label
                   for='signupInputUserName'
                   style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
@@ -97,6 +133,17 @@
                   Pet Friendly
                 </label>
               </div>
+              
+              <div class='mb-3' style='margin-top: 0.4rem;'>
+                <label
+                  for='formFile'
+                  class='form-label'
+                  style='font-weight:500;'
+                >Home Image</label>
+                <input class='form-control' type='file' id='formFile' />
+              </div>
+              
+
 
               {{!-- XIMENA--}}
               <label
@@ -132,9 +179,25 @@
                 type='submit'
                 id='offerSubmit'
                 class='btn btn-primary'
-                style='margin: 3%;'
+                style='margin-left: 40%; margin-top:3%;'
               >Submit</button>
+
             </form>
+
+            <!--multer Test from -->
+            {{! <form
+              action='/api/offer/uploadFile'
+              enctype='multipart/form-data'
+              method='POST'
+            >
+              <input
+                type='file'
+                class='admin__input'
+                id='myFile'
+                name='myFile'
+              />
+              <input class='admin__submit' type='submit' />
+            </form> }}
           </div>
         </div>
       </div>
@@ -146,7 +209,7 @@
         <div class='row align-items-start'>
           <div
             class='col-4'
-            style='margin-left: 10%;  background-color:rgba(228, 230, 221, 0.561); padding:2%;'
+            style='margin-left: 10%;'
           >
             <img
               src='../images/profile-picture.jpeg'
@@ -156,10 +219,10 @@
 
             <button
               type='button'
-              class='btn btn-outline-white btn-dark btn-signup'
+              class='btn btn-outline-white btn-dark btn-signup btn-sm'
               data-bs-toggle='modal'
               data-bs-target='#offerHomeModal'
-              style='font-family: Poppins; border-radius: 0; margin-right: 20%'
+              style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
             >Offer a Home</button>
           </div>
           <div class='col-6' style='margin-top:10%'>
@@ -169,7 +232,7 @@
                   for='exampleInputEmail1'
                   class='form-label'
                   style='margin-right:80%; font-weight:500;'
-                >User Name</label>
+                >User</label>
                 <input
                   type='email'
                   class='form-control'
@@ -182,7 +245,7 @@
                   for='exampleInputPassword1'
                   class='form-label'
                   style='margin-right:80%; font-weight:500;'
-                >User Email</label>
+                >Email</label>
                 <input
                   type='password'
                   class='form-control'

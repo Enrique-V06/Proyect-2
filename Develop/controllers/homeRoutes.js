@@ -1,4 +1,5 @@
 // const { Review } = require('../model');
+const { Sequelize } = require('sequelize');
 const { Users, Search, Offer, Review } = require('../model');
 
 const router = require('express').Router();
@@ -9,7 +10,7 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const reviewsData = await Review.findAll({});
+    const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
 
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
@@ -26,6 +27,21 @@ router.get('/', async (req, res) => {
 router.get('/contact', async (req, res) => {
   try {
     res.render('contact');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//REVIEWS
+// http://localhost:3001/reviews
+router.get('/reviews', async (req, res) => {
+  try {
+    const reviewsData = await Review.findAll();
+
+    // Serialize data so the template can read it
+    const reviews = reviewsData.map((review) => review.get({ plain: true }));
+
+    res.render('reviews', {reviews});
   } catch (err) {
     res.status(500).json(err);
   }
