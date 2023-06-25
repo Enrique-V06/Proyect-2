@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const { Users, Search, Offer, Review } = require('../../model');
 
 // You are SIGNED IN
-// http://localhost:3001/api/user/all
+// http://localhost:3001/api/user
 router.get('/', async (req, res) => {
   console.log('---------------LOGED?: ', req.session.loggedIn);
   console.log(req.session)
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
       const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
       const reviews = reviewsData.map((review) => review.get({plain:true}));
       // console.log('-------------------------test', reviews);
-      res.render('userhomepage', { homes, reviews });
+      res.render('userhomepage', { homes, reviews, user });
       // res.render('userhomepage');
     } catch (err) {
       console.log(err);
