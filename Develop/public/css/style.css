@@ -163,3 +163,6 @@ body::-webkit-scrollbar {
     --bs-modal-header-border-color: transparent;
 }
 
+.optionsx:hover {
+    font-weight: bold;
+}

@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 
       console.log("-------------homes aft: ", homes);
 
-      res.render('userhomepage', {homes, user});
+      res.render('userhomepage', {homes, user}); //homes is the object with location, type of home & pet. user is also comming from this get req.
       // res.render('userhomepage');
     } catch (err) {
       console.log(err);

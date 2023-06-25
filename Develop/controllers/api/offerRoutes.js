@@ -3,6 +3,8 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
+  console.log("---------REQ RECEIVED")
+  console.log(req.body) 
   try {
     const offerData = await Offer.create({
       location: req.body.location,
