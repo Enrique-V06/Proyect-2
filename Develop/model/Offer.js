@@ -23,7 +23,8 @@ Offer.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    imageUrl: {
+
+    image: {
       type: DataTypes.STRING,
       allowNull: true,
     },

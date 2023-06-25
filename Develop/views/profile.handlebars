@@ -60,7 +60,12 @@
           </div>
 
           <div class='modal-body'>
-            <form class='offer-form'>
+            <form
+              action='/upload'
+              method='POST'
+              enctype='multipart/form-data'
+              class='offer-form'
+            >
               <!-- Location Input -->
               {{!-- <div class='form-group'>
                 <label
@@ -133,14 +138,11 @@
                   Pet Friendly
                 </label>
               </div>
-              
+
+
               <div class='mb-3' style='margin-top: 0.4rem;'>
-                <label
-                  for='formFile'
-                  class='form-label'
-                  style='font-weight:500;'
-                >Home Image</label>
-                <input class='form-control' type='file' id='formFile' />
+                <input type='file' name='image' />
+                <input type='submit' value='Upload' />
               </div>
               
 
