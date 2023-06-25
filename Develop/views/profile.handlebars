@@ -62,7 +62,7 @@
           <div class='modal-body'>
             <form class='offer-form'>
               <!-- Location Input -->
-              <div class='form-group'>
+              {{!-- <div class='form-group'>
                 <label
                   for='signupInputUserName'
                   style='text-align: left; margin-right:80%; margin-bottom: 2%;font-weight:500;'
@@ -77,7 +77,7 @@
                   style='margin-bottom: 4%;'
                 />
                 {{! <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> }}
-              </div>
+              </div> --}}
 
               <!--Type OF Home Input-->
               <div class='form-group' style='margin-bottom: 4%;'>
@@ -133,7 +133,7 @@
                   Pet Friendly
                 </label>
               </div>
-
+              
               <div class='mb-3' style='margin-top: 0.4rem;'>
                 <label
                   for='formFile'
@@ -142,6 +142,38 @@
                 >Home Image</label>
                 <input class='form-control' type='file' id='formFile' />
               </div>
+              
+
+
+              {{!-- XIMENA--}}
+              <label
+                  for='signupInputUserName'
+                  style='text-align: left; margin-right:80%;font-weight:500;'
+                >Location
+              </label>
+              <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                  <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Enter the location of your home" aria-label="Search" id="mySrch">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-success" type="search" id="LocSrchBtn">Search</button>
+                    </div>
+                  </div>
+                </form>
+              </nav>      
+
+                <div class="optionsBox">
+                    <h5 id="Select"></h5>
+                    <div class="optionsx" id="0"></div>
+                    <div class="optionsx" id="1"></div>
+                    <div class="optionsx" id="2"></div>
+                    <div class="optionsx" id="3"></div>
+                    <div class="optionsx" id="4"></div>
+                    <div class="optionsx" id="5"></div>
+                    <div class="optionsx" id="6"></div>
+                </div>  
+              {{!-- XIMENA --}}
+
 
               <button
                 type='submit'

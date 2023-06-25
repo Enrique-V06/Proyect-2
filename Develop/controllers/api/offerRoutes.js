@@ -28,6 +28,8 @@ const upload = multer({
 });
 
 router.post('/', async (req, res) => {
+  console.log("---------REQ RECEIVED")
+  console.log(req.body) 
   try {
     const offerData = await Offer.create({
       location: req.body.location,
