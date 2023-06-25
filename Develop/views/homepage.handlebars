@@ -1,12 +1,15 @@
-
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container-fluid">
-      <a class="navbar-brand fs-4" href="/" style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
-      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="color: var(--dark-color);">
+      <a class="navbar-brand fs-4" href="/"
+        style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
+        style="color: var(--dark-color);">
         <span class="navbar-toggler-icon" style="color: var(--dark-color);"></span>
       </button>
-      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header border-bottom" style="color: var(--light-color);">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family: Lora; margin-left: 2%">roomiehunt</h5>
           <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -14,19 +17,23 @@
         <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
           <ul class="navbar-nav justify-content-end align-items-center fs-5 flex-grow-1 pe-3">
             <li class="nav-item">
+
               <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
+
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link btn-contact" href="/contact" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
+              <a class="nav-link btn-contact" href="/contact"
+                style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
             </li>
           </ul>
         </div>
-    </div>
-  </nav> 
+      </div>
+  </nav>
 </header>
+
   <body>
     <main>
       <div class="bg-home-container"></div>
@@ -45,164 +52,206 @@
           <div class='col-6' style="margin-top:10%; margin-left:5%; height:auto">
             <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
           </div>
-
-          <!-- Modal LOGIN -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form> 
-                        <div class="form-group">
-                            <label for="loginInputEmail" style="margin-right:75%; margin-bottom: 2%;">Email address</label>
-                            <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginInputPassword" style="margin-right:80%; margin-bottom: 2%;">Password</label>
-                            <input type="password" class="form-control" id="loginInputPassword" placeholder="Password" style="font-family:Poppins; text-align: left; margin-bottom: 2%;">
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="loginSubmit">Submit</button>
-                    </form>
-                </div>
-                {{!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> --}}
-            </div>
         </div>
-    </div>
+        <div class='col-6' style="margin-top:10%; margin-left:5%; height:auto">
+          <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
+        </div>
 
-    <!-- Modal SIGNUP-->
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 5%; border-color: #ffff">
-        <div class="modal-dialog" role="document">
+        <!-- Modal LOGIN -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                  <div class="row" style="padding-top: 2%;">
-                    <h5 class="modal-title" id="exampleModalLabel" style="justify-content:center; text-align:center; font-family:Poppins; color:var(--dark-green-color);">Create your free account</h5>
-                    <p style="padding-top:2%; justify-content:center; margin: auto; max-width:300px; font-size:14px; font-family:Poppins; color:var(--grey-color)">Join thousands of roomies waiting for their perfect match</p>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="loginInputEmail" style="margin-right:75%; margin-bottom: 2%;">Email address</label>
+                    <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp"
+                      placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
                   </div>
-                </div>
-                <div class="modal-body" style="border-color: #FFFF;">
-                    <form> 
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="signupInputUserName" aria-describedby="emailHelp" placeholder="Your Username" style="justify-content: center; text-align: center; align-items: center; margin-bottom: 2%; width: 350px">
-                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="signupInputEmail" aria-describedby="emailHelp" placeholder="Enter email" style=" text-align: left; margin-bottom: 2%; width: 350px">
-                            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                        </div>
-                        <div class="form-group" style="border-radius: 20%;">
-                            <input type="password" class="form-control" id="signupInputPassword" placeholder="Password" style="text-align: left; margin-bottom: 2%; width: 350px">
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="signUpSubmit">Submit</button>
-                    </form>
-                </div>
-                {{!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> --}}
+                  <div class="form-group">
+                    <label for="loginInputPassword" style="margin-right:80%; margin-bottom: 2%;">Password</label>
+                    <input type="password" class="form-control" id="loginInputPassword" placeholder="Password"
+                      style="font-family:Poppins; text-align: left; margin-bottom: 2%;">
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="margin: 3%;" id="loginSubmit">Submit</button>
+                </form>
+              </div>
+              {{!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> --}}
             </div>
+          </div>
         </div>
-    </div>
+
+        <!-- Modal SIGNUP-->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" style="margin-top: 5%; border-color: #ffff">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="row" style="padding-top: 2%;">
+                  <h5 class="modal-title" id="exampleModalLabel"
+                    style="justify-content:center; text-align:center; font-family:Poppins; color:var(--dark-green-color);">
+                    Create your free account</h5>
+                  <p
+                    style="padding-top:2%; justify-content:center; margin: auto; max-width:300px; font-size:14px; font-family:Poppins; color:var(--grey-color)">
+                    Join thousands of roomies waiting for their perfect match</p>
+                </div>
+              </div>
+              <div class="modal-body" style="border-color: #FFFF;">
+                <form>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="signupInputUserName" aria-describedby="emailHelp"
+                      placeholder="Your Username"
+                      style="justify-content: center; text-align: center; align-items: center; margin-bottom: 2%; width: 350px">
+                    {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                      else.</small> --}}
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="signupInputEmail" aria-describedby="emailHelp"
+                      placeholder="Enter email" style=" text-align: left; margin-bottom: 2%; width: 350px">
+                    {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                      else.</small> --}}
+                  </div>
+                  <div class="form-group" style="border-radius: 20%;">
+                    <input type="password" class="form-control" id="signupInputPassword" placeholder="Password"
+                      style="text-align: left; margin-bottom: 2%; width: 350px">
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="margin: 3%;" id="signUpSubmit">Submit</button>
+                </form>
+              </div>
+              {{!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> --}}
+            </div>
+          </div>
+        </div>
 
 
-          <div class="col-12" style="padding-top: 10%;">
-            <h3 class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>About us</h2>
-            <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
+        <div class="col-12" style="padding-top: 10%;">
+          <h3 class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>
+            About us</h2>
+            <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The
+              site for those looking for the best place to live</p>
             <div class="container text-center" style='padding-top: 5%; padding-left: 5%'>
               <div class="row align-items-center">
                 <div class="col">
-                  <div class="card" style="width: 24rem; border-color: #FFFF;" style='display:flex; justify-content: center;'>
-                      <img src="../images/house.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-                      <div class="card-body" id="card-about-us">
-                      
-                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>Find what best suits you.</p>
-                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                        </small>
-                      
-                      </div>
+                  <div class="card" style="width: 24rem; border-color: #FFFF;"
+                    style='display:flex; justify-content: center;'>
+                    <img src="../images/house.png" class="card-img-top" alt="..."
+                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+                    <div class="card-body" id="card-about-us">
+
+                      <p class="card-text"
+                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
+                        Find what best suits you.</p>
+                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
+                      </small>
+
                     </div>
                   </div>
+                </div>
 
                 <div class="col">
                   <div class="card" style="width: 24rem; border-color: #FFFF;">
-                  
-                      <img src="../images/roomies.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
 
-                      <div class="card-body" id="card-about-us">
-                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>With the best people</p>
-                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                        </small>
-                      </div>
+                    <img src="../images/roomies.png" class="card-img-top" alt="..."
+                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+
+                    <div class="card-body" id="card-about-us">
+                      <p class="card-text"
+                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
+                        With the best people</p>
+                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
+                      </small>
                     </div>
+                  </div>
                 </div>
                 <div class="col">
-                  <div class="card" style="width: 24rem; border-color: #FFFF;" >
-                      <img src="../images/apoyo.png" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-                      <div class="card-body" id="card-about-us">
-                        <p class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>24/7 Support</p>
-                        <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                          sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                        </small>
-                      </div>
+                  <div class="card" style="width: 24rem; border-color: #FFFF;">
+                    <img src="../images/apoyo.png" class="card-img-top" alt="..."
+                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+                    <div class="card-body" id="card-about-us">
+                      <p class="card-text"
+                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
+                        24/7 Support</p>
+                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
+                      </small>
                     </div>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
-          </div>
+        </div>
 
-          <div class="bg-our-services"></div>
-          <div class="col-12" style="padding-top:15%;">
-            <h3 class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
+        <div class="bg-our-services"></div>
+        <div class="col-12" style="padding-top:15%;">
+          <h3 class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
             <div class="container text-center" style="display:flex; justify-content:center;">
               <div class="row align-items-start">
                 <div class="col">
                   <div class="card" style="width: 18rem;">
-                      <img src="../images/find-a-roomie.png" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        
-                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find a Roommate</p>
-                      </div>
+                    <img src="../images/find-a-roomie.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+
+                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find
+                        a Roommate</p>
                     </div>
                   </div>
+                </div>
 
                 <div class="col">
-                    <div class="card align-self-end" style="margin-top:15%; width: 18rem;">
-                      <img src="../images/find-a-place.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find a Place</p>
-                      </div>
+                  <div class="card align-self-end" style="margin-top:15%; width: 18rem;">
+                    <img src="../images/find-a-place.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find
+                        a Place</p>
                     </div>
+                  </div>
                 </div>
                 <div class="col">
-                    <div class="card" style="width: 18rem;">
-                      <img src="../images/share-a-place.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Share a Place</p>
-                      </div>
+                  <div class="card" style="width: 18rem;">
+                    <img src="../images/share-a-place.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Share
+                        a Place</p>
                     </div>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
+        </div>
+
+        <div class="bg-reviews"></div>
+        <div class='row align-items-start' style="padding-top:25%">
+          <div class='col-5' style="width:553px; height:768px;">
+            <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
           </div>
-        
-          <div class="bg-reviews"></div>
-          <div class='row align-items-start' style="padding-top:25%">
-            <div class='col-5' style="width:553px; height:768px;">
-              <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
+          <div class='col-6' style="transform:translateY(-10vh)">
+            <h1 class="display-1"
+              style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our
+              Happy Clients Say</h1>
+            <p class="lead"
+              style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>
+              {{reviews.[0].description}}</p>
+            <div class="container" style="display: flex; justify-content: left;">
+              <p class="lead"
+                style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>
+                {{reviews.[0].name}}</p>
             </div>
-            <div class='col-6' style="transform:translateY(-10vh)">
-              <h1 class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
-              <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>{{reviews.[0].description}}</p>
-    <div class="container" style="display: flex; justify-content: left;">
-    <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>{{reviews.[0].name}}</p>
-    </div>
           </div>
 
           <div class="container" style="padding-top: 20%; margin-bottom: 20%">
@@ -210,11 +259,13 @@
               <div class="col-sm-12">
                 <div class="content">
                   <h1 style="font-family:Lora; color:var(--dark-green-color); font-size:56px">Join Our Newsletter</h1>
-                  <h2 style="padding-top:5%; font-family:Poppins; color:var(--grey-color); font-size:16px">Sign up for our email newsletter to get our latest news</h2>
+                  <h2 style="padding-top:5%; font-family:Poppins; color:var(--grey-color); font-size:16px">Sign up for
+                    our email newsletter to get our latest news</h2>
                   <div class="input-group" style="padding-top:5%;">
                     <input type="email" class="form-control" name="" placeholder="Enter email">
                     <span class="input-group-btn">
-                      <button class="btn" type="submit" style="padding: 24px 71px; border-radius:0%; background-color:var(--dark-green-color); color:var(--light-color)">Subscribe</button>
+                      <button class="btn" type="submit"
+                        style="padding: 24px 71px; border-radius:0%; background-color:var(--dark-green-color); color:var(--light-color)">Subscribe</button>
                     </span>
                   </div>
                 </div>
@@ -224,11 +275,11 @@
 
         </div>
       </div>
-    </main>
-    <div class="container-fluid" style="background-color: #E4EEE6;">
-      ...
-    </div>
-        <script src='../../js/auth.js'></script>
-  </body>
 
+  </main>
+  <div class="container-fluid" style="background-color: #E4EEE6;">
+    ...
+  </div>
+  <script src='/js/auth.js'></script>
+</body>
 
