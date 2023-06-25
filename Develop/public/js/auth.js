@@ -112,20 +112,3 @@ async () => {
 }
 )
 
-//SEARCH
-var searchSubmit = document.querySelector("#searchSubmit");
-searchSubmit.addEventListener("click", async (event) => {
-  const location = document.querySelector('#locationDropDown').value;
-  const typeOfHome = document.querySelector('#typeDropDown').value;
-  const pet = document.querySelector('#petDropDown').value;
-
-  if (location && typeOfHome && pet){
-    const response = await fetch('/api/user', {
-      method: 'GET',
-      body: JSON.stringify({location, typeOfHome, pet}),
-      headers: { 'Content-Type': 'application/json' },
-  }) 
-  } else {
-    alert('Please complete all the forms');
-  };
-});
