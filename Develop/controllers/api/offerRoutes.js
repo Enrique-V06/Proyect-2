@@ -30,8 +30,8 @@ const upload = multer({ dest: 'public/images' });
 router.post('/upload', upload.single('image'), (req, res) => {
   try {
     console.log('Holiwis');
-    // const { name } = req.image;
-    // console.log('IMAGE NAME ON ROUTE', name);
+    const ima = req.image;
+    console.log('IMAGE NAME ON ROUTE', ima);
     // const path = `public/images${name}`;
     //console.log('PATH', req.file);
     // alert(path);
