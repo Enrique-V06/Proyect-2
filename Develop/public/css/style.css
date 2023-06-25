@@ -106,8 +106,8 @@ body::-webkit-scrollbar {
 }
 
 .btn-login {
-    background-color: var(--light-green-color) !important;
-    border-color: var(--light-green-color) !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
 }
 
 .btn-logout {
@@ -150,16 +150,21 @@ body::-webkit-scrollbar {
 
 /* Card CSS */
 
+.card-text {
+    font-weight: 500;
+}
+
 .card {
-    border-color: var(--light-green-color);
+    background-color: transparent  !important;
+    border-color: transparent !important;
 }
 
 .card-body {
-    background-color: var(--light-green-color);
+    background-color: transparent !important;
 }
 
 #card-about-us {
-    background-color: #ffff;
+    background-color: transparent !important;
 }
 
 .circle-image {
