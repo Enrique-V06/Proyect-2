@@ -163,3 +163,38 @@ body::-webkit-scrollbar {
     --bs-modal-header-border-color: transparent;
 }
 
+.fontAwesome {
+    font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+.navbar-toggler {
+    filter: invert();
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        background-color: var(--dark-green-color);
+        backdrop-filter: blur(10px);
+    }
+
+    .btn-home {
+        color: var(--light-color) !important;
+    }
+
+    .btn-contact {
+        color: var(--light-color) !important;
+    }
+
+    .btn-user {
+        filter: invert();
+    }
+
+    .btn-logout {
+        background-color: var(--light-green-color) !important;
+        color: var(--dark-color) !important;
+    }
+
+    .navbar-nav {
+        justify-content: center !important;
+    }
+}
