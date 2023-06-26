@@ -40,8 +40,8 @@ router.get('/reviews', async (req, res) => {
 
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
-
-    res.render('reviews', {reviews});
+    
+    res.render('reviews', {reviews, loggedIn: req.session.loggedIn});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -124,6 +124,22 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.post('/revsubmit', async (req, res) => {
+  try {
+    const dbReviewData = await Review.create({
+      name: req.body.revName,
+      description: req.body.revBody,
+    });
+    res.status(200).json(dbReviewData);
+      console.log('response sent', dbReviewData);
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+    console.log('failure: ', res.status);
   }
 });
 
