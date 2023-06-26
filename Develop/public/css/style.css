@@ -90,19 +90,11 @@ body::-webkit-scrollbar {
     height: 76px;
 }
 
-.btn-signup:hover {
-    opacity: 70% !important;
-}
-
 .btn-more-info {
     background-color: var(--dark-green-color) !important;
     border-color: var(--dark-green-color) !important;
     width: 100px;
     height: 35px;
-}
-
-.btn-more-info:hover {
-    opacity: 70% !important;
 }
 
 .btn-login {
@@ -112,10 +104,6 @@ body::-webkit-scrollbar {
 
 .btn-logout {
     background-color: var(--dark-green-color) !important;
-}
-
-.btn-logout:hover {
-    opacity: 70% !important;
 }
 
 .btn-user:hover {
@@ -141,22 +129,19 @@ body::-webkit-scrollbar {
     border-radius: 3rem;
 }
 
-.btn-submit-modal:hover {
-    opacity: 70% !important;
-}
-
-.btn-contact-us:hover {
-    opacity: 70% !important;
-}
-
-.btn-dropdown {
-    background-color: var(--dark-green-color) !important;
-    color: var(--light-color);
-}
-
+.btn-signup:hover,
+.btn-logout:hover,
+.btn-more-info:hover,
+.btn-submit-modal:hover, 
+.btn-contact-us:hover,
 .btn-dropdown:hover,
 .btn-dropdown:active {
     opacity: 70% !important;
+}
+
+.btn-dropdown, .btn-change-password {
+    background-color: var(--dark-green-color) !important;
+    color: var(--light-color);
 }
 
 /* Card CSS */
