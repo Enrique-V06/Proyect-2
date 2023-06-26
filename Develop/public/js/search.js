@@ -26,15 +26,10 @@ dropdownMenu.addEventListener('click', async (e) => {
       alert('There was a problem with your search');
     }
   } else {
-    alert('Please submit the three options for your personalized search');
+    alert('Please submit an option for your personalized search');
   }
-  // typeOfHome = this.innerHTML;
-  // return type;
 });
-// (function () {
 
-//   // return type;
-// })();
 
 (function () {
   var Options = $('.item-location'); //document.querySelectorAll
