@@ -60,10 +60,10 @@
             <button id="typeDropDown" class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Poppins;">
               Type of location
             </button>
-            <ul class="dropdown-menu" aria-labelledby="typeDropDown">
-              <li><a class="dropdown-item item-type" id="A">House</a></li>
-              <li><a class="dropdown-item item-type" id="B">Apartment</a></li>
-              <li><a class="dropdown-item item-type" id="C">Both</a></li>
+            <ul class="dropdown-menu typeOfHome_menu" aria-labelledby="typeDropDown">
+              <li><a class="dropdown-item item-type" data-value="house" id="A">House</a></li>
+              <li><a class="dropdown-item item-type" data-value="apartment" id="B">Apartment</a></li>
+              <li><a class="dropdown-item item-type" data-value="Both" id="C">Both</a></li>
             </ul>
           </div>
         </div>
@@ -251,6 +251,6 @@
   </div>
 
   <script src='../../js/logout.js'></script>
-  <script src='/js/search.js'></script>
+  <script src='../js/search.js'></script>
 
 </body>
