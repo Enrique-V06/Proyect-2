@@ -1,45 +1,42 @@
 <html lang='en'>
-<head>
-  <meta charset='UTF-8' />
-  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' />
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'
-    integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM' crossorigin='anonymous' />
-  <link rel='stylesheet' href='../css/style.css' />
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {{!-- fontawesome --}}
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'/>
+    {{!-- Bootstrap style --}}
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet' 
+    integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM' crossorigin='anonymous'/>
+    {{!-- CSS --}}
+    <link rel='stylesheet' href='../css/style.css' />
+    {{!-- JQuery --}}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   {{!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha384-/3/9ZX7PRyHZsET4+CpSx5BHZHbGJY3b+7NmUeSJ0EDZQ9TJt6eY4aSk1KgI9Chd"
     crossorigin="anonymous"></script> --}}
 
-  <title>RoomieHunt</title>
-  <script>
-    window.addEventListener("load", () => {
-      setInterval(loaderTimer, 2800);
+    <title>RoomieHunt</title>
+    <script>
+      window.addEventListener("load", () => { setInterval(loaderTimer, 2800);
       function loaderTimer() {
-        document.querySelector(".preloader").classList.add("preloader--hidden");
-      }
+      document.querySelector(".preloader").classList.add("preloader--hidden"); }
       setInterval(bgloaderTimer, 3000); function bgloaderTimer() {
-        document.querySelector(".preloader-bg").classList.add("preloader-bg--hidden");
-      }
-    })
-  </script>
+      document.querySelector(".preloader-bg").classList.add("preloader-bg--hidden");
+      } })
+    </script>
+  </head>
+  
+  <body>
 
-</head>
+    <div class='preloader-bg'></div>
+    <div class='preloader'></div>
 
-<body>
+    <main>
+      <!-- Render the sub layout -->
+      {{{body}}}
+    </main>
 
-  <div class="preloader-bg"></div>
-  <div class="preloader"></div>
-
-  <main>
-    <!-- Render the sub layout -->
-    {{{body}}}
-  </main>
-
-    <!--footer-->
     <footer class='footer'>
       <div class='container-fluid' style='background-color: #E4EEE6;'>
         <div class='container text-center'>
@@ -51,7 +48,8 @@
               <p
                 style='font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)'
               >roomiehunt</p>
-              <small style="font-family: Poppins;">A place where you can offer a home or find a roomie!
+              <small>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Autem blanditiis velit voluptates.
               </small>
             </div>
             <div class='col'>
@@ -115,47 +113,35 @@
                   href='mailto:example@example.com'
                   style='text-decoration: none; color:inherit;'
                 >hello@roomiehunt.com</a></small>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <!--end of footer -->
-  
-    <script
-      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'
-      integrity='sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz'
-      crossorigin='anonymous'
-    ></script>
-    <script
-      src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'
-    ></script>
-    <script src='../../js/auth.js'></script>
-    <script src='../../js/offers.js'></script>
-    <script src='../../js/geocodeApi.js'></script>
+    </footer>
+
+    {{!-- SCRIPTS --}}
+    {{!-- BOOTSTRAP JS --}}
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'
+      integrity='sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz' crossorigin='anonymous'>
+    </script>
+
+    {{!-- JS Files --}}
     <script src="../../js/reviewSubmit.js"></script>
-    <script
-      src='https://code.jquery.com/jquery-3.6.0.min.js'
-      integrity='sha384-/3/9ZX7PRyHZsET4+CpSx5BHZHbGJY3b+7NmUeSJ0EDZQ9TJt6eY4aSk1KgI9Chd'
-      crossorigin='anonymous'
-    ></script>
-
     <script src='../../js/logout.js'></script>
-
 
     <script>
       var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function () {
+      if (window.pageYOffset >= 200) {
+      nav.classList.add('bg-light', 'shadow');
+      nav.classList.remove('bg-transparent');
+      } else {
+      nav.classList.remove('bg-light', 'shadow');
+      nav.classList.add('bg-transparent');
+      };
+      })
+    </script>
 
-  window.addEventListener('scroll', function () {
-  if (window.pageYOffset >= 200) {
-  nav.classList.add('bg-light', 'shadow');
-  nav.classList.remove('bg-transparent');
-  } else {
-  nav.classList.remove('bg-light', 'shadow');
-  nav.classList.add('bg-transparent');
-  };
-  })
-</script>
-  
-</body>
+  </body>
 </html>
