@@ -18,7 +18,7 @@
             <li class="nav-item mx-2">
               <a class="nav-link btn-contact" href="/contact" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
               <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
             </li>
           </ul>
@@ -44,15 +44,16 @@
       role='dialog'
       aria-labelledby='exampleModalLabel'
       aria-hidden='true'
+      style="margin-top: 5%;"
     >
       <div class='modal-dialog' role='document'>
         <div class='modal-content'>
 
           <div class='modal-header'>
             <h5
-              class='modal-title'
+              class='modal-title d-flex'
               id='exampleModalLabel'
-              style='justify-content:center;  margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
+              style='justify-content:center; margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
             >Offer a Home</h5>
             <button
               type='button'
@@ -83,10 +84,10 @@
               </div> --}}
 
               <!--Type OF Home Input-->
-              <div class='form-group' style='margin-bottom: 4%;'>
+              <div class='form-group form-offer' style='margin-bottom: 3%;'>
                 <label
                   for='signupInputUserName'
-                  style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
+                  style='width: 250px; text-align: left; margin-bottom: 2%; font-weight:500;'
                 >Home Type
                 </label>
 
@@ -121,7 +122,7 @@
 
               <label
                 for='signupInputUserName'
-                style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'
+                style='text-align: left; margin-top: 4%; margin-bottom: 2%; font-weight:500;'
               >Pet Friendly
               </label>
 
@@ -137,7 +138,7 @@
                 </label>
               </div>
               
-              <div class='mb-3' style='margin-top: 0.4rem;'>
+              <div class='mb-3' style='margin-top: 4%;'>
                 <label
                   for='formFile'
                   class='form-label'
@@ -154,7 +155,7 @@
                   style='text-align: left; margin-right:80%;font-weight:500;'
                 >Location
               </label>
-              <nav class="navbar navbar-light bg-light">
+              <nav class="navbar">
                 <form class="form-inline">
                   <div class="input-group">
                     <input class="form-control" type="search" placeholder="Enter the location of your home" aria-label="Search" id="mySrch">
@@ -166,7 +167,7 @@
               </nav>      
 
                 <div class="optionsBox">
-                    <h5 id="Select"></h5>
+                    <h5 id="Select" style="font-family: Poppins; font-size: 16px;"></h5>
                     <div class="optionsx" id="0"></div>
                     <div class="optionsx" id="1"></div>
                     <div class="optionsx" id="2"></div>
@@ -182,8 +183,8 @@
                 type='submit'
                 value='Upload'
                 id='offerSubmit'
-                class='btn btn-primary'
-                style='margin-left: 40%; margin-top:3%;'
+                class='btn btn-primary btn-submit-modal'
+                style='margin-top:3%;'
               >Submit</button>
 
             </form>
