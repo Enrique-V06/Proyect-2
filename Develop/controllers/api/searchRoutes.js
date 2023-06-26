@@ -6,18 +6,17 @@ const router = require('express').Router();
 
 //Make a post
 router.post('/', async (req, res) => {
-    try {
-        const newSearch = await Search.create({
-            location: req.body.loc,
-            typeOfHome: req.body.typeOfHome,
-            pet: req.body.pet
-        });
-        console.log("Search Data", newSearch)
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
-
+  try {
+    const newSearch = await Search.create({
+      location: req.body.loc,
+      typeOfHome: req.body.typeOfHome,
+      pet: req.body.pet,
+    });
+    console.log('Search Data', newSearch);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // //GET request to display search data
 // //api/search
@@ -43,28 +42,44 @@ router.post('/', async (req, res) => {
 // });
 
 router.get('/', async (req, res) => {
-    console.log(req.session)
-    if (!req.session.loggedIn) {
-      res.redirect('/');
-    } else {
-      console.log("loged!")
-      try {
-        const offerData = await Offer.findAll({
-            where: {
-                location: req.body.location,
-                typeOfHome: req.body.typeOfHome,
-                pet: req.body.pet,
-            }
-        }, {include: [{ model: Search }]}
-        );
-        res.render('userhomepage');
-
-      } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-      }
-
+  console.log(req.session);
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+  } else {
+    console.log('loged!');
+    try {
+      const offerData = await Offer.findAll(
+        {
+          where: {
+            location: req.body.location,
+            typeOfHome: req.body.typeOfHome,
+            pet: req.body.pet,
+          },
+        },
+        { include: [{ model: Search }] }
+      );
+      res.render('userhomepage');
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
     }
-  });
+  }
+});
+
+router.get('/:typeOfHome', async (req, res) => {
+  const typeOfHome = req.params.typeOfHome;
+  console.log('IN GET ROUTE, TYPE VAL :', typeOfHome);
+  const offerData = await Offer.findAll(
+    {
+      where: {
+        typeOfHome: typeOfHome,
+      },
+    },
+    {
+      include: [{ model: Search }],
+    }
+  );
+  console.log('OFFER DATA :', offerData);
+});
 
 module.exports = router;
