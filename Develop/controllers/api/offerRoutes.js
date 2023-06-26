@@ -1,18 +1,18 @@
 const { Users, Search, Offer, Review } = require('../../model');
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
+const path = require('path');
 
 const multer = require('multer');
-const upload = multer({ dest: 'public/images' });
-// const multerStorage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'public');
-//   },
-//   filename: (req, file, cb) => {
-//     const ext = file.mimetype.split('/')[1];
-//     cb(null, `images/admin-${file.fieldname}-${Date.now()}.${ext}`);
-//   },
-// });
+const storage = multer.diskStorage({
+  destination: 'public/images',
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const extension = path.extname(file.originalname);
+    cb(null, uniqueSuffix + extension);
+  },
+});
+const upload = multer({ storage });
 
 // const multerFilter = (req, file, cb) => {
 //   if (file.mimetype.split('/')[1] === 'png') {
@@ -30,9 +30,11 @@ const upload = multer({ dest: 'public/images' });
 router.post('/upload', upload.single('image'), (req, res) => {
   try {
     console.log('Holiwis');
-    const ima = req.image;
-    console.log('IMAGE NAME ON ROUTE', ima);
-    // const path = `public/images${name}`;
+    const body = req.body;
+    const file = req.file;
+    console.log('Ruta de imagen', file);
+    console.log('IMAGE NAME ON ROUTE', body);
+    // const path = `public/images/${name}`;
     //console.log('PATH', req.file);
     // alert(path);
     // const offerData = Offer.create({
