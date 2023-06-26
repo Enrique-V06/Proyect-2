@@ -19,20 +19,35 @@
         <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
           <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link active btn-home" aria-current="page" href='/api/user'
                 style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
+=======
+              <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Home</a>
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link btn-contact" href="/contact"
                 style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
+            </li>
           </ul>
+<<<<<<< HEAD
           <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
             <a href="/api/profile"><img class="nav-link btn-user" style="width:55px; height:50px; opacity:60%"
                 src="../images/user.png"></a>
             <a><button class='btn btn-outline-white btn-dark btn-logout' type='submit' id="logOutBtn"
                 style="font-family:Poppins">Log Out</button></a>
           </div>
+=======
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+          <a href="/api/profile"><img 
+          class="nav-link btn-user" 
+          style="width:55px; height:50px; opacity:150%" src="../images/user.png"></a>
+          <a><button class='btn btn-outline-white btn-dark btn-logout' type='submit' id="logOutBtn" style="font-family:Poppins">Log Out</button></a>
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
         </div>
       </div>
   </nav>
@@ -42,16 +57,42 @@
   <main>
 
     <!-- ***Add a Home modal*** (toggle)-->
+<<<<<<< HEAD
     <div class='modal fade' id='offerHomeModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel'
       aria-hidden='true'>
+=======
+    <div
+      class='modal fade'
+      id='offerHomeModal'
+      tabindex='-1'
+      role='dialog'
+      aria-labelledby='exampleModalLabel'
+      aria-hidden='true'
+      style="margin-top: 5%;"
+    >
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
       <div class='modal-dialog' role='document'>
         <div class='modal-content'>
 
           <div class='modal-header'>
+<<<<<<< HEAD
             <h5 class='modal-title' id='exampleModalLabel'
               style='justify-content:center;  margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'>
               Offer a Home</h5>
             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+=======
+            <h5
+              class='modal-title d-flex'
+              id='exampleModalLabel'
+              style='justify-content:center; margin-left: 35%; font-family:Poppins; color:var(--dark-green-color);'
+            >Offer a Home</h5>
+            <button
+              type='button'
+              class='btn-close'
+              data-bs-dismiss='modal'
+              aria-label='Close'
+            ></button>
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
           </div>
 
           <div class='modal-body'>
@@ -69,9 +110,17 @@
               </div> --}}
 
               <!--Type OF Home Input-->
+<<<<<<< HEAD
               <div class='form-group' style='margin-bottom: 4%;'>
                 <label for='signupInputUserName'
                   style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'>Home Type
+=======
+              <div class='form-group form-offer' style='margin-bottom: 3%;'>
+                <label
+                  for='signupInputUserName'
+                  style='width: 250px; text-align: left; margin-bottom: 2%; font-weight:500;'
+                >Home Type
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
                 </label>
 
                 <div class='form-check'>
@@ -93,8 +142,15 @@
 
               <!--Pet Friendly Input-->
 
+<<<<<<< HEAD
               <label for='signupInputUserName'
                 style='text-align: left; margin-right:80%; margin-bottom: 4px; font-weight:500;'>Pet Friendly
+=======
+              <label
+                for='signupInputUserName'
+                style='text-align: left; margin-top: 4%; margin-bottom: 2%; font-weight:500;'
+              >Pet Friendly
+>>>>>>> d73ec5e25c3d382989483674bdd1328677f55e0a
               </label>
 
               <div class='form-check form-switch' style="margin-bottom: 2%;">
@@ -103,9 +159,13 @@
                   Pet Friendly
                 </label>
               </div>
-
-              <div class='mb-3' style='margin-top: 0.4rem;'>
-                <label for='formFile' class='form-label' style='font-weight:500;'>Home Image</label>
+              
+              <div class='mb-3' style='margin-top: 4%;'>
+                <label
+                  for='formFile'
+                  class='form-label'
+                  style='font-weight:500;'
+                >Home Image</label>
                 <input class='form-control' type='file' id='formFile' />
               </div>
 
@@ -114,7 +174,7 @@
               {{!-- XIMENA--}}
               <label for='signupInputUserName' style='text-align: left; margin-right:80%;font-weight:500;'>Location
               </label>
-              <nav class="navbar navbar-light bg-light">
+              <nav class="navbar">
                 <form class="form-inline">
                   <div class="input-group">
                     <input class="form-control" type="search" placeholder="Enter the location of your home"
@@ -124,23 +184,28 @@
                     </div>
                   </div>
                 </form>
-              </nav>
+              </nav>      
 
-              <div class="optionsBox">
-                <h5 id="Select"></h5>
-                <div class="optionsx" id="0"></div>
-                <div class="optionsx" id="1"></div>
-                <div class="optionsx" id="2"></div>
-                <div class="optionsx" id="3"></div>
-                <div class="optionsx" id="4"></div>
-                <div class="optionsx" id="5"></div>
-                <div class="optionsx" id="6"></div>
-              </div>
+                <div class="optionsBox">
+                    <h5 id="Select" style="font-family: Poppins; font-size: 16px;"></h5>
+                    <div class="optionsx" id="0"></div>
+                    <div class="optionsx" id="1"></div>
+                    <div class="optionsx" id="2"></div>
+                    <div class="optionsx" id="3"></div>
+                    <div class="optionsx" id="4"></div>
+                    <div class="optionsx" id="5"></div>
+                    <div class="optionsx" id="6"></div>
+                </div>  
               {{!-- XIMENA --}}
 
 
-              <button type='submit' value='Upload' id='offerSubmit' class='btn btn-primary'
-                style='margin-left: 40%; margin-top:3%;'>Submit</button>
+              <button
+                type='submit'
+                value='Upload'
+                id='offerSubmit'
+                class='btn btn-primary btn-submit-modal'
+                style='margin-top:3%;'
+              >Submit</button>
 
             </form>
 

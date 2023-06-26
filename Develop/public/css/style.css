@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
     width: 70vw;
     height: 80vh;
     left: 35vw;
-    top: 350vh;
+    top: 330vh;
     background: var(--light-green-color);
     z-index: -10;
 }
@@ -77,7 +77,7 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: 70vh;
     left: 0vw;
-    top: 240vh;
+    top: 215vh;
     background: var(--light-green-color);
     z-index: -10;
 }
@@ -134,6 +134,17 @@ body::-webkit-scrollbar {
     height: 35px;
 }
 
+.btn-submit-modal {
+    background-color: var(--dark-green-color) !important;
+    border-color: transparent;
+    width: 250px;
+    border-radius: 3rem;
+}
+
+.btn-submit-modal:hover {
+    opacity: 70% !important;
+}
+
 .btn-contact-us:hover {
     opacity: 70% !important;
 }
@@ -186,6 +197,25 @@ body::-webkit-scrollbar {
 
 .navbar-toggler {
     filter: invert();
+}
+
+.form-login {
+    border-radius: 3rem;
+    width: 250px !important;
+    
+}
+
+.form-signup {
+    border-radius: 3rem;
+    width: 250px !important;
+}
+
+.form-offer {
+    margin: 0 !important;
+}
+
+.form-group {
+    margin-left: 23%;
 }
 
 @media (max-width: 991px) {
