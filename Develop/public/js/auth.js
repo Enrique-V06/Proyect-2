@@ -45,6 +45,7 @@ signUpSubmit.addEventListener("click", async (event) => {
         const response = await fetch('/signup', {
             method: 'POST',
             body: JSON.stringify({username, email, password, userType}),
+            //file:¨
             headers: { 'Content-Type': 'application/json' },
         })
         console.log("back")

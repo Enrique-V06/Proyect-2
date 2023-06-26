@@ -73,6 +73,22 @@ router.get('/', async (req, res) => {
 //     }
 //   }
 // })
+// router.post('/revsubmit', async (req, res) => {
+//   try {
+//     const dbReviewData = await Review.create({
+//       name: req.body.revName,
+//       description: req.body.revBody,
+//     });
+//     res.status(200).json(dbReviewData);
+//       console.log('response sent', dbReviewData);
+    
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//     console.log('failure: ', res.status);
+//   }
+// });
+
 
 
 
