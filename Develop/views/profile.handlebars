@@ -63,9 +63,14 @@
           </div>
 
           <div class='modal-body'>
-            <form class='offer-form'>
+            <form
+              action='/api/offer/upload'
+              method='POST'
+              enctype='multipart/form-data'
+              class='offer-form'
+            >
               <!-- Location Input -->
-              <div class='form-group'>
+              {{!-- <div class='form-group'>
                 <label
                   for='signupInputUserName'
                   style='text-align: left; margin-right:80%; margin-bottom: 2%;font-weight:500;'
@@ -80,7 +85,7 @@
                   style='margin-bottom: 4%;'
                 />
                 {{! <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> }}
-              </div>
+              </div> --}}
 
               <!--Type OF Home Input-->
               <div class='form-group' style='margin-bottom: 4%;'>
@@ -98,7 +103,7 @@
                     id='typeOgHomeA'
                     value='Department'
                   />
-                  <label class='form-check-label' for='typeOfHomeA'>
+                  <label class='form-check-label' for='typeOfHomeA' style="color:#706c6c;">
                     Department
                   </label>
                 </div>
@@ -111,7 +116,7 @@
                     id='typeOfHomeB'
                     value='House'
                   />
-                  <label class='form-check-label' for='typeOfHomeB'>
+                  <label class='form-check-label' for='typeOfHomeB' style="color:#706c6c;">
                     House
                   </label>
                 </div>
@@ -125,29 +130,62 @@
               >Pet Friendly
               </label>
 
-              <div class='form-check form-switch'>
+              <div class='form-check form-switch' style="margin-bottom: 2%;">
                 <input
                   class='form-check-input'
                   type='checkbox'
                   value=''
                   id='checkPetFriendly'
+                  
                 />
-                <label class='form-check-label' for='checkPetFriendly'>
+                <label class='form-check-label' for='checkPetFriendly' style="color:#706c6c;">
                   Pet Friendly
                 </label>
               </div>
 
-              <div class='mb-3' style='margin-top: 0.4rem;'>
-                <label
-                  for='formFile'
-                  class='form-label'
-                  style='font-weight:500;'
-                >Home Image</label>
-                <input class='form-control' type='file' id='formFile' />
+             <label class='form-label' style="font-weight:500;" >
+                  Home Image
+                </label>
+              <div class='mb-3'>
+                <input class="form-control" type='file' name='image' id='formFile' style="color:#706c6c;" />
+                {{!-- <input type='submit' value='Upload' /> --}}
               </div>
+              
+
+
+              {{!-- XIMENA--}}
+              <label
+                  for='signupInputUserName'
+                  style='text-align: left; margin-right:80%;font-weight:500;'
+                >Location
+              </label>
+              <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                  <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Enter the location of your home" aria-label="Search" id="mySrch">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-success" type="search" id="LocSrchBtn">Search</button>
+                    </div>
+                  </div>
+                </form>
+              </nav>      
+
+                <div class="optionsBox">
+                    <h5 id="Select"></h5>
+                    <div class="optionsx" id="0"></div>
+                    <div class="optionsx" id="1"></div>
+                    <div class="optionsx" id="2"></div>
+                    <div class="optionsx" id="3"></div>
+                    <div class="optionsx" id="4"></div>
+                    <div class="optionsx" id="5"></div>
+                    <div class="optionsx" id="6"></div>
+                </div>  
+              {{!-- XIMENA --}}
+
 
               <button
                 type='submit'
+                value='Upload' 
                 id='offerSubmit'
                 class='btn btn-primary'
                 style='margin-left: 40%; margin-top:3%;'
@@ -174,6 +212,35 @@
       </div>
     </div>
 
+              <!-- Modal LOGIN -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <div class="form-group">
+                            <label for="loginInputEmail" style="margin-right:75%; margin-bottom: 2%;">Email address</label>
+                            <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginInputPassword" style="margin-right:80%; margin-bottom: 2%;">Password</label>
+                            <input type="password" class="form-control" id="loginInputPassword" placeholder="Password" style="font-family:Poppins; text-align: left; margin-bottom: 2%;">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="loginSubmit">Submit</button>
+                    </form>
+                </div>
+                {{!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
     <!-- ***"profile homepage"*** -->
     <div class='container-fluid' style='margin-bottom: 5%; margin-top:5%;'>
       <div class='container text-center'>
@@ -196,7 +263,10 @@
               style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
             >Offer a Home</button>
           </div>
-          <div class='col-6' style='margin-top:10%'>
+          <div class='col-6' >{{!-- style='margin-top:10%' --}}
+
+            <h3 class="display-3" style='text-align:center; font-family: Lora; font-weight: 400; font-size: 40px; color:var(--dark-color); margin-bottom: 6%'>{{user}}'s Profile</h3>
+
             <form style='padding-left:20%'>
               <div class='mb-3'>
                 <label
@@ -243,5 +313,6 @@
       </div>
     </div>
   </main>
-
+    <script src='../../js/offers.js'></script>
+    <script src='../../js/geocodeApi.js'></script>
 </body>

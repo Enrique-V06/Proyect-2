@@ -175,6 +175,11 @@ body::-webkit-scrollbar {
     --bs-modal-header-border-color: transparent;
 }
 
+
+.optionsx:hover {
+    font-weight: bold;
+}
+
 .fontAwesome {
     font-family: 'Helvetica', FontAwesome, sans-serif;
 }
@@ -210,3 +215,4 @@ body::-webkit-scrollbar {
         justify-content: center !important;
     }
 }
+
