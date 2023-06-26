@@ -12,7 +12,7 @@ function sub(location) {
     let offerPetFriendly = document.querySelector('#checkPetFriendly');
     //let fileData = document.getElementById('formFile').value;
     const fileInput = document.querySelector('input[type="file"]');
-    const file = fileInput.files[0];
+    const image = fileInput.files[0];
 
     //console.log('FILE DATA :', fileData);
     let pet = offerPetFriendly.checked;
@@ -26,9 +26,9 @@ function sub(location) {
     console.log('Type of Home  :', typeOfHome);
     console.log('Location :', location);
     console.log('Pet Friendly :', pet);
-    console.log('File data :', file);
-    console.log('File name :', file.name);
-    console.log('File path :', file.filepath);
+    // console.log('File data :', file);
+    // console.log('File name :', file.name);
+    // console.log('File path :', file.filepath);
 
     if ((location && typeOfHome && pet) || (location && typeOfHome && !pet)) {
       const response = await fetch('/api/offer/upload', {
@@ -36,7 +36,7 @@ function sub(location) {
         body: JSON.stringify({
           location,
           typeOfHome,
-          image: file,
+          image,
           pet,
         }),
         headers: { 'Content-Type': 'application/json' },
