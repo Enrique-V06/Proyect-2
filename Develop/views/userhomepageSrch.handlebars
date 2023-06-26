@@ -39,6 +39,7 @@
         <div class='row align-items-start'>
           <div class='col-5'>
             <div class="bg-header"></div>
+            <p>WORKING HERE</p>
             <p class="lead" style='top:25vh; text-align: center; max-width:501px; font-size:18px; color:var(var(--grey-color)); font-family: Poppins'>
               Welcome back <b>{{user}}</b> !</p> 
             {{!-- <h1 class="display-1" style='text-align: center; font-family: Lora'>TITULO TITULO</h1> --}}
@@ -87,8 +88,8 @@
               Pet friendly
             </button>
             <ul class="dropdown-menu" aria-labelledby="petDropDown">
-              <li><a class="dropdown-item item-pet" id="1">Yes</a></li>
-              <li><a class="dropdown-item item-pet" id="0">No</a></li>
+              <li><a class="dropdown-item item-pet" id="A">Yes</a></li>
+              <li><a class="dropdown-item item-pet" id="B">No</a></li>
               <li><a class="dropdown-item item-pet" id="C">Both</a></li>
             </ul>
           </div>
@@ -105,47 +106,14 @@
       </form>
 
       </div>
-      {{!-- DROPDOWNS END --}}
+      {{!-- DROPDOWNS --}}
 
           {{!-- ximena  --}}
-          {{#each homes}}
+          {{#each mySrch}}
           {{> homes}}
           {{/each}}
           {{!-- ximena  --}}
-
-
-          {{!-- REVIEWS  --}}
-          <div class='row align-items-start' style="padding-top:20%">
-            <div class='col-5' style="width:553px; height:768px;">
-              <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
-            </div>
-            <div class='col-6' style="transform:translateY(-10vh)">
-              <h1 class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
-              <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>{{reviews.[0].description}}</p>
-              <div class="container" style="display: flex; justify-content: left;">
-                <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>{{reviews.[0].name}}</p>
-            </div>
-          </div>
-
-          {{!-- NEWSLETTER  --}}
-          <div class="container" style="padding-top: 20%; margin-bottom: 20%">
-            <div class="row" style="max-width: 750px; margin:auto">
-              <div class="col-sm-12">
-                <div class="content">
-                  <h1 style="font-family:Lora; color:var(--dark-green-color); font-size:56px">Join Our Newsletter</h1>
-                  <h2 style="padding-top:5%; font-family:Poppins; color:var(--grey-color); font-size:16px">Sign up for
-                    our email newsletter to get our latest news</h2>
-                  <div class="input-group" style="padding-top:5%;">
-                    <input type="email" class="form-control" name="" placeholder="Enter email">
-                    <span class="input-group-btn">
-                      <button class="btn" type="submit"
-                        style="padding: 24px 71px; border-radius:0%; background-color:var(--dark-green-color); color:var(--light-color)">Subscribe</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
       </div>

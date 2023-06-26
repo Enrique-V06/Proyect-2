@@ -1,20 +1,56 @@
 [
     {
         "location": "Gustavo A. Madero",
-        "typeOfHome": "house",
+        "typeOfHome": "House",
         "pet": true,
         "user_id": 1
     },
     {
         "location": "Coyoacán",
-        "typeOfHome": "apartment",
+        "typeOfHome": "Apartment",
+        "pet": true,
+        "user_id": 2
+    },
+    {
+        "location": "Coyoacán",
+        "typeOfHome": "House",
+        "pet": true,
+        "user_id": 2
+    },
+    {
+        "location": "Coyoacán",
+        "typeOfHome": "House",
+        "pet": false,
+        "user_id": 2
+    },
+    {
+        "location": "Coyoacán",
+        "typeOfHome": "House",
+        "pet": true,
+        "user_id": 2
+    },
+    {
+        "location": "Coyoacán",
+        "typeOfHome": "House",
         "pet": true,
         "user_id": 2
     },
     {
         "location": "Cuahutemoc",
-        "typeOfHome": "house",
+        "typeOfHome": "House",
         "pet": false,
         "user_id": 3
+    },
+    {
+        "location": "Cuahutemoc",
+        "typeOfHome": "House",
+        "pet": false,
+        "user_id": 3
+    },
+    {
+        "location": "Cuahutemoc",
+        "typeOfHome": "Apartment",
+        "pet": true,
+        "user_id": 2
     }
 ]
