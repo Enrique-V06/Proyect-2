@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container-fluid">
         <a class="navbar-brand fs-4" href="/" style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
         <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="color: var(--dark-color);">
@@ -11,6 +12,10 @@
             </div>
             <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
             <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+            <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
                 <li class="nav-item">
                 <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
                 </li>
@@ -19,6 +24,8 @@
                 </li>
                 <li class="nav-item mx-2">
                 <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</>
+                </li>
+                <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
                 </li>
             </ul>
             <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
@@ -29,7 +36,9 @@
             </div>
         </div>
         </div>
-</nav> 
+    </nav> 
+</header>
+
 <body>
     <main>
         <div class="container">
@@ -43,7 +52,40 @@
                     {{/each}}
                 </section>
                 </div>
-                <div class="row" style="justify-content: center;">
+                {{#if loggedIn}}
+                <div style="justify-content: center;">
+                <button type="button" class='btn btn-outline-white btn-dark btn-submit' data-bs-toggle="modal" data-bs-target="#reviewModal" style="font-family: Poppins; border-radius: 0; margin-right: 20%; ">Submit a review!</button>
+                </div>
+                {{/if}}
+                   <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write your review!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form> 
+                        <div class="form-group">
+                            <label for="subject" style="font-family: Poppins; color: var(--dark-green-color)">Name</label>
+                            <input type="name" class="form-control" id="nameInput" aria-describedby="reviewnameInput" placeholder="Write your name" style="text-align: left; margin-bottom: 2%;">
+                        </div>
+                        <div class="md-form">
+                            <label for="" style="font-family: Poppins; color: var(--dark-green-color)">Write your review!</label>
+                            <textarea type="text" id="revInput" name="review" row="3" class="form-control md-textarea" style="""font-family: Poppins; color: var(--grey-color)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin: 3%;" id="reviewSubmit">Submit</button>
+                    </form>
+                </div>
+                {{!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+                {{!-- <div class="row" style="justify-content: center;">
                     <div class="col-md-9 mb-md-0 mb-5">
                         <form id="reviewsform">
                             
@@ -68,11 +110,8 @@
                             </div>
                         </form>
                     </div>
-                    <div>
-
-                    </div>
                 </div>
             </section>
-        </div>
+        </div> --}}
     </main>
 </body>
