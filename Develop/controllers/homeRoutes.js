@@ -4,9 +4,8 @@ const { Users, Search, Offer, Review } = require('../model');
 
 const router = require('express').Router();
 
-//const withAuth = require('../utils/auth');
 
-//GET REVIEWS
+//RENDER HOMEPAGE, GET REVIEWS
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data

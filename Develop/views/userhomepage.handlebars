@@ -35,7 +35,7 @@
 <body>           
     <main>
       <div class="bg-home-container"></div>
-      <div class='container text-center'>
+      <div class='container text-center' style="margin-top:4%">
         <div class='row align-items-start'>
           <div class='col-5'>
             <div class="bg-header"></div>
@@ -48,7 +48,13 @@
           <h3 class="display-3" style='text-align:center; font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>What suits you best</h2>
           <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
       </div>
+
       <form class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
+
+
+      {{!-- DROPDOWNS --}}
+      <div class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
+
         <div class="col" style="align-items: center; padding">
           <div class="btn-group" style="align-items: center;">
             <button id="typeDropDown" class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Poppins;">
@@ -88,6 +94,7 @@
           </div>
         </div>
 
+
         <div class="col" style="align-items: center; padding">
           <div class="btn-group" style="align-items: center;">
             <button id="submitSearchBtn" class="btn btn-secondary btn-dropdown" type="button" aria-expanded="false" style="font-family: Poppins;">
@@ -96,6 +103,9 @@
           </div>
         </div>
       </form>
+
+      </div>
+      {{!-- DROPDOWNS --}}
 
           {{!-- ximena  --}}
           {{#each homes}}
