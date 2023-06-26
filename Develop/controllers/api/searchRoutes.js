@@ -4,7 +4,6 @@ const { Sequelize } = require('sequelize');
 const { Users, Search, Offer, Review } = require('../../model');
 const router = require('express').Router();
 
-
 // var newSearch;
 // //Make a post
 // router.post('/', async (req, res) => {
@@ -20,7 +19,6 @@ const router = require('express').Router();
 //         res.status(500).json(err);
 //     }
 // })
-s
 
 // //GET request to display search data
 // //api/search
@@ -44,7 +42,6 @@ s
 //         }
 //     }
 // });
-
 
 // router.get('/', async (req, res) => {
 //     console.log(req.session)
