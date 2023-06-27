@@ -46,9 +46,12 @@
               Location
             </button>
             <ul class="dropdown-menu location_menu" aria-labelledby="locationDropDown">
-              <li><a class="dropdown-item item-location" id="A">Gustavo A. Madero</a></li>
-              <li><a class="dropdown-item item-location" id="B">Cuahutemoc</a></li>
-              <li><a class="dropdown-item item-location" id="C">Coyoacán</a></li>
+              {{#each drpdwnOpts}}
+                <li><a class="dropdown-item item-location" id="A">{{this}}</a></li>
+              {{/each}}
+              
+              {{!-- <li><a class="dropdown-item item-location" id="B">Cuahutemoc</a></li>
+              <li><a class="dropdown-item item-location" id="C">Coyoacán</a></li> --}}
             </ul>
           </div>
         </div>
