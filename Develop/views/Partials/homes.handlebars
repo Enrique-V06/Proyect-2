@@ -1,21 +1,38 @@
 <div class='col'>
-  <div class='card' style='width: 18rem; margin-bottom: 2rem; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);'>
-    {{!-- box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); --}}
-    <img src='{{image}}' class='card-img-top' alt="Home Image" style="max-width: 284px; max-height: 191px" />
+  <div
+    class='card'
+    style='width: 18rem; margin-bottom: 2rem; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);'
+  >
+    {{! box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }}
+    <img
+      src='{{image}}'
+      class='card-img-top'
+      alt='Home Image'
+      style='max-width: 284px; max-height: 191px'
+    />
     <div class='card-body'>
-      <h5 style="color:#124633; margin-bottom:0%" class='card-title'>{{user.userName}}'s  {{typeOfHome}}</h5>
+      <h5
+        style='color:#124633; margin-bottom:0%'
+        class='card-title'
+      >{{user.userName}}'s {{typeOfHome}}</h5>
       <h6 class='card-title'>in {{location}}</h6>
-      <p style=" margin-bottom:0%;"><b>Looking for {{roomies}}  roomies</b> </p>
+      <p style=' margin-bottom:0%;'><b>Looking for {{roomies}} roomies</b> </p>
       <p>{{pet}}</p>
-      
-      <div class="card-footer" style="margin-bottom:5%">
-      {{!-- <div style="padding:1%; text-align: left; border: 1px solid #082e21; border-radius: 4px;"> --}}
-        <b style="color:#124633;"> Owner says:</b> {{message}}
-      {{!-- </div> --}}
-      </div>
-            <a style="margin-bottom:3%" href="mailto:{{user.email}}" class="btn btn-primary btn-more-info">Contact</a><br>
 
-      <small style="padding-right:60%; color: grey">An hour ago</small>
+      <div class='card-footer' style='margin-bottom:5%'>
+        {{! <div style="padding:1%; text-align: left; border: 1px solid #082e21; border-radius: 4px;"> }}
+        <b style='color:#124633;'> Owner says:</b>
+        {{message}}
+        {{! </div> }}
+      </div>
+      <a
+        style='margin-bottom:3%'
+        href='mailto:{{user.email}}'
+        class='btn btn-primary btn-more-info'
+      >Contact</a><br />
+
+      <small style='color: grey;'>Created on:
+        <br />{{date}}</small>
 
     </div>
   </div>

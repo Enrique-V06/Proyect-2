@@ -5,9 +5,7 @@ const dayjs = require('dayjs');
 // --multer dependency --
 const multer = require('multer');
 const withAuth = require('../../utils/auth');
-const {
-  Offer,
-} = require('../../model');
+const { Offer } = require('../../model');
 
 const storage = multer.diskStorage({
   destination: 'public/images',
@@ -41,7 +39,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const { body } = req;
     const { file } = req;
     const name = file.filename;
- 
+
     console.log('Ruta de imagen', file.filename);
     console.log('IMAGE NAME ON ROUTE', body);
     const path = `/images/${name}`;
@@ -56,6 +54,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
       typeOfHome: req.body.typeOfHome,
       image: path,
       pet: req.body.pet,
+      date: now,
       user_id: req.session.user_id,
       roomies: req.body.roomies,
       message: req.body.message,
@@ -79,7 +78,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
   } catch (err) {
     console.log(
       err,
-      'Something happened in the /upload post route, better go check it out!',
+      'Something happened in the /upload post route, better go check it out!'
     );
   }
 });
