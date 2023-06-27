@@ -6,13 +6,17 @@ const bcrypt = require('bcrypt');
 
 // /api/profile/
 router.get('/', async (req, res) => {
-  try {
-    console.log("-----------GET REQ a user/profile /")
-    const user = req.session.user;
-    console.log("---------------------- user: ", user)
-    res.render('profile', {user});
-  } catch (err) {
-    res.status(500).json(err);
+  if (!req.session.loggedIn) {
+    res.redirect('/');
+  } else {
+    try {
+      console.log("-----------GET REQ a user/profile /")
+      const user = req.session.user;
+      console.log("---------------------- user: ", user)
+      res.render('profile', {user});
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
 });
 
