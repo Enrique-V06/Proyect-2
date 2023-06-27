@@ -82,6 +82,16 @@ body::-webkit-scrollbar {
     z-index: -10;
 }
 
+.bg-contact-us {
+    position: absolute;
+    width: 70vw;
+    height: 42vh;
+    left: 0vw;
+    top: 0vh;
+    background: var(--light-green-color);
+    z-index: -10;
+}
+
 /* Buttons CSS*/
 
 .btn-signup {
