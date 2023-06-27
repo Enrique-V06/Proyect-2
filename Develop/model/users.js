@@ -35,7 +35,7 @@ Users.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { len: [2, 20] },
+      validate: { len: [2, 60] },
     },
   },
   {
@@ -44,10 +44,6 @@ Users.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      async beforeUpdate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      }
     },
     sequelize,
     timestamps: false,
