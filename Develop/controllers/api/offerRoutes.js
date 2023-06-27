@@ -30,24 +30,27 @@ const upload = multer({ storage });
 //   fileFilter: multerFilter,
 // });
 
-router.post('/upload', upload.single('image'), (req, res) => {
+router.post('/upload', upload.single('image'), async (req, res) => {
+  console.log('REQUEST OBJ', req.session);
   try {
-    console.log('Holiwis');
     const body = req.body;
     const file = req.file;
     const name = file.filename;
     console.log('Ruta de imagen', file.filename);
     console.log('IMAGE NAME ON ROUTE', body);
-    const path = `public/images/${name}`;
+    const path = `/images/${name}`;
     console.log('PATH', path);
     // alert(path);
-    const offerData = Offer.create({
+    const offerData = await Offer.create({
       location: req.body.location,
       typeOfHome: req.body.typeOfHome,
       image: path,
       pet: req.body.pet,
+      user_id: req.session.user_id,
     });
+    console.log('OFFER DATA', offerData);
 
+    return res.status(200).send('offer created');
     // Offer.save((err) => {
     //   if (err) {
     //     console.log('Indeed there was an error', err);

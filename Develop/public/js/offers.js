@@ -13,7 +13,6 @@ function sub(location) {
     //let fileData = document.getElementById('formFile').value;
     const fileInput = document.querySelector('input[type="file"]');
     const image = fileInput.files[0];
-    const formData = new FormData();
 
     //console.log('FILE DATA :', fileData);
     let pet = offerPetFriendly.checked;
@@ -24,11 +23,12 @@ function sub(location) {
       }
     }
 
-    console.log('Type of Home  :', typeOfHome);
-    console.log('Location :', location);
-    console.log('Pet Friendly :', pet);
-    console.log('File data :', image);
+    // console.log('Type of Home  :', typeOfHome);
+    // console.log('Location :', location);
+    // console.log('Pet Friendly :', pet);
+    // console.log('File data :', image);
 
+    const formData = new FormData();
     formData.append('location', location);
     formData.append('typeOfHome', typeOfHome);
     formData.append('image', image);
@@ -40,9 +40,10 @@ function sub(location) {
         body: formData,
       });
 
+      console.log('RES', response);
       if (response.ok) {
         alert('RESPONSE WAS GOOD');
-        //document.location.replace('/api/profile');
+        document.location.replace('/api/profile');
       } else {
         alert('Failed to create Offer (offers.js)');
       }
