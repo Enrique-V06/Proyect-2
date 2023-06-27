@@ -1,10 +1,11 @@
 // const { Review } = require('../model');
 const { Sequelize } = require('sequelize');
-const { Users, Search, Offer, Review } = require('../model');
-
 const router = require('express').Router();
+const {
+  Users, Search, Offer, Review,
+} = require('../model');
 
-//RENDER HOMEPAGE, GET REVIEWS
+// RENDER HOMEPAGE, GET REVIEWS
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -20,7 +21,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//CONTACT
+// CONTACT
 // http://localhost:3001/contact
 router.get('/contact', async (req, res) => {
   try {
@@ -30,7 +31,7 @@ router.get('/contact', async (req, res) => {
   }
 });
 
-//REVIEWS
+// REVIEWS
 // http://localhost:3001/reviews
 router.get('/reviews', async (req, res) => {
   try {
@@ -72,7 +73,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-//LOGIN
+// LOGIN
 // http://localhost:3001/login
 router.post('/login', async (req, res) => {
   try {
@@ -106,7 +107,6 @@ router.post('/login', async (req, res) => {
       req.session.user_id = dbUserData.id;
 
       req.session.search = false;
-
 
       res
         .status(200)

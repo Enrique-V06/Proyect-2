@@ -1,3 +1,5 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
@@ -12,7 +14,7 @@ if (process.env.JAWSDB_URL) {
       host: process.env.HOST,
       dialect: 'mysql',
       port: 3306,
-    }
+    },
   );
 }
 

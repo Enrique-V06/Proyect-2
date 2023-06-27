@@ -1,16 +1,20 @@
-const { Users, Search, Offer, Review } = require('../../model');
+/* eslint-disable no-shadow */
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
 const path = require('path');
 // --multer dependency --
 const multer = require('multer');
+const withAuth = require('../../utils/auth');
+const {
+  Users, Search, Offer, Review,
+} = require('../../model');
+
 const storage = multer.diskStorage({
   destination: 'public/images',
   filename: (req, file, cb) => {
-    //const fileName = file.originalname.split('.');
+    // const fileName = file.originalname.split('.');
     // console.log('inside Multer diskStorage', fileName[0]);
     // const finalFileName = fileName[0]
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
     const extension = path.extname(file.originalname);
     cb(null, uniqueSuffix + extension);
   },
@@ -33,8 +37,8 @@ const upload = multer({ storage });
 router.post('/upload', upload.single('image'), async (req, res) => {
   console.log('REQUEST OBJ', req.session);
   try {
-    const body = req.body;
-    const file = req.file;
+    const { body } = req;
+    const { file } = req;
     const name = file.filename;
     console.log('Ruta de imagen', file.filename);
     console.log('IMAGE NAME ON ROUTE', body);
@@ -67,12 +71,12 @@ router.post('/upload', upload.single('image'), async (req, res) => {
   } catch (err) {
     console.log(
       err,
-      'Something happened in the /upload post route, better go check it out!'
+      'Something happened in the /upload post route, better go check it out!',
     );
   }
 });
 
-//const upload = multer({ dest: 'public/images' });
+// const upload = multer({ dest: 'public/images' });
 
 // router.post('/multerTest', upload.single('myFile'), (req, res) => {
 //   console.log('IMAGE STRING', req.file);
