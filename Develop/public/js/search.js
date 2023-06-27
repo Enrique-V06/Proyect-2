@@ -1,4 +1,5 @@
-
+/* eslint-disable no-undef */
+/* eslint-disable func-names */
 console.log('ON SEARCH JS');
 let type;
 let loc;
@@ -10,38 +11,37 @@ let pet;
     document.getElementById('locationDropDown').textContent = this.innerHTML;
     loc = this.innerHTML;
   });
-})();
+}());
 
 (function () {
   $('.item-pet').on('click', function () {
     document.getElementById('petDropDown').textContent = `Pet Friendly: ${this.innerHTML}`;
     pet = this.id; // 0 for false, 1 for true
   });
-})();
+}());
 
-(function (){
-    $('.item-type').on('click', function () { 
-    type = this.innerHTML; 
-    document.getElementById("typeDropDown").textContent=this.innerHTML;
-    });
-})();
+(function () {
+  $('.item-type').on('click', function () {
+    type = this.innerHTML;
+    document.getElementById('typeDropDown').textContent = this.innerHTML;
+  });
+}());
 
-// FOR GET 
+// FOR GET
 const dropdownMenu = document.querySelector('#submitSearchBtn');
 dropdownMenu.addEventListener('click', async () => {
-  console.log("Click submit search")
-  const url= `/api/search?param1=${loc}&param2=${type}&param3=${pet}`;
+  console.log('Click submit search');
+  const url = `/api/search?param1=${loc}&param2=${type}&param3=${pet}`;
   document.location.replace(url);
 });
 
-
-// FOR POST 
+// FOR POST
 // const dropdownMenu = document.querySelector('#submitSearchBtn');
 // dropdownMenu.addEventListener('click', async () => {
 //   console.log("Click submit search")
 //   const srch = {
 //     loc: loc,
-//     type: type, 
+//     type: type,
 //     pet: pet,
 //   }
 //   console.log("salida: ",srch)
@@ -59,12 +59,5 @@ dropdownMenu.addEventListener('click', async () => {
 //   //   console.log("back")
 //   //   console.log(data);
 //   // })
-    
+
 // });
-
-
-
-
-
-
-
