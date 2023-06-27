@@ -4,7 +4,6 @@ let type;
 let loc;
 let pet;
 
-
 // ---------RESPONSIVE DROPDOWNS
 (function () {
   $('.item-location').on('click', function () {

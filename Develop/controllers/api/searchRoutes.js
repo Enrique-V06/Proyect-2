@@ -4,7 +4,9 @@ const { Sequelize } = require('sequelize');
 const { Users, Search, Offer, Review } = require('../../model');
 const router = require('express').Router();
 
+
 //Make a post
+
 // router.post('/', async (req, res) => {
 //   console.log("---------------------------POSTTTTTTT")
 //   console.log("REQ.BODY: ")
@@ -73,8 +75,7 @@ router.get('/', async (req, res) => {
     const param3 = req.query.param3;
     console.log("QUERY PARAMS: ")
     console.log("Param1: ", param1, "Param2: ", param2, "Param3: ", param3)
-
-
+    
     try {
       // --------------------
       let dbSrchHomeData;

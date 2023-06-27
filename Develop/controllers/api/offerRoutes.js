@@ -7,6 +7,9 @@ const multer = require('multer');
 const storage = multer.diskStorage({
   destination: 'public/images',
   filename: (req, file, cb) => {
+    //const fileName = file.originalname.split('.');
+    // console.log('inside Multer diskStorage', fileName[0]);
+    // const finalFileName = fileName[0]
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
     const extension = path.extname(file.originalname);
     cb(null, uniqueSuffix + extension);
@@ -32,17 +35,18 @@ router.post('/upload', upload.single('image'), (req, res) => {
     console.log('Holiwis');
     const body = req.body;
     const file = req.file;
-    console.log('Ruta de imagen', file);
+    const name = file.filename;
+    console.log('Ruta de imagen', file.filename);
     console.log('IMAGE NAME ON ROUTE', body);
-    // const path = `public/images/${name}`;
-    //console.log('PATH', req.file);
+    const path = `public/images/${name}`;
+    console.log('PATH', path);
     // alert(path);
-    // const offerData = Offer.create({
-    //   location: req.body.location,
-    //   typeOfHome: req.body.typeOfHome,
-    //   image: path,
-    //   pet: req.body.pet,
-    // });
+    const offerData = Offer.create({
+      location: req.body.location,
+      typeOfHome: req.body.typeOfHome,
+      image: path,
+      pet: req.body.pet,
+    });
 
     // Offer.save((err) => {
     //   if (err) {

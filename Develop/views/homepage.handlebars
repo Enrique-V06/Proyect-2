@@ -1,48 +1,14 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-4" href="/"
-        style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
-      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
-        style="color: var(--dark-color);">
-        <span class="navbar-toggler-icon" style="color: var(--dark-color);"></span>
-      </button>
-      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header border-bottom" style="color: var(--light-color);">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family: Lora; margin-left: 2%">roomiehunt</h5>
-          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-          <ul class="navbar-nav justify-content-end align-items-center fs-5 flex-grow-1 pe-3">
-            <li class="nav-item">
-
-              <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
-
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link btn-contact" href="/contact"
-                style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-  </nav>
-</header>
+{{> preloader}}
+{{> nologgedNabvar}}
 
   <body>
     <main>
       <div class="bg-home-container"></div>
       <div class='container text-center'>
         <div class='row align-items-start'>
-          <div class='col-5' style="padding-top:10%; transform:translateY(-10vh)">
+          <div class='col-5' style="padding-top:10%;">
             <div class="bg-header"></div>
             <p class="lead" style='top:25vh; text-align:left; max-width:501px; font-size:18px; color:var(var(--grey-color)); font-family: Poppins'>We offer a wide range of roomies and fine locations</p>
-
             <h1 class="display-1" style='text-align: left; font-family: Lora'>Find the best place to live</h1>
             <div class="container" style="padding-top: 5%; display: flex; justify-content: left;">
               <button type="button" class='btn btn-outline-white btn-dark btn-signup' data-bs-toggle="modal" data-bs-target="#signupModal" style="font-family: Poppins; border-radius: 0; margin-right: 20%">Signup</button>
@@ -53,32 +19,33 @@
             <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
           </div>
         </div>
-        <div class='col-6' style="margin-top:10%; margin-left:5%; height:auto">
-          <img src="../images/aesthethicDept.png" class="img-fluid" alt="homepage image">
-        </div>
 
         <!-- Modal LOGIN -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
+          aria-hidden="true" style="margin-top: 5%;">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row" style="padding-top: 2%;">
+                  <h5 class="modal-title" 
+                    style="justify-content:center; text-align:center; font-family:Poppins; color:var(--dark-green-color);">
+                    Login into account</h5>
+                  <p
+                    style="padding-top:2%; justify-content:center; margin: auto; max-width:300px; font-size:14px; font-family:Poppins; color:var(--grey-color)">
+                    Join thousands of roomies waiting for their perfect match</p>
+                </div>
               </div>
               <div class="modal-body">
                 <form>
                   <div class="form-group">
-                    <label for="loginInputEmail" style="margin-right:75%; margin-bottom: 2%;">Email address</label>
-                    <input type="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp"
-                      placeholder="Enter email" style="text-align: left; margin-bottom: 2%;">
+                    <input type="email" class="form-control form-login" id="loginInputEmail" aria-describedby="emailHelp"
+                      placeholder="Enter email" style="font-family:Poppins; text-align: center; margin-bottom: 2%;">
                   </div>
                   <div class="form-group">
-                    <label for="loginInputPassword" style="margin-right:80%; margin-bottom: 2%;">Password</label>
-                    <input type="password" class="form-control" id="loginInputPassword" placeholder="Password"
-                      style="font-family:Poppins; text-align: left; margin-bottom: 2%;">
+                    <input type="password" class="form-control form-login" id="loginInputPassword" placeholder="Password"
+                      style="font-family:Poppins; text-align: center; margin-bottom: 2%;">
                   </div>
-                  <button type="submit" class="btn btn-primary" style="margin: 3%;" id="loginSubmit">Submit</button>
+                  <button type="submit" class="btn btn-primary btn-submit-modal" style="font-family:Poppins; margin: 3%;" id="loginSubmit">Submit</button>
                 </form>
               </div>
               {{!-- <div class="modal-footer">
@@ -104,26 +71,26 @@
                     Join thousands of roomies waiting for their perfect match</p>
                 </div>
               </div>
-              <div class="modal-body" style="border-color: #FFFF;">
+              <div class="modal-body justify-content-center align-items-center" style="border-color: #FFFF;">
                 <form>
                   <div class="form-group">
-                    <input type="username" class="form-control" id="signupInputUserName" aria-describedby="emailHelp"
+                    <input type="username" class="form-control form-signup" id="signupInputUserName" aria-describedby="emailHelp"
                       placeholder="Your Username"
                       style="justify-content: center; text-align: left; align-items: center; margin-bottom: 2%;">
                     {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                       else.</small> --}}
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="signupInputEmail" aria-describedby="emailHelp"
+                    <input type="email" class="form-control form-signup" id="signupInputEmail" aria-describedby="emailHelp"
                       placeholder="Enter email" style=" text-align: left; margin-bottom: 2%; ">
                     {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                       else.</small> --}}
                   </div>
                   <div class="form-group" style="border-radius: 20%;">
-                    <input type="password" class="form-control" id="signupInputPassword" placeholder="Password"
+                    <input type="password" class="form-control form-signup" id="signupInputPassword" placeholder="Password"
                       style="text-align: left; margin-bottom: 2%;">
                   </div>
-                  <button type="submit" class="btn btn-primary" style="margin: 3%;" id="signUpSubmit">Submit</button>
+                  <button type="submit" class="btn btn-primary btn-submit-modal" style="margin: 3%;" id="signUpSubmit">Submit</button>
                 </form>
               </div>
               {{!-- <div class="modal-footer">
@@ -135,8 +102,8 @@
         </div>
 
 
-        <div class="col-12" style="padding-top: 10%;">
-          <h3 class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>
+        <div class="col-12" style="padding-top: 15%;">
+          <h3 id="about-us" class="display-3" style='font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>
             About us</h2>
             <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The
               site for those looking for the best place to live</p>
@@ -199,7 +166,7 @@
 
         <div class="bg-our-services"></div>
         <div class="col-12" style="padding-top:15%;">
-          <h3 class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
+          <h3 id="our-services" class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
             <div class="container text-center" style="display:flex; justify-content:center;">
               <div class="row align-items-start">
                 <div class="col">
@@ -240,7 +207,7 @@
           <div class='col-5' style="width:553px; height:768px;">
             <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
           </div>
-          <div class='col-6' style="transform:translateY(-10vh)">
+          <div id="reviews" class='col-6' style="transform:translateY(-10vh)">
             <h1 class="display-1"
               style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our
               Happy Clients Say</h1>
