@@ -11,8 +11,13 @@ router.get('/', async (req, res) => {
     try {
       console.log("-----------GET REQ a user/profile /")
       const user = req.session.user;
-      console.log("---------------------- user: ", user)
-      res.render('profile', {user});
+      // ---
+      const DBmail = await Users.findAll({where: {userName: user},attributes: ['email']})
+      const profMail = DBmail[0].dataValues.email;
+      // console.log("---------------------- MAIL: ", profMail)
+      // ---
+
+      res.render('profile', {user, profMail});
     } catch (err) {
       res.status(500).json(err);
     }
