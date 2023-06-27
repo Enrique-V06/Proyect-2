@@ -23,9 +23,16 @@ Offer.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-
     image: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+    roomies: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    message: {
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     user_id: {
