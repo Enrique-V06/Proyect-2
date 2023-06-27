@@ -250,7 +250,7 @@
               style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
             >Offer a Home</button>
 
-            <button
+             <button
               type='button'
               class='btn btn-outline-white btn-dark btn-signup btn-sm'
               style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'
@@ -259,11 +259,7 @@
           <!--user image, offer buttons -->
 
 
-          <div class='col-6' >{{!-- style='margin-top:10%' --}}
-
-              style='font-family: Poppins; border-radius: 0; margin-right: auto; margin-left:auto; margin-top:3%;'>Offer
-              a Home</button>
-          </div>
+         
           <div class='col-6'>
 
 
@@ -271,7 +267,7 @@
               style='text-align:center; font-family: Poppins; font-weight: 500; font-size: 40px; color:var(--dark-color); margin-bottom: 6%'>
               {{user}}'s Profile</h3>
 
-            <form style='padding-left:20%; justify-content-center align-items-center'>
+            <form style='padding-left:20%'>
               <div class='mb-3'>
                 <label for='exampleInputEmail1' class='form-label'
                   style='margin-right:80%; font-weight:500;'>User</label>
@@ -284,7 +280,8 @@
                   placeholder='your email address' />
               </div>
 
-              <div class="col-3">
+              <div class='d-grid gap-2 d-md-block button-group'>
+
 
                 <button class='btn btn-dark' type='button' style='padding-left:1.5rem; padding-right:1.5rem;'
                   data-bs-toggle="modal" data-bs-target="#chPwdModal">
@@ -295,7 +292,6 @@
                   data-bs-toggle="modal" data-bs-target="#delAccModal">
                   Delete Account</button>
               </div>
-              
             </form>
           </div>
         </div>
