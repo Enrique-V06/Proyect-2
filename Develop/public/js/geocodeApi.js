@@ -1,3 +1,8 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
 // Open Cage API
 // https://opencagedata.com/api
 
@@ -9,7 +14,7 @@ let searchAdrr;
 
 document
   .getElementById('LocSrchBtn')
-  .addEventListener('click', async function (event) {
+  .addEventListener('click', async (event) => {
     event.stopPropagation();
     event.preventDefault(); // Prevent form submission
     searchAdrr = document.getElementById('mySrch').value;
@@ -18,19 +23,16 @@ document
 
 function getLocationApi(searchAdrr) {
   console.log('   getLocationApi()');
-  var queryURL1 =
-    'https://api.opencagedata.com/geocode/v1/json?q=' +
-    searchAdrr +
-    '&key=2f9dc7b017e04d3daa1a27f20c2b9aad';
+  const queryURL1 = `https://api.opencagedata.com/geocode/v1/json?q=${
+    searchAdrr
+  }&key=2f9dc7b017e04d3daa1a27f20c2b9aad`;
 
   fetch(queryURL1)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      //console.log('data from getLocationApi:');
-      //console.log(data.results);
-      let place = [];
+    .then((response) => response.json())
+    .then((data) => {
+      // console.log('data from getLocationApi:');
+      // console.log(data.results);
+      const place = [];
       data.results.forEach((ob) => {
         place.push(ob.formatted);
       });
@@ -41,26 +43,25 @@ function getLocationApi(searchAdrr) {
 }
 
 let renderOpts = (locs) => {
-  document.querySelector('#Select').textContent =
-    'Select the location that best matches your home:';
+  document.querySelector('#Select').textContent = 'Select the location that best matches your home:';
   for (i = 0; i < 6; i++) {
-    //console.log(locs[i])
+    // console.log(locs[i])
     document.getElementById(`${i}`).textContent = locs[i];
   }
   clickOptions(locs);
 };
 
 function clickOptions(data, optionsNamesArr) {
-  var saveButton = $('.optionsx');
+  const saveButton = $('.optionsx');
   saveButton.on('click', function (event) {
-    //console.log("   clickOptions() on click");
-    var theId = this.textContent;
+    // console.log("   clickOptions() on click");
+    const theId = this.textContent;
     document.querySelector('#Select').textContent = 'Your Location: ';
-    document.getElementById(`0`).textContent = theId;
+    document.getElementById('0').textContent = theId;
     for (i = 1; i < 6; i++) {
       document.getElementById(`${i}`).textContent = '';
     }
-    //console.log("the id!:"+theId);
+    // console.log("the id!:"+theId);
     sub(theId);
   });
 }

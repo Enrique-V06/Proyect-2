@@ -1,16 +1,20 @@
 [
   {
-    "location": "Gustavo A. Madero",
+    "location": "San Miguel de Allende",
     "typeOfHome": "House",
     "pet": true,
     "image": "/images/houseShotTest1.jpeg",
+    "roomies": 1,
+    "message": "Looking for roomie that likes to run",
     "user_id": 1
   },
     {
-    "location": "Gustavo A. Madero",
+    "location": "Peña de Bernal",
     "typeOfHome": "House",
     "pet": true,
     "image": "/images/houseShotTest1.jpeg",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 1
   },
   {
@@ -18,6 +22,8 @@
     "typeOfHome": "Apartment",
     "pet": false,
     "image": "/images/apartmentShotTest1.png",
+    "roomies": 3,
+    "message": "",
     "user_id": 2
   },
     {
@@ -25,6 +31,8 @@
     "typeOfHome": "House",
     "pet": true,
     "image": "/images/apartmentShotTest1.png",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 2
   },
     {
@@ -32,6 +40,8 @@
     "typeOfHome": "Apartment",
     "pet": true,
     "image": "/images/apartmentShotTest1.png",
+    "roomies": 1,
+    "message": "Old roomie moving out. Looking for girl roomie.",
     "user_id": 2
   },
       {
@@ -39,13 +49,17 @@
     "typeOfHome": "Apartment",
     "pet": true,
     "image": "/images/apartmentShotTest1.png",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 3
   },
   {
-    "location": "Cuahutemoc",
+    "location": "Veraruz",
     "typeOfHome": "House",
     "pet": false,
     "image": "/images/houseShotTest2.png",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 3
   },
     {
@@ -53,13 +67,17 @@
     "typeOfHome": "House",
     "pet": false,
     "image": "/images/houseShotTest2.png",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 3
   },
   {
-    "location": "Cuahutemoc",
+    "location": "Vista del Valle",
     "typeOfHome": "Apartment",
     "pet": false,
     "image": "/images/houseShotTest2.png",
+    "roomies": 2,
+    "message": "Need roomie asap.",
     "user_id": 3
   }
 ]
