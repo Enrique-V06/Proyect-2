@@ -13,11 +13,10 @@ router.get('/', async (req, res) => {
   } else {
     console.log("loged!")
     const user = req.session.user;
-    const searchh = req.session.search
+    const searchh = false;
     //---------------------------
     try {
-      const dbHomeData = await Offer.findAll(
-      );
+      const dbHomeData = await Offer.findAll({order: [Sequelize.fn('RAND')]}); //
       console.log("-------------dbHomeData: ", dbHomeData);
 
       const homes = dbHomeData.map((home) =>
