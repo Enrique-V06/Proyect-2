@@ -3,63 +3,63 @@
     "location": "Gustavo A. Madero",
     "typeOfHome": "House",
     "pet": true,
-    "image": "public/images/houseShotTest1.jpeg",
+    "image": "/images/houseShotTest1.jpeg",
     "user_id": 1
   },
     {
     "location": "Gustavo A. Madero",
     "typeOfHome": "House",
     "pet": true,
-    "image": "public/images/houseShotTest1.jpeg",
+    "image": "/images/houseShotTest1.jpeg",
     "user_id": 1
   },
   {
     "location": "Coyoacán",
     "typeOfHome": "Apartment",
     "pet": false,
-    "image": "public/images/apartmentShotTest1.png",
+    "image": "/images/apartmentShotTest1.png",
     "user_id": 2
   },
     {
     "location": "Coyoacán",
     "typeOfHome": "House",
     "pet": true,
-    "image": "public/images/apartmentShotTest1.png",
+    "image": "/images/apartmentShotTest1.png",
     "user_id": 2
   },
     {
     "location": "Coyoacán",
     "typeOfHome": "Apartment",
     "pet": true,
-    "image": "public/images/apartmentShotTest1.png",
+    "image": "/images/apartmentShotTest1.png",
     "user_id": 2
   },
       {
     "location": "Coyoacán",
     "typeOfHome": "Apartment",
     "pet": true,
-    "image": "public/images/apartmentShotTest1.png",
+    "image": "/images/apartmentShotTest1.png",
     "user_id": 2
   },
   {
     "location": "Cuahutemoc",
     "typeOfHome": "House",
     "pet": false,
-    "image": "public/images/houseShotTest2.png",
+    "image": "/images/houseShotTest2.png",
     "user_id": 3
   },
     {
     "location": "Cuahutemoc",
     "typeOfHome": "House",
     "pet": false,
-    "image": "public/images/houseShotTest2.png",
+    "image": "/images/houseShotTest2.png",
     "user_id": 3
   },
   {
     "location": "Cuahutemoc",
     "typeOfHome": "Apartment",
     "pet": false,
-    "image": "public/images/houseShotTest2.png",
+    "image": "/images/houseShotTest2.png",
     "user_id": 3
   }
 ]
