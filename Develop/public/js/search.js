@@ -29,8 +29,20 @@ let pet;
 // FOR GET 
 const dropdownMenu = document.querySelector('#submitSearchBtn');
 dropdownMenu.addEventListener('click', async () => {
+  let url;
   console.log("Click submit search")
-  const url= `/api/search?param1=${loc}&param2=${type}&param3=${pet}`;
+  if (loc && type && pet){
+    console.log("los 3")
+    url= `/api/search?param1=${loc}&param2=${type}&param3=${pet}`;
+  } else if (loc && type){
+    console.log("solo 2")
+    url= `/api/search?param1=${loc}&param2=${type}`
+  } else if (loc){
+    url= `/api/search?param1=${loc}`
+  } else if (type){
+    url= `/api/search?param1=${type}`
+  }
+  // url= `/api/search?param1=${loc}&param2=${type}&param3=${pet}`;
   document.location.replace(url);
 });
 

@@ -97,20 +97,38 @@ router.get('/', async (req, res) => {
           }
         ); 
       } else if (param1) {
-        console.log("solo loc")
-        dbSrchHomeData = await Offer.findAll(
-          { where: {location: param1}}
+        if (param1== "House" || param1== "Apartment"){
+          console.log("solo type")
+          dbSrchHomeData = await Offer.findAll(
+          { where: {typeOfHome: param1}}
         ); 
-      } else if (param2) {
-        console.log("solo type")
-        dbSrchHomeData = await Offer.findAll(
-          { where: {location: param2}}
-        ); 
-      }
+        } else {
+
+          console.log("solo loc")
+          dbSrchHomeData = await Offer.findAll(
+            { where: {location: param1}}
+          ); 
+        }
+      } 
       
       console.log(dbSrchHomeData);
+
+      
       const mySrch = dbSrchHomeData.map((offer) => offer.get({ plain: true }));
       console.log("*********serialized: ", mySrch)
+      // let usersArr=[];
+      // mySrch.forEach( async(home, i) =>{
+      //   const userDB = await Users.findByPk(home.user_id);
+      //   const user = userDB.get({ plain: true });
+      //   // console.log("-----------------results of find by PK")
+        
+      //   const uemail = user.email
+      //   console.log("uemail: ", uemail)
+      //   usersArr.push(uemail)
+      // });
+      // console.log("usersArr-------------")
+      // console.log(usersArr)
+
       //---------------------
 
       const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
