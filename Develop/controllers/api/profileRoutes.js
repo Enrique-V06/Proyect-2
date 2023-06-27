@@ -11,8 +11,13 @@ router.get('/', async (req, res) => {
     try {
       console.log("-----------GET REQ a user/profile /")
       const user = req.session.user;
-      console.log("---------------------- user: ", user)
-      res.render('profile', {user});
+      // ---
+      const DBmail = await Users.findAll({where: {userName: user},attributes: ['email']})
+      const profMail = DBmail[0].dataValues.email;
+      // console.log("---------------------- MAIL: ", profMail)
+      // ---
+
+      res.render('profile', {user, profMail});
     } catch (err) {
       res.status(500).json(err);
     }
@@ -31,6 +36,15 @@ router.get('/userOffers', async (req, res) => {
     console.log('IN userOffers route', offerData);
     // Serialize data so the template can read it
     const offers = offerData.map((offer) => offer.get({ plain: true }));
+    
+    offers.forEach(element => {
+      if (!element.pet) {
+        element.pet = 'No Pets Allowed'
+      } else {
+        element.pet = 'This home is Pet Friendly'
+      }
+    });
+
     console.log('SERIALIZED', offers);
     // for (let i = 0; i < offers.length; i++){
     //   const finalOffers = offers.map((offer) => {

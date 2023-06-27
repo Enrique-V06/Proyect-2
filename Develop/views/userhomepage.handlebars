@@ -1,4 +1,6 @@
-{{> preloader}}
+{{#unless searchh}}
+  {{> preloader}}
+{{/unless}}
 {{> loggedNavbar}}
 
 <body>           
@@ -9,14 +11,16 @@
           <div class='col-5'>
             <div class="bg-header"></div>
             <p class="lead" style='top:25vh; text-align: center; max-width:501px; font-size:18px; color:var(var(--grey-color)); font-family: Poppins'>
-              Welcome back <b>{{user}}</b> !</p> 
+              Good to see you <b>{{user}}</b> !</p> 
             {{!-- <h1 class="display-1" style='text-align: center; font-family: Lora'>TITULO TITULO</h1> --}}
           </div>
-
-      <div class="col-12" style="padding-top: 2%;">
+      {{#unless searchh}}
+        <div class="col-12" style="padding-top: 2%;">
           <h3 class="display-3" style='text-align:center; font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>What suits you best</h2>
           <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
       </div>
+      {{/unless}}
+      
 
       <form class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
 
@@ -26,12 +30,12 @@
         <div class="col" style="align-items: center; padding">
           <div class="btn-group" style="align-items: center;">
             <button id="typeDropDown" class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Poppins;">
-              Type of location
+              Type of Home
             </button>
             <ul class="dropdown-menu typeOfHome_menu" aria-labelledby="typeDropDown">
               <li><a class="dropdown-item item-type" data-value="house" id="A">House</a></li>
               <li><a class="dropdown-item item-type" data-value="apartment" id="B">Apartment</a></li>
-              <li><a class="dropdown-item item-type" data-value="Both" id="C">Both</a></li>
+              {{!-- <li><a class="dropdown-item item-type" data-value="Both" id="C">Both</a></li> --}}
             </ul>
           </div>
         </div>
@@ -42,9 +46,12 @@
               Location
             </button>
             <ul class="dropdown-menu location_menu" aria-labelledby="locationDropDown">
-              <li><a class="dropdown-item item-location" id="A">Gustavo A. Madero</a></li>
-              <li><a class="dropdown-item item-location" id="B">Cuahutemoc</a></li>
-              <li><a class="dropdown-item item-location" id="C">Coyoacán</a></li>
+              {{#each drpdwnOpts}}
+                <li><a class="dropdown-item item-location" id="A">{{this}}</a></li>
+              {{/each}}
+              
+              {{!-- <li><a class="dropdown-item item-location" id="B">Cuahutemoc</a></li>
+              <li><a class="dropdown-item item-location" id="C">Coyoacán</a></li> --}}
             </ul>
           </div>
         </div>
@@ -52,12 +59,12 @@
         <div class="col" style="align-items: center;">
           <div class="btn-group" style="align-items: center;">
             <button id="petDropDown" class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Poppins;">
-              Pet friendly
+              Pet Friendly
             </button>
             <ul class="dropdown-menu" aria-labelledby="petDropDown">
               <li><a class="dropdown-item item-pet" id="1">Yes</a></li>
               <li><a class="dropdown-item item-pet" id="0">No</a></li>
-              <li><a class="dropdown-item item-pet" id="C">Both</a></li>
+              {{!-- <li><a class="dropdown-item item-pet" id="C">Both</a></li> --}}
             </ul>
           </div>
         </div>
