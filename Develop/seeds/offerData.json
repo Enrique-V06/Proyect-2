@@ -47,14 +47,14 @@
     "pet": false,
     "image": "public/images/houseShotTest2.png",
     "user_id": 3
-  }
+  },
     {
     "location": "Cuahutemoc",
     "typeOfHome": "House",
     "pet": false,
     "image": "public/images/houseShotTest2.png",
     "user_id": 3
-  }
+  },
   {
     "location": "Cuahutemoc",
     "typeOfHome": "Apartment",
