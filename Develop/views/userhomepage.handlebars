@@ -1,37 +1,6 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-4" href="/api/user" style="font-weight:400; font-size:36px; font-family:Lora; color:var(--dark-color)">roomiehunt</a>
-      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="color: var(--dark-color);">
-        <span class="navbar-toggler-icon" style="color: var(--dark-color);"></span>
-      </button>
-      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header border-bottom" style="color: var(--light-color);">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="font-family: Lora; margin-left: 2%">roomiehunt</h5>
-            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-          <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active btn-home" aria-current="page" href='/api/user' style="font-weight:600; font-size:20px; color:var(--dark-green-color); font-family: Poppins;">Home</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link btn-contact" href="/contact" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Contact</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link btn-contact" href="/reviews" style="font-weight:600; font-size:20px; color:var(--grey-color); font-family: Poppins;">Reviews</a>
-            </li>
-          </ul>
-        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-          <a href="/api/profile"><img 
-          class="nav-link btn-user" 
-          style="width:55px; height:50px; opacity:60%" src="../images/user.png"></a>
-          <a><button class='btn btn-outline-white btn-dark btn-logout' type='submit' id="logOutBtn" style="font-family:Poppins">Log Out</button></a>
-        </div>
-      </div>
-    </div>
-  </nav> 
-</header>
+{{> preloader}}
+{{> loggedNavbar}}
+
 <body>           
     <main>
       <div class="bg-home-container"></div>
@@ -51,7 +20,6 @@
 
       <form class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
 
-
       {{!-- DROPDOWNS --}}
       <div class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
 
@@ -67,13 +35,13 @@
             </ul>
           </div>
         </div>
-      
+
         <div class="col" style="align-items: center;">
           <div class="btn-group" style="align-items: center;">
             <button id="locationDropDown" class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Poppins;">
               Location
             </button>
-            <ul class="dropdown-menu" aria-labelledby="locationDropDown">
+            <ul class="dropdown-menu location_menu" aria-labelledby="locationDropDown">
               <li><a class="dropdown-item item-location" id="A">Gustavo A. Madero</a></li>
               <li><a class="dropdown-item item-location" id="B">Cuahutemoc</a></li>
               <li><a class="dropdown-item item-location" id="C">Coyoacán</a></li>
@@ -87,8 +55,8 @@
               Pet friendly
             </button>
             <ul class="dropdown-menu" aria-labelledby="petDropDown">
-              <li><a class="dropdown-item item-pet" id="A">Yes</a></li>
-              <li><a class="dropdown-item item-pet" id="B">No</a></li>
+              <li><a class="dropdown-item item-pet" id="1">Yes</a></li>
+              <li><a class="dropdown-item item-pet" id="0">No</a></li>
               <li><a class="dropdown-item item-pet" id="C">Both</a></li>
             </ul>
           </div>
@@ -98,132 +66,43 @@
         <div class="col" style="align-items: center; padding">
           <div class="btn-group" style="align-items: center;">
             <button id="submitSearchBtn" class="btn btn-secondary btn-dropdown" type="button" aria-expanded="false" style="font-family: Poppins;">
-              Submit
+              Search Homes
             </button>
           </div>
         </div>
+
       </form>
 
       </div>
-      {{!-- DROPDOWNS --}}
+      {{!-- DROPDOWNS END --}}
 
           {{!-- ximena  --}}
-          {{#each homes}}
-          {{> homes}}
-          {{/each}}
+          {{#if searchh}}
+            {{#each mySrch}}
+            {{> homes}}
+            {{/each}}
+          {{else}}
+            {{#each homes}}
+            {{> homes}}
+            {{/each}}
+          {{/if}}
           {{!-- ximena  --}}
 
-{{!-- 
-          <div class="col-12" style="padding-top: 20%;">
-            <h3 class="display-3" style='text-align:center; font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>About us</h2>
-            <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
-            <div class="container text-center" style='padding-top: 5%; padding-left: 5%'>
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="card" style="width: 24rem; border-color: #FFFF;"
-                    style='display:flex; justify-content: center;'>
-                    <img src="../images/house.png" class="card-img-top" alt="..."
-                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-                    <div class="card-body" id="card-about-us">
 
-                      <p class="card-text"
-                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
-                        Find what best suits you.</p>
-                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                      </small>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="card" style="width: 24rem; border-color: #FFFF;">
-
-                    <img src="../images/roomies.png" class="card-img-top" alt="..."
-                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-
-                    <div class="card-body" id="card-about-us">
-                      <p class="card-text"
-                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
-                        With the best people</p>
-                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                      </small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card" style="width: 24rem; border-color: #FFFF;">
-                    <img src="../images/apoyo.png" class="card-img-top" alt="..."
-                      style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-                    <div class="card-body" id="card-about-us">
-                      <p class="card-text"
-                        style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>
-                        24/7 Support</p>
-                      <small style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>"Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna.”
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="bg-our-services"></div>
-        <div class="col-12" style="padding-top:15%;">
-          <h3 class="display-3" style="padding-bottom:5%; font-family:Lora; font-size:56px;">Our Services</h2>
-            <div class="container text-center" style="display:flex; justify-content:center;">
-              <div class="row align-items-start">
-                <div class="col">
-                  <div class="card" style="width: 18rem;">
-                    <img src="../images/find-a-roomie.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-
-                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find
-                        a Roommate</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="card align-self-end" style="margin-top:15%; width: 18rem;">
-                    <img src="../images/find-a-place.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Find
-                        a Place</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card" style="width: 18rem;">
-                    <img src="../images/share-a-place.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text" style="font-family:Lora; font-size:24px; color:var(--dark-green-color)">Share
-                        a Place</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> --}}
-
+          {{!-- REVIEWS  --}}
           <div class='row align-items-start' style="padding-top:20%">
             <div class='col-5' style="width:553px; height:768px;">
               <img src="../images/reviews.jpg" class="img-fluid" alt="homepage image">
             </div>
             <div class='col-6' style="transform:translateY(-10vh)">
-              <h1 class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
+              <h1 id="reviews" class="display-1" style='padding-top:60%; padding-left:10%; text-align:left; font-family:Lora; font-size:56px'>What Our Happy Clients Say</h1>
               <p class="lead" style='margin-top:5%; padding-left:12%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--grey-color); font-family:Poppins'>{{reviews.[0].description}}</p>
               <div class="container" style="display: flex; justify-content: left;">
                 <p class="lead" style='margin-top:5%; padding-left:10%; top:45vh; text-align:left; max-width:450px; font-size:15px; color:var(--dark-green-color); font-family:Poppins; font-weight:600'>{{reviews.[0].name}}</p>
             </div>
           </div>
 
+          {{!-- NEWSLETTER  --}}
           <div class="container" style="padding-top: 20%; margin-bottom: 20%">
             <div class="row" style="max-width: 750px; margin:auto">
               <div class="col-sm-12">

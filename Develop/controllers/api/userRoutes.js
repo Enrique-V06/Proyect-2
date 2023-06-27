@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
   } else {
     console.log("loged!")
     const user = req.session.user;
+    const searchh = req.session.search
     //---------------------------
     try {
       const dbHomeData = await Offer.findAll(
@@ -33,11 +34,10 @@ router.get('/', async (req, res) => {
         }
       });
 
-      // console.log("-------------homes aft: ", homes);
       const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
       const reviews = reviewsData.map((review) => review.get({plain:true}));
-      // console.log('-------------------------test', reviews);
-      res.render('userhomepage', { homes, reviews, user });
+      
+      res.render('userhomepage', {homes, reviews, user, searchh});
       // res.render('userhomepage');
     } catch (err) {
       console.log(err);

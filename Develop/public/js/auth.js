@@ -2,36 +2,7 @@
 console.log("Auth.js file")
 var signUpSubmit = document.querySelector("#signUpSubmit");
 let type; 
-// ----------- Type of user JQuery  
-(function (){
-    var Options = $('.item-type');  //document.querySelectorAll
-    Options.on('click', function () { 
-    type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
-    document.getElementById("typeDropDown").textContent=this.innerHTML;
-      return type;
-    });
-    // return type;
-})();
 
-(function (){
-  var Options = $('.item-location');  //document.querySelectorAll
-  Options.on('click', function () { 
-  type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
-  document.getElementById("locationDropDown").textContent=this.innerHTML;
-    return type;
-  });
-  return type;
-})();
-
-(function (){
-  var Options = $('.item-pet');  //document.querySelectorAll
-  Options.on('click', function () { 
-  type =(this.id); // A= looking for a home, B=Looking for a Roomie Change: id homepage.handlebars
-  document.getElementById("petDropDown").textContent=this.innerHTML;
-    return type;
-  });
-  return type;
-})();
 
 //SIGNUP
 signUpSubmit.addEventListener("click", async (event) => {
@@ -51,7 +22,6 @@ signUpSubmit.addEventListener("click", async (event) => {
         console.log("back")
         console.log(response.ok);
         if (response.ok) {
-            console.log("in if auth")
             document.location.replace('/api/user');
             // const lemein = await fetch('/api/users/in')
             // .then(response => response.text())
