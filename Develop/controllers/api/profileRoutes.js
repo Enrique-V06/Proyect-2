@@ -1,9 +1,7 @@
 /* eslint-disable no-param-reassign */
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-const {
-  Users, Offer,
-} = require('../../model');
+const { Users, Offer } = require('../../model');
 const { beforeUpdate } = require('../../model/users');
 
 // /api/profile/
@@ -15,7 +13,10 @@ router.get('/', async (req, res) => {
       console.log('-----------GET REQ a user/profile /');
       const { user } = req.session;
       // ---
-      const DBmail = await Users.findAll({ where: { userName: user }, attributes: ['email'] });
+      const DBmail = await Users.findAll({
+        where: { userName: user },
+        attributes: ['email'],
+      });
       const profMail = DBmail[0].dataValues.email;
       // console.log("---------------------- MAIL: ", profMail)
       // ---
@@ -31,8 +32,15 @@ router.get('/', async (req, res) => {
 // http://localhost:3001/userOffers
 router.get('/userOffers', async (req, res) => {
   try {
+    const { user } = req.session;
     const offerData = await Offer.findAll({
       where: { user_id: req.session.user_id },
+      include: [
+        {
+          model: Users,
+          attributes: ['email', 'userName'],
+        },
+      ],
     });
 
     console.log('IN userOffers route', offerData);
@@ -54,7 +62,7 @@ router.get('/userOffers', async (req, res) => {
     //   })
     // }
 
-    res.render('userOffers', { offers, loggedIn: req.session.loggedIn });
+    res.render('userOffers', { offers, loggedIn: req.session.loggedIn, user });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -77,7 +85,7 @@ router.put('/:email', async (req, res) => {
         where: {
           email: req.params.email,
         },
-      },
+      }
     );
     res.status(200).json();
   } catch (err) {

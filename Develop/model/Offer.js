@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Offer extends Model { }
+class Offer extends Model {}
 
 Offer.init(
   {
@@ -35,6 +35,10 @@ Offer.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -49,7 +53,7 @@ Offer.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'offer',
-  },
+  }
 );
 
 module.exports = Offer;
