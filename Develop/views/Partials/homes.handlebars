@@ -1,4 +1,4 @@
-    {{!-- <div class="container text-center" style='padding-top: 5%; padding-left: 5%; align-items: center;'>
+{{!-- <div class="container text-center" style='padding-top: 5%; padding-left: 5%; align-items: center;'>
         <div class="row align-items-center">
             <div class="col">
                 <div class="card" style="width: 24rem; border-color: #FFFF;" style='display:flex; justify-content: center;'>
@@ -14,17 +14,22 @@
         </div>
     </div> --}}
 
-<div class="card border-secondary mb-3" style="max-width: 18rem;">
+<div class='card border-secondary mb-3' style='max-width: 18rem;'>
 
-  <div class="card-body">
-    <img src="" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
+  <div class='card-body'>
+    <img
+      src='{{image}}'
+      class='card-img-top'
+      alt='...'
+      style='margin-left:35%; margin-top:2%; width:100px; height:100px'
+    />
   </div>
   <div class="card-footer">
     <h5 class="card-title">{{typeOfHome}}</h5>
     <h6 class="card-title">in {{location}}</h6>
     <p class="card-text">Looking for 2 roomies</p>
     <p class="card-text">{{pet}}</p>
-    <button class="btn btn-primary btn-more-info">Contact owner</button>
+    <a href="mailto:contact@roomiehunt.com" class="btn btn-primary btn-more-info">Contact owner</a>
   </div>
 
 </div>

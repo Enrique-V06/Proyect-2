@@ -2,7 +2,7 @@ const { Users, Search, Offer, Review } = require('../../model');
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const path = require('path');
-
+// --multer dependency --
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: 'public/images',
