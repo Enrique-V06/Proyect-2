@@ -14,11 +14,13 @@
                     {{/each}}
                 </section>
                 </div>
+                <div >
                 {{#if loggedIn}}
-                <div style="justify-content: center;">
-                <button type="button" class='btn btn-outline-white btn-dark btn-submit' data-bs-toggle="modal" data-bs-target="#reviewModal" style="font-family: Poppins; border-radius: 0; margin-right: 20%; ">Submit a review!</button>
+                <div class="rev-btn" style="text-align: right; margin:20px">
+                <button type="button" class='btn btn-outline-white btn-dark btn-submit' data-bs-toggle="modal" data-bs-target="#reviewModal" style="font-family: Poppins;  margin-right: 20%;">Submit a review!</button>
                 </div>
                 {{/if}}
+                </div>
                 <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -42,8 +44,10 @@
             </div>
         </div>
     </div>
+    <div>
+             
     </main>
-
+   
 <script src="../js/reviewSubmit.js"></script>
 
 </body>
