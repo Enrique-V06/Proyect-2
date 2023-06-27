@@ -13,18 +13,15 @@ router.get('/', async (req, res) => {
   } else {
     console.log("loged!")
     const user = req.session.user;
-    const searchh = req.session.search
+    const searchh = false;
     //---------------------------
     try {
-      const dbHomeData = await Offer.findAll(
-      );
+      const dbHomeData = await Offer.findAll({order: [Sequelize.fn('RAND')]}); //
       console.log("-------------dbHomeData: ", dbHomeData);
 
       const homes = dbHomeData.map((home) =>
         home.get({ plain: true })
       );
-
-      // console.log("-------------homes b4: ", homes);
 
       homes.forEach(element => {
         if (!element.pet) {
@@ -33,11 +30,18 @@ router.get('/', async (req, res) => {
           element.pet = 'This home is Pet Friendly'
         }
       });
+      //-----------------
+      
+      const DBdrpdwnOpts = await Offer.findAll({attributes: ['location']})
+      const SrlzdrpdwnOpts = DBdrpdwnOpts.map((locs) => locs.get({plain:true}));
+      const drpdwnOpts = [...new Set(SrlzdrpdwnOpts.map(item => item.location))];
+      console.log("................Dropdown opts: ", drpdwnOpts)
+      //-----------------
 
       const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
       const reviews = reviewsData.map((review) => review.get({plain:true}));
       
-      res.render('userhomepage', {homes, reviews, user, searchh});
+      res.render('userhomepage', {homes, reviews, user, searchh, drpdwnOpts});
       // res.render('userhomepage');
     } catch (err) {
       console.log(err);
@@ -49,45 +53,7 @@ router.get('/', async (req, res) => {
 });
 
 
-// You are SIGNED IN
-// http://localhost:3001/api/user/
-// router.get('/:loc/:type:/pet', async (req, res) => {
-//   if (!req.session.loggedIn) {
-//     res.redirect('/');
-//   } else {
-//     try {
-//       const newSearch = await Offer.findAll(req.params.loc, req.params.typeOfHome, req.params.pet, {
-//         where: {
-//           loc: req.body.location,
-//           typeOfHome: req.body.typeOfHome,
-//           pet: req.body.pet,
-//         }
-//       });
-//       const searchResults = newSearch.map((search) =>
-//         search.get({ plain: true })
-//       );
-//       console.log("This are the personalizaed results", searchResults)
-//       res.render('userhomepage', { searchResults });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   }
-// })
-// router.post('/revsubmit', async (req, res) => {
-//   try {
-//     const dbReviewData = await Review.create({
-//       name: req.body.revName,
-//       description: req.body.revBody,
-//     });
-//     res.status(200).json(dbReviewData);
-//       console.log('response sent', dbReviewData);
-    
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//     console.log('failure: ', res.status);
-//   }
-// });
+
 
 
 
