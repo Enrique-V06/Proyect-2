@@ -4,12 +4,11 @@ const { Users, Search, Offer, Review } = require('../model');
 
 const router = require('express').Router();
 
-
 //RENDER HOMEPAGE, GET REVIEWS
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
+    const reviewsData = await Review.findAll({ order: [Sequelize.fn('RAND')] });
 
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
@@ -39,8 +38,8 @@ router.get('/reviews', async (req, res) => {
 
     // Serialize data so the template can read it
     const reviews = reviewsData.map((review) => review.get({ plain: true }));
-    
-    res.render('reviews', {reviews, loggedIn: req.session.loggedIn});
+
+    res.render('reviews', { reviews, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -55,12 +54,14 @@ router.post('/signup', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-
+    console.log('DB DATA', dbUserData);
     // Set up sessions with a 'loggedIn' variable set to `true`
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user = req.body.username;
+      req.session.user = dbUserData.userName;
+      req.session.user_id = dbUserData.id;
       req.session.search = false;
+
       res.status(200).json(dbUserData);
       console.log('response sent');
     });
@@ -87,7 +88,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Cannot Find your account in our system.' });
       return;
     }
-    
+
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -101,7 +102,11 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user = dbUserData.userName;
+
+      req.session.user_id = dbUserData.id;
+
       req.session.search = false;
+
 
       res
         .status(200)
@@ -135,8 +140,7 @@ router.post('/revsubmit', async (req, res) => {
       description: req.body.revBody,
     });
     res.status(200).json(dbReviewData);
-      console.log('response sent', dbReviewData);
-    
+    console.log('response sent', dbReviewData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
