@@ -158,12 +158,10 @@ body::-webkit-scrollbar {
 }
 
 .card-rev{
-    background-color: var(--light-green-color);
+    background-color: var(--light-color);
     border-radius: 5%;
     margin: 10px;
-    border-style: solid;
-    border-color: #202020;
-    border-width: thin;
+    border-style: solid var(--light-color);
     box-shadow: var(--grey-color) 10px 10px;
 }
 
