@@ -12,8 +12,7 @@
       role='dialog'
       aria-labelledby='exampleModalLabel'
       aria-hidden='true'
-      style="margin-top: 5%;"
-    >
+      style="margin-top: 5%;">
       <div class='modal-dialog' role='document'>
         <div class='modal-content'>
 
@@ -32,6 +31,7 @@
           </div>
 
           <div class='modal-body'>
+            <p>Please provide us with the following details so we can share your home with your future roomie!</p>
             <form class='offer-form'>
               <!--Type OF Home Input-->
               <div class='form-group form-offer' style='margin-bottom: 3%;'>
@@ -63,7 +63,7 @@
               <label
                 for='signupInputUserName'
                 style='text-align: left; margin-top: 4%; margin-bottom: 2%; font-weight:500;'
-              >Pet Friendly
+              >Will you allow pets?
               </label>
 
               <div class='form-check form-switch' style="margin-bottom: 2%;">
@@ -77,16 +77,30 @@
                 <label
                   for='formFile'
                   class='form-label'
-                  style='font-weight:500;'
+                  style='font-weight:500; margin-bottom:0%'
                 >Home Image</label>
+                <p style="margin-bottom:0%">Upload at least one photo of your home.</p>
                 <input class='form-control' type='file' id='formFile' />
               </div>
 
-
-
-              {{!-- XIMENA--}}
-              <label for='signupInputUserName' style='text-align: left; margin-right:80%;font-weight:500;'>Location
+              <div>
+                <label for='numerofroomies' style='width: 250px; text-align: left; margin-bottom: 1%; font-weight:500;'>
+                Number of Roomies 
+                </label>
+                <input id="roomiesNum" class="form-control form-login" placeholder="Roomies"
+                  style="justify-content: center; text-align: left; align-items: center; margin-bottom: 2%; ">
+              </div>
+              <div style="margin-top:4%; margin-bottom:4%;">
+                <label for='numerofroomies' style='width: 250px; text-align: left; margin-bottom: 0%; font-weight:500;'>
+                Message
+                </label>
+                <p style="margin-bottom:0%">You can write a small message for your potential roomies here.</p>
+                <textarea type="text" id="messageroom" name="review" row="3" class="form-control md-textarea" style="""font-family: Poppins; color: var(--grey-color)"></textarea>
+              </div>
+              
+              <label for='signupInputUserName' style='text-align: left; margin-right:80%;font-weight:500; margin-bottom:0%'>Location
               </label>
+              <p>Please search for a location and choose the option that best of your home's.</p>
               <nav class="navbar">
                 <form class="form-inline">
                   <div class="input-group">
@@ -109,8 +123,6 @@
                     <div class="optionsx" id="5"></div>
                     <div class="optionsx" id="6"></div>
                 </div>  
-              {{!-- XIMENA --}}
-
 
               <button
                 type='submit'

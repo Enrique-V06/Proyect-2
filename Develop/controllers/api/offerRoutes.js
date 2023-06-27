@@ -40,6 +40,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const { body } = req;
     const { file } = req;
     const name = file.filename;
+ 
     console.log('Ruta de imagen', file.filename);
     console.log('IMAGE NAME ON ROUTE', body);
     const path = `/images/${name}`;
@@ -51,6 +52,8 @@ router.post('/upload', upload.single('image'), async (req, res) => {
       image: path,
       pet: req.body.pet,
       user_id: req.session.user_id,
+      roomies: req.body.roomies,
+      message: req.body.message,
     });
     console.log('OFFER DATA', offerData);
 

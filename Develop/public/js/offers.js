@@ -15,6 +15,14 @@ function sub(location) {
     // let fileData = document.getElementById('formFile').value;
     const fileInput = document.querySelector('input[type="file"]');
     const image = fileInput.files[0];
+    //----
+    let roomiesNum = document.querySelector('#roomiesNum');
+    let messageroom = document.querySelector('#messageroom');
+    const roomies = roomiesNum.value.trim(); 
+    const message = messageroom.value.trim();
+
+    console.log("--------- ROOMIE & MESSAGE");
+    console.log(roomies, message);
 
     // console.log('FILE DATA :', fileData);
     const pet = offerPetFriendly.checked;
@@ -25,18 +33,16 @@ function sub(location) {
       }
     }
 
-    // console.log('Type of Home  :', typeOfHome);
-    // console.log('Location :', location);
-    // console.log('Pet Friendly :', pet);
-    // console.log('File data :', image);
-
     const formData = new FormData();
     formData.append('location', location);
     formData.append('typeOfHome', typeOfHome);
     formData.append('image', image);
     formData.append('pet', pet);
+    formData.append('roomies', roomies);
+    formData.append('message', message);
 
-    if ((location && typeOfHome && pet) || (location && typeOfHome && !pet)) {
+
+    if ((location && typeOfHome && pet && roomies) || (location && typeOfHome && !pet && roomies)) {
       const response = await fetch('/api/offer/upload', {
         method: 'POST',
         body: formData,
@@ -44,7 +50,6 @@ function sub(location) {
 
       console.log('RES', response);
       if (response.ok) {
-        alert('RESPONSE WAS GOOD');
         document.location.replace('/api/profile');
       } else {
         alert('Failed to create Offer (offers.js)');
