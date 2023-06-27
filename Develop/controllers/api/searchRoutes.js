@@ -3,7 +3,7 @@
 const { Sequelize } = require('sequelize');
 const router = require('express').Router();
 const {
-  Users, Search, Offer, Review,
+  Users, Offer, Review,
 } = require('../../model');
 
 // You made a SEARCH

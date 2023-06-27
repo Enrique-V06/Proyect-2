@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const { Sequelize } = require('sequelize');
 const {
-  Users, Search, Offer, Review,
+  Users, Offer, Review,
 } = require('../../model');
 
 // You are SIGNED IN

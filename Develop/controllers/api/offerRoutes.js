@@ -5,7 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const withAuth = require('../../utils/auth');
 const {
-  Users, Search, Offer, Review,
+  Offer,
 } = require('../../model');
 
 const storage = multer.diskStorage({

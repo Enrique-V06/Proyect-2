@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const {
-  Users, Search, Offer, Review,
+  Users, Offer,
 } = require('../../model');
 const { beforeUpdate } = require('../../model/users');
 
