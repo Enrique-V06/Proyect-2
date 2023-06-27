@@ -16,7 +16,13 @@ router.get('/', async (req, res) => {
     const searchh = false;
     //---------------------------
     try {
-      const dbHomeData = await Offer.findAll({order: [Sequelize.fn('RAND')]}); //
+      const dbHomeData = await Offer.findAll(
+        {order: [Sequelize.fn('RAND')],
+        include: [{
+          model: Users, 
+          attributes: ['email', 'userName'],
+        }]
+        }); //
       console.log("-------------dbHomeData: ", dbHomeData);
 
       const homes = dbHomeData.map((home) =>
