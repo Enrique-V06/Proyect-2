@@ -109,11 +109,17 @@
       {{!-- DROPDOWNS --}}
 
           {{!-- ximena  --}}
-          {{#each mySrch}}
-          {{> homes}}
-          {{/each}}
+          {{#if searchh}}
+            {{#each mySrch}}
+            {{> homes}}
+            {{/each}}
+          {{else}}
+            {{#each homes}}
+            {{> homes}}
+            {{/each}}
+          {{/if}}
           {{!-- ximena  --}}
-          
+
 
         </div>
       </div>

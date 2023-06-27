@@ -112,12 +112,14 @@ router.get('/', async (req, res) => {
       console.log("*********serialized: ", mySrch)
       //---------------------
 
-      // const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
-      // const reviews = reviewsData.map((review) => review.get({plain:true}));
+      const reviewsData = await Review.findAll({order: [Sequelize.fn('RAND')]});
+      const reviews = reviewsData.map((review) => review.get({plain:true}));
       
       req.session.save(() => {
         req.session.search = true;
-        res.render('userhomepageSrch', {mySrch, user }); // reviews, 
+        const searchh = req.session.search;
+        console.log(req.session)
+        res.render('userhomepage', {mySrch, reviews, user, searchh}); // 
       });
 
     } catch (err) {

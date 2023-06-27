@@ -108,9 +108,15 @@
       {{!-- DROPDOWNS END --}}
 
           {{!-- ximena  --}}
-          {{#each homes}}
-          {{> homes}}
-          {{/each}}
+          {{#if searchh}}
+            {{#each mySrch}}
+            {{> homes}}
+            {{/each}}
+          {{else}}
+            {{#each homes}}
+            {{> homes}}
+            {{/each}}
+          {{/if}}
           {{!-- ximena  --}}
 
 
