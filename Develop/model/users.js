@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
 // New Sequelize model for Users
 class Users extends Model {
@@ -50,7 +51,7 @@ Users.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'users',
-  }
+  },
 );
 
 module.exports = Users;

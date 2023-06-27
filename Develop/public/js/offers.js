@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-unused-vars */
 console.log('IN OFFERS:JS');
 // const path = require('path');
 // const fs = require('fs');
@@ -7,10 +9,10 @@ function sub(location) {
   OfferForm.addEventListener('click', async (e) => {
     e.preventDefault();
     // let location = document.querySelector('.locationInput').value.trim();
-    let radioOptions = document.getElementsByName('typeOfHomeRadio');
+    const radioOptions = document.getElementsByName('typeOfHomeRadio');
     let typeOfHome;
-    let offerPetFriendly = document.querySelector('#checkPetFriendly');
-    //let fileData = document.getElementById('formFile').value;
+    const offerPetFriendly = document.querySelector('#checkPetFriendly');
+    // let fileData = document.getElementById('formFile').value;
     const fileInput = document.querySelector('input[type="file"]');
     const image = fileInput.files[0];
     //----
@@ -22,8 +24,8 @@ function sub(location) {
     console.log("--------- ROOMIE & MESSAGE");
     console.log(roomies, message);
 
-    //console.log('FILE DATA :', fileData);
-    let pet = offerPetFriendly.checked;
+    // console.log('FILE DATA :', fileData);
+    const pet = offerPetFriendly.checked;
     for (let i = 0; i < radioOptions.length; i++) {
       if (radioOptions[i].checked) {
         typeOfHome = radioOptions[i].value;
