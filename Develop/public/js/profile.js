@@ -1,16 +1,17 @@
 //Change Password and Delete Account 
-// const bcrypt = require('bcrypt');
 console.log('profile.js file')
 
 var saveChanges = document.querySelector('.changePwSubmit');
 var deleteAccount = document.querySelector('.deleteSubmit');
 
-//Change Password
+//Change Password - WORKING
 saveChanges.addEventListener('click', async (event) => {
     event.preventDefault();
     const email = document.querySelector('#email').value;
     const newPassword = document.querySelector('#newPwd').value;
     const verifyPassword = document.querySelector('#newPwd2').value;
+
+    //Validar longitud aquí también
 
     if (newPassword === verifyPassword){
         const response = await fetch(`/api/profile/${email} `, {
@@ -18,8 +19,13 @@ saveChanges.addEventListener('click', async (event) => {
             body: JSON.stringify({newPassword}),
             headers: { 'Content-Type': 'application/json' },
         })
+        if (response.ok){
+            location.reload('/api/profile');
+        } else {
+            alert(('Password not updated'))
+        }
     } else {
-        alert('Error introducing new password')
+        alert('Passwords do NOT match')
     }
 });
 
@@ -36,7 +42,7 @@ deleteAccount.addEventListener('click', async (event) => {
             headers: { 'Content-Type': 'application/json' }
         })
         if (response.ok) {
-            document.location.replace('/'); //Not working
+            document.location.replace('/');
         } else {
             alert('There was a problem deleting your account');
         }
