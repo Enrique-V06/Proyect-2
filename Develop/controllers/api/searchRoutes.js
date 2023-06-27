@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-param-reassign */
 // New endpoint to display options from personalized search
 
 const { Sequelize } = require('sequelize');

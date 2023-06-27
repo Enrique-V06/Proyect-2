@@ -2,7 +2,7 @@
 const { Sequelize } = require('sequelize');
 const router = require('express').Router();
 const {
-  Users, Search, Offer, Review,
+  Users, Review,
 } = require('../model');
 
 // RENDER HOMEPAGE, GET REVIEWS
