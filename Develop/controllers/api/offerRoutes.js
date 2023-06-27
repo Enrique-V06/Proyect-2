@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
 const router = require('express').Router();
 const path = require('path');
+const dayjs = require('dayjs');
 // --multer dependency --
 const multer = require('multer');
 const withAuth = require('../../utils/auth');
@@ -46,6 +47,10 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     const path = `/images/${name}`;
     console.log('PATH', path);
     // alert(path);
+
+    //import dayjs from 'dayjs' // ES 2015
+    var now = dayjs().format('MM-DD-YYYY');
+    console.log('NOW', now);
     const offerData = await Offer.create({
       location: req.body.location,
       typeOfHome: req.body.typeOfHome,
