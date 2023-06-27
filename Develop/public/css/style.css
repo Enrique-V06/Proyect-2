@@ -243,3 +243,6 @@ body::-webkit-scrollbar {
     }
 }
 
+#deletebtn:hover {
+    color:rgb(143, 29, 29);
+}
