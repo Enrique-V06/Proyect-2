@@ -14,11 +14,13 @@
               Good to see you <b>{{user}}</b> !</p> 
             {{!-- <h1 class="display-1" style='text-align: center; font-family: Lora'>TITULO TITULO</h1> --}}
           </div>
-
-      <div class="col-12" style="padding-top: 2%;">
+      {{#unless searchh}}
+        <div class="col-12" style="padding-top: 2%;">
           <h3 class="display-3" style='text-align:center; font-family: Lora; font-weight: 400; font-size: 56px; color:var(--dark-color)'>What suits you best</h2>
           <p class="lead" style='font-family: Poppins; font-weight: 400; font-size: 18px; color:var(--grey-color)'>The site for those looking for the best place to live</p>
       </div>
+      {{/unless}}
+      
 
       <form class="row align-items-center" style="padding-top: 5%; padding-bottom: 5%; margin-left: 1%">
 
