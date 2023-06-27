@@ -1,19 +1,19 @@
 [
     {
         "name": "Katy",
-        "description": "The house at Cuahutemoc, has an amazing location, with big rooms and clean accomodations!",
+        "description": "The page helped me get a home super quick and is super easy to us!",
         "date_created": "2023-06-21",
         "user_id": 3
     },
     {
         "name": "John",
-        "description": "The location is the best! You can walk to get to Coyoacan's market, Coyoacan's town center, with amazing places to eat! ",
+        "description": "This place is great for finding a home when you have a pet ",
         "date_created": "2023-06-21",
         "user_id": 2
     },
     {
         "name": "Fred",
-        "description": "Sal was an awesome host, he showed me around town and ",
+        "description": "Roomiefinder is super easy to use to offer a place for someone to stay",
         "date_created": "2023-06-21",
         "user_id": 1
     }
