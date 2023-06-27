@@ -1,35 +1,12 @@
-{{!-- <div class="container text-center" style='padding-top: 5%; padding-left: 5%; align-items: center;'>
-        <div class="row align-items-center">
-            <div class="col">
-                <div class="card" style="width: 24rem; border-color: #FFFF;" style='display:flex; justify-content: center;'>
-                    <img src="" class="card-img-top" alt="..." style='margin-left:35%; margin-top:2%; width:100px; height:100px'>
-                        <div class="card-body" id="card-about-us">
-                            <h5 class="card-text" style='margin-left:10%; max-width:280px; font-family:Lora; font-size:24px; color:var(--dark-green-color)'>Type: {{typeOfHome}}</h5>
-                            <p style='font-family: Poppins; font-size: 18px; color: var(--grey-color)'>Location: {{location}}</p>
-                            {{pet}}
-                            <a href="#" class="btn btn-primary btn-more-info">More info</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div> --}}
-
-<div class='card border-secondary mb-3' style='max-width: 18rem;'>
-
-  <div class='card-body'>
-    <img
-      src='{{image}}'
-      class='card-img-top'
-      alt='...'
-      style='margin-left:35%; margin-top:2%; width:100px; height:100px'
-    />
+<div class='col'>
+  <div class='card' style='width: 18rem; margin-bottom: 2rem;'>
+    <img src='{{image}}' class='card-img-top' alt="Home Image" style="max-width: 284px; max-height: 191px" />
+    <div class='card-body'>
+      <h5 class='card-title'>{{typeOfHome}}</h5>
+      <h6 class='card-title'>in {{location}}</h6>
+      <p class='card-text'>Looking for 2 roomies</p>
+      <p class='card-text'>{{pet}}</p>
+      <button class='btn btn-primary btn-more-info' style="margin-bottom: 10%;">Contact owner</button>
+    </div>
   </div>
-  <div class='card-footer'>
-    <h5 class='card-title'>{{typeOfHome}}</h5>
-    <h6 class='card-title'>in {{location}}</h6>
-    <p class='card-text'>Looking for 2 roomies</p>
-    <p class='card-text'>{{pet}}</p>
-    <button class='btn btn-primary btn-more-info'>Contact owner</button>
-  </div>
-
 </div>
