@@ -119,15 +119,13 @@ router.get('/', async (req, res) => {
         req.session.search = true;
         const searchh = req.session.search;
         console.log(req.session)
-        res.render('userhomepage', {mySrch, reviews, user, searchh}); // 
+        res.render('userhomepage', {mySrch, reviews, user, searchh}); 
       });
 
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
-    //---------------------------
-    // res.render('userhomepage'); 
   }
 });
 
