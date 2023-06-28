@@ -7,9 +7,14 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
 // model import:
+// eslint-disable-next-line no-unused-vars
 const Users = require('./model');
 
-const hbs = exphbs.create({});
+const partialsDir = path.join(__dirname, 'views', 'mypartials');
+
+const hbs = exphbs.create({
+  partialsDir,
+});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
