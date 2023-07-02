@@ -5,6 +5,7 @@
 /* eslint-disable no-undef */
 // Open Cage API
 // https://opencagedata.com/api
+// const key = require('dotenv').config();
 
 console.log('GeocodeApi JS');
 let searchAdrr;
@@ -25,7 +26,7 @@ function getLocationApi(searchAdrr) {
   console.log('   getLocationApi()');
   const queryURL1 = `https://api.opencagedata.com/geocode/v1/json?q=${
     searchAdrr
-  }&key=${process.env.KEY}`;
+  }&key=${key}`;
 
   fetch(queryURL1)
     .then((response) => response.json())

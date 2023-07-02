@@ -15,7 +15,7 @@ reviewSubmit.addEventListener('click', async (e) => {
     });
 
     if (response.ok) {
-      console.log(revName, revBody);
+      document.location.replace('/reviews');
     } else {
       alert('Failed to submit.');
     }

@@ -16,12 +16,12 @@ function sub(location) {
     const fileInput = document.querySelector('input[type="file"]');
     const image = fileInput.files[0];
     //----
-    let roomiesNum = document.querySelector('#roomiesNum');
-    let messageroom = document.querySelector('#messageroom');
-    const roomies = roomiesNum.value.trim(); 
+    const roomiesNum = document.querySelector('#roomiesNum');
+    const messageroom = document.querySelector('#messageroom');
+    const roomies = roomiesNum.value.trim();
     const message = messageroom.value.trim();
 
-    console.log("--------- ROOMIE & MESSAGE");
+    console.log('--------- ROOMIE & MESSAGE');
     console.log(roomies, message);
 
     // console.log('FILE DATA :', fileData);
@@ -40,7 +40,6 @@ function sub(location) {
     formData.append('pet', pet);
     formData.append('roomies', roomies);
     formData.append('message', message);
-
 
     if ((location && typeOfHome && pet && roomies) || (location && typeOfHome && !pet && roomies)) {
       const response = await fetch('/api/offer/upload', {

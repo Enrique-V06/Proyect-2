@@ -53,7 +53,7 @@ Offer.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'offer',
-  }
+  },
 );
 
 module.exports = Offer;

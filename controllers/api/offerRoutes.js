@@ -46,8 +46,8 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     console.log('PATH', path);
     // alert(path);
 
-    //import dayjs from 'dayjs' // ES 2015
-    var now = dayjs().format('MM-DD-YYYY');
+    // import dayjs from 'dayjs' // ES 2015
+    const now = dayjs().format('MM-DD-YYYY');
     console.log('NOW', now);
     const offerData = await Offer.create({
       location: req.body.location,
@@ -78,7 +78,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
   } catch (err) {
     console.log(
       err,
-      'Something happened in the /upload post route, better go check it out!'
+      'Something happened in the /upload post route, better go check it out!',
     );
   }
 });
