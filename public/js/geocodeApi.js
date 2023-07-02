@@ -26,7 +26,7 @@ function getLocationApi(searchAdrr) {
   console.log('   getLocationApi()');
   const queryURL1 = `https://api.opencagedata.com/geocode/v1/json?q=${
     searchAdrr
-  }&key=${key}`;
+  }&key=2f9dc7b017e04d3daa1a27f20c2b9aad`;
 
   fetch(queryURL1)
     .then((response) => response.json())
