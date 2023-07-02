@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
       // console.log("---------------------- MAIL: ", profMail)
       // ---
 
-      res.render('profile', { user, profMail });
+      res.render('profile', { user, profMail, env: process.env });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -62,7 +62,7 @@ router.get('/userOffers', async (req, res) => {
     //   })
     // }
 
-    res.render('userOffers', { offers, loggedIn: req.session.loggedIn, user });
+    res.render('userOffers', { offers, loggedIn: req.session.loggedIn, user, });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -85,7 +85,7 @@ router.put('/:email', async (req, res) => {
         where: {
           email: req.params.email,
         },
-      }
+      },
     );
     res.status(200).json();
   } catch (err) {
