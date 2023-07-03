@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
     try {
       console.log('-----------GET REQ a user/profile /');
       const { user } = req.session;
+      const apiKey = process.env.KEY;
       // ---
       const DBmail = await Users.findAll({
         where: { userName: user },
@@ -21,7 +22,7 @@ router.get('/', async (req, res) => {
       // console.log("---------------------- MAIL: ", profMail)
       // ---
 
-      res.render('profile', { user, profMail, env: process.env });
+      res.render('profile', { user, profMail, apiKey });
     } catch (err) {
       res.status(500).json(err);
     }
